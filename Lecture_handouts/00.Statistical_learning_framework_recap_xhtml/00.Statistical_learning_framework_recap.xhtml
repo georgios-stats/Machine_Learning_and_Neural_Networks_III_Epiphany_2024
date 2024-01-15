@@ -297,7 +297,7 @@ div.foot:hover div.foot_inner {
    </mstyle>
   </mrow>
  </mrow></math> that act as outputs; i.e. 
-<span style = "text-align: center;"><img src="lyxprevieweDJAlY1.png" alt="Mathematical Equation" />
+<span style = "text-align: center;"><img src="lyxpreviewDUdmbe1.png" alt="Mathematical Equation" />
 </span>
 . Hence, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -365,7 +365,7 @@ The learner's output is a function, <math xmlns="http://www.w3.org/1998/Math/Mat
    <mstyle mathvariant='script'><mi>X</mi>
    </mstyle>
   </mrow>
- </mrow></math>. It is also called hypothesis, prediction rule, predictor, or classifier.</div>
+ </mrow></math>. It is also called Hypothesis, prediction rule, predictor, or classifier.</div>
 </div>
 
 <div class="standard" id='magicparlabel-48'><br />
@@ -437,7 +437,14 @@ We often denote the set of hypothesis as <math xmlns="http://www.w3.org/1998/Mat
    <mstyle mathvariant='script'><mi>Y</mi>
    </mstyle>
   </mrow>
- </mrow></math> (that learner wishes to learn) to approximate mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> (that learner wishes to learn) with <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo>
+  </mrow>
+ </mrow></math> approximating the mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mo> &rarr; </mo><mi>y</mi>
   </mrow>
@@ -460,34 +467,6 @@ We often denote the set of hypothesis as <math xmlns="http://www.w3.org/1998/Mat
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
   </mrow>
- </mrow></math>. We can use the loss <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>h</mi><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>x</mi><mo>,</mo><mi>y</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>-</mo><mi>y</mi>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </msup>
-  </mrow>
  </mrow></math>. </div>
 </div>
 
@@ -495,7 +474,101 @@ We often denote the set of hypothesis as <math xmlns="http://www.w3.org/1998/Mat
 
 </div>
 
-<div class="definition" id='magicparlabel-61'><div class="definition_item"><span class="definition_label">Definition 4.</span>
+<div class="example" id='magicparlabel-61'><div class="example_item"><span class="example_label">Example 4.</span>
+<a id="exa__Linear_Regression__Consider_1" />
+(Binary Classification) Consider the classification problem where the goal is to learn the mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>x</mi><mo> &rarr; </mo><mi>y</mi>
+  </mrow>
+ </mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>x</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>X</mi>
+   </mstyle><mo> &sube; </mo>
+   <msup>
+    <mrow>
+     <mstyle mathvariant='double-struck'><mi>R</mi>
+     </mstyle>
+    </mrow>
+    <mrow><mi>d</mi>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>y</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>Y</mi>
+   </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mo>-</mo><mn>1</mn><mo>,</mo><mo>+</mo><mn>1</mn>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math>. A hypothesis can be a function <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>h</mi><mo>:</mo>
+   <mstyle mathvariant='script'><mi>X</mi>
+   </mstyle><mo> &rarr; </mo>
+   <mstyle mathvariant='script'><mi>Y</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi>
+    </mrow>
+   </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> approximating the mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>x</mi><mo> &rarr; </mo><mi>y</mi>
+  </mrow>
+ </mrow></math>. The hypothesis set <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mi>x</mi><mo> &rarr; </mo>
+    <mstyle mathvariant='normal'>
+     <mrow><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi>
+     </mrow>
+    </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>:</mo><mi>w</mi><mo> &isin; </mo>
+    <msup>
+     <mrow>
+      <mstyle mathvariant='double-struck'><mi>R</mi>
+      </mstyle>
+     </mrow>
+     <mrow><mi>d</mi>
+     </mrow>
+    </msup>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math>. </div>
+</div>
+
+<div class="standard" id='magicparlabel-62'><br />
+
+</div>
+
+<div class="definition" id='magicparlabel-63'><div class="definition_item"><span class="definition_label">Definition 5.</span>
 Training data set <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>S</mi>
@@ -540,14 +613,42 @@ Training data set <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mstyle mathvariant='script'><mi>Y</mi>
    </mstyle>
   </mrow>
+ </mrow></math>; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>S</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo>,</mo>
+     <msub>
+      <mrow><mi>y</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>;</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
  </mrow></math>. This is the information that the learner has assess. </div>
 </div>
 
-<div class="standard" id='magicparlabel-62'><br />
+<div class="standard" id='magicparlabel-64'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-63'><div class="definition_item"><span class="definition_label">Definition 5.</span>
+<div class="definition" id='magicparlabel-65'><div class="definition_item"><span class="definition_label">Definition 6.</span>
 Data generation model <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -572,11 +673,11 @@ Data generation model <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-64'><br />
+<div class="standard" id='magicparlabel-66'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-65'><div class="definition_item"><span class="definition_label">Definition 6.</span>
+<div class="definition" id='magicparlabel-67'><div class="definition_item"><span class="definition_label">Definition 7.</span>
 We denote as <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -599,11 +700,11 @@ We denote as <math xmlns="http://www.w3.org/1998/Math/MathML">
 
 
 
-<div class="standard" id='magicparlabel-73'><br />
+<div class="standard" id='magicparlabel-75'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-74'><div class="definition_item"><span class="definition_label">Definition 7.</span>
+<div class="definition" id='magicparlabel-76'><div class="definition_item"><span class="definition_label">Definition 8.</span>
 (Loss function) Given any set of hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>H</mi>
@@ -650,18 +751,30 @@ We denote as <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> specified according to the purpose to quantify the &ldquo;error&rdquo; for a given hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>h</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>z</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>Z</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math> is specified according to the purpose the machine learning algorithm. It reflects how the &ldquo;error&rdquo; is quantified for a given hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>h</mi>
  </mrow></math> and a given example <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>z</mi>
- </mrow></math> –the greater the error the greater the value of the loss.</div>
+ </mrow></math>. The rule is &ldquo;the greater the error the greater the value of the loss&rdquo;.</div>
 </div>
 
-<div class="standard" id='magicparlabel-75'><br />
+<div class="standard" id='magicparlabel-77'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-76'><div class="example_item"><span class="example_label">Example 8.</span>
+<div class="example" id='magicparlabel-78'><div class="example_item"><span class="example_label">Example 9.</span>
 <a id="exa_In_regression_problems" />
 (Cont. Example <a href="#exa__Linear_Regression__Consider">3</a>) In regression problems <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -722,12 +835,13 @@ We denote as <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-77'><br />
+<div class="standard" id='magicparlabel-79'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-78'><div class="example_item"><span class="example_label">Example 9.</span>
-In binary classification problems with <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="example" id='magicparlabel-80'><div class="example_item"><span class="example_label">Example 10.</span>
+<a id="exa__Cont__Example___1" />
+(Cont. Example <a href="#exa__Linear_Regression__Consider_1">4</a>) In binary classification problems with hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>h</mi><mo>:</mo>
    <mstyle mathvariant='script'><mi>X</mi>
@@ -735,17 +849,7 @@ In binary classification problems with <math xmlns="http://www.w3.org/1998/Math/
    <mstyle mathvariant='script'><mi>Y</mi>
    </mstyle>
   </mrow>
- </mrow></math> a learner where <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>Z</mi>
-   </mstyle><mo>=</mo>
-   <mstyle mathvariant='script'><mi>X</mi>
-   </mstyle><mo> &times; </mo>
-   <mstyle mathvariant='script'><mi>Y</mi>
-   </mstyle>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>Y</mi>
@@ -791,11 +895,11 @@ In binary classification problems with <math xmlns="http://www.w3.org/1998/Math/
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-83'><br />
+<div class="standard" id='magicparlabel-89'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-84'><div class="definition_item"><span class="definition_label">Definition 10.</span>
+<div class="definition" id='magicparlabel-90'><div class="definition_item"><span class="definition_label">Definition 11.</span>
 (Risk function) The risk function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -864,7 +968,7 @@ In binary classification problems with <math xmlns="http://www.w3.org/1998/Math/
  </mtable></math></div>
 </div>
 
-<div class="remark" id='magicparlabel-85'><div class="remark_item"><span class="remark_label">Remark 11.</span>
+<div class="remark" id='magicparlabel-91'><div class="remark_item"><span class="remark_label">Remark 12.</span>
 In learning, an ideal way to obtain an optimal predictor <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msup>
@@ -873,48 +977,55 @@ In learning, an ideal way to obtain an optimal predictor <math xmlns="http://www
    <mrow><mo>*</mo>
    </mrow>
   </msup>
- </mrow></math> is to compute the minimizer of the risk; i.e. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi>h</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo>=</mo><mo> arg </mo>
-   <msub>
-    <mrow><mo> min </mo>
-    </mrow>
+ </mrow></math> is to compute the minimizer of the risk; i.e. <a id="eq_" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
     <mrow>
-     <mrow><mi> &forall; </mi><mi>h</mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <msup>
+      <mrow><mi>h</mi>
+      </mrow>
+      <mrow><mo>*</mo>
+      </mrow>
+     </msup><mo>=</mo><mo> arg </mo>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi> &forall; </mi><mi>h</mi>
+       </mrow>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-   <mrow>
-    <msub>
-     <mrow><mi>R</mi>
-     </mrow>
-     <mrow><mi>g</mi>
-     </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow>
+      <msub>
+       <mrow><mi>R</mi>
+       </mrow>
+       <mrow><mi>g</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>h</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-   </mrow>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-  </mrow>
- </mrow></math></div>
+    </mrow>
+   </mtd>
+   <mtd>(2.2)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-86'><br />
+<div class="standard" id='magicparlabel-92'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-87'><div class="example_item"><span class="example_label">Example 12.</span>
+<div class="example" id='magicparlabel-93'><div class="example_item"><span class="example_label">Example 13.</span>
 <a id="exa__Cont__Example__" />
-(Cont. Ex. <a href="#exa_In_regression_problems">8</a>) The risk function is <math xmlns="http://www.w3.org/1998/Math/MathML">
+(Cont. Ex. <a href="#exa_In_regression_problems">9</a>) The risk function is <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -974,22 +1085,22 @@ In learning, an ideal way to obtain an optimal predictor <math xmlns="http://www
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-88'><br />
+<div class="standard" id='magicparlabel-94'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-89'><div class="note_item"><span class="note_label">Note 13.</span>
+<div class="note" id='magicparlabel-95'><div class="note_item"><span class="note_label">Note 14.</span>
 Computing the risk minimizer may be practically challenging due to the integration w.r.t. the unknown data generation model <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>g</mi>
- </mrow></math> involved in the expectation <a href="#eq_asfgasfgasg">(2.1)</a>. Sub-optimally, one may resort to the Empirical risk function.</div>
+ </mrow></math> involved in the expectation <a href="#eq_asfgasfgasg">(2.1)</a>. Sub-optimally, one may use the Empirical risk function instead of the Risk function in <a href="#eq_">(2.2)</a>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-90'><br />
+<div class="standard" id='magicparlabel-96'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-91'><div class="definition_item"><span class="definition_label">Definition 14.</span>
-(Empirical risk function) The empirical risk function <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="definition" id='magicparlabel-97'><div class="definition_item"><span class="definition_label">Definition 15.</span>
+(Empirical risk function) The Empirical Risk Function (ERF) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -1086,12 +1197,90 @@ Computing the risk minimizer may be practically challenging due to the integrati
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-92'><br />
+<div class="standard" id='magicparlabel-98'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-93'><div class="example_item"><span class="example_label">Example 15.</span>
-(Cont. Example <a href="#exa__Cont__Example__">12</a>) Given given sample <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="remark" id='magicparlabel-99'><div class="remark_item"><span class="remark_label">Remark 16.</span>
+Given Empirical Risk Function (ERF) <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow>
+     <mover>
+      <mrow><mi>R</mi>
+      </mrow><mo stretchy="true">&circ;</mo>
+     </mover>
+    </mrow>
+    <mrow><mi>S</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>h</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>h</mi>
+ </mrow></math> the optimal predictor <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>h</mi>
+   </mrow>
+   <mrow><mo>*</mo>
+   </mrow>
+  </msup>
+ </mrow></math> is the minimizer of the ERF; i.e. <a id="eq__1" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msup>
+      <mrow><mi>h</mi>
+      </mrow>
+      <mrow><mo>*</mo>
+      </mrow>
+     </msup><mo>=</mo><mo> arg </mo>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi> &forall; </mi><mi>h</mi>
+       </mrow>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow>
+        <mover>
+         <mrow><mi>R</mi>
+         </mrow><mo stretchy="true">&circ;</mo>
+        </mover>
+       </mrow>
+       <mrow><mi>S</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>h</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+   <mtd>(2.3)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-100'><br />
+
+</div>
+
+<div class="example" id='magicparlabel-101'><div class="example_item"><span class="example_label">Example 17.</span>
+(Cont. Example <a href="#exa__Cont__Example__">13</a>) Given given sample <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>S</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -1179,11 +1368,255 @@ Computing the risk minimizer may be practically challenging due to the integrati
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-94'><br />
+<div class="standard" id='magicparlabel-102'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-95'><div class="example_item"><span class="example_label">Example 16.</span>
+<div class="example" id='magicparlabel-103'><div class="example_item"><span class="example_label">Example 18.</span>
+(Cont. Example <a href="#exa__Cont__Example___1">10</a>) Given given sample <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>S</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo>,</mo>
+     <msub>
+      <mrow><mi>y</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>;</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math> the empirical risk function is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow>
+     <mover>
+      <mrow><mi>R</mi>
+      </mrow><mo stretchy="true">&circ;</mo>
+     </mover>
+    </mrow>
+    <mrow><mi>S</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>h</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+   <mfrac>
+    <mrow><mn>1</mn>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </mfrac>
+   <msubsup>
+    <mrow><mo> &sum; </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </msubsup>
+   <mstyle mathvariant='normal'><mn>1</mn>
+   </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &ne; </mo>
+    <msub>
+     <mrow><mi>y</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>.</div>
+</div>
+
+<div class="standard" id='magicparlabel-104'><br />
+
+</div>
+
+<div class="remark" id='magicparlabel-105'><div class="remark_item"><span class="remark_label">Remark 19.</span>
+If the Hypothesis set <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mstyle mathvariant='script'><mi>H</mi>
+  </mstyle>
+ </mrow></math> is a known parametric family of functions; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>h</mi>
+     </mrow>
+     <mrow><mi>w</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>;</mo><mi>w</mi><mo> &isin; </mo>
+    <mstyle mathvariant='script'><mi>W</mi>
+    </mstyle>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math> parameterized by unknown <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>w</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>W</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math>, then we can equivalently consider <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mi>w</mi><mo> &isin; </mo>
+    <mstyle mathvariant='script'><mi>W</mi>
+    </mstyle>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+<mo>=</mo>
+   <mstyle mathvariant='script'><mi>W</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math> keeping in mind that the learner's output is restricted to <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>h</mi>
+    </mrow>
+    <mrow><mi>w</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>. </div>
+</div>
+
+<div class="standard" id='magicparlabel-106'><br />
+
+</div>
+
+<div class="example" id='magicparlabel-107'><div class="example_item"><span class="example_label">Example 20.</span>
+Consider the multiple linear regression problem with regressors <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>x</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>X</mi>
+   </mstyle><mo> &sube; </mo>
+   <msup>
+    <mrow>
+     <mstyle mathvariant='double-struck'><mi>R</mi>
+     </mstyle>
+    </mrow>
+    <mrow><mi>d</mi>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> and response <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>y</mi><mo> &isin; </mo>
+   <mstyle mathvariant='script'><mi>Y</mi>
+   </mstyle><mo> &sube; </mo>
+   <mstyle mathvariant='double-struck'><mi>R</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math>.  Because it involves only linear functions as predictors <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>h</mi>
+    </mrow>
+    <mrow><mi>w</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo>
+  </mrow>
+ </mrow></math>, we could consider a hypothesis class <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mi>w</mi><mo> &isin; </mo>
+    <msup>
+     <mrow>
+      <mstyle mathvariant='double-struck'><mi>R</mi>
+      </mstyle>
+     </mrow>
+     <mrow><mi>d</mi>
+     </mrow>
+    </msup>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math> and loss function loss <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>w</mi><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi>y</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+   <msup>
+    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>-</mo><mi>y</mi>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> for computational simplicity. The latter will be mainly used.</div>
+</div>
+
+<div class="standard" id='magicparlabel-118'><br />
+
+</div>
+
+<div class="example" id='magicparlabel-119'><div class="example_item"><span class="example_label">Example 21.</span>
 Consider a learning problem where the true data generation distribution (unknown to the learner) is <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -1356,7 +1789,7 @@ Consider a learning problem where the true data generation distribution (unknown
 
     </mrow>
    </mtd>
-   <mtd>(2.2)
+   <mtd>(2.4)
    </mtd>
   </mtr>
  </mtable></math> whose minimizer is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1433,7 +1866,7 @@ Consider a learning problem where the true data generation distribution (unknown
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> as the first term in <a href="#eq_qrgqwrgqwerg">(2.2)</a> is constant. Note that in the Maximum Likelihood Estimation technique the MLE <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> as the first term in <a href="#eq_qrgqwrgqwerg">(2.4)</a> is constant. Note that in the Maximum Likelihood Estimation technique the MLE <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi> &theta; </mi>
@@ -1599,7 +2032,7 @@ Consider a learning problem where the true data generation distribution (unknown
  </mrow></math>.</div>
 </div>
 
-<div class="definition" id='magicparlabel-96'><div class="definition_item"><span class="definition_label">Definition 17.</span>
+<div class="definition" id='magicparlabel-120'><div class="definition_item"><span class="definition_label">Definition 22.</span>
 A learning problem with hypothesis class <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>H</mi>
@@ -1621,15 +2054,15 @@ A learning problem with hypothesis class <math xmlns="http://www.w3.org/1998/Mat
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math>.</div>
+ </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-97'><br />
+<div class="standard" id='magicparlabel-121'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-98'><div class="example_item"><span class="example_label">Example 18.</span>
-Consider the multiple linear regression problem with regressors <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="example" id='magicparlabel-122'><div class="example_item"><span class="example_label">Example 23.</span>
+The standard multiple linear regression problem with regressors <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mo> &isin; </mo>
    <mstyle mathvariant='script'><mi>X</mi>
@@ -1651,18 +2084,17 @@ Consider the multiple linear regression problem with regressors <math xmlns="htt
    <mstyle mathvariant='double-struck'><mi>R</mi>
    </mstyle>
   </mrow>
- </mrow></math>. Till now, we set the learning problem <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
+ </mrow></math>, is a learning problem with examples domain <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
   <mrow>
-   <mstyle mathvariant='script'><mi>H</mi>
-   </mstyle><mo>,</mo>
    <mstyle mathvariant='script'><mi>Z</mi>
-   </mstyle><mo>,</mo><mi> &ell; </mi>
+   </mstyle><mo>=</mo>
+   <mstyle mathvariant='script'><mi>X</mi>
+   </mstyle><mo> &times; </mo>
+   <mstyle mathvariant='script'><mi>Y</mi>
+   </mstyle>
   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
- </mrow></math> in the linear regression with hypothesis class <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, hypothesis class <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>H</mi>
@@ -1681,9 +2113,19 @@ Consider the multiple linear regression problem with regressors <math xmlns="htt
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
   </mrow>
- </mrow></math>, loss <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> , and loss function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow>
+   <msub>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>s</mi><mi>q</mi>
+      </mrow>
+     </mstyle>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
    <mrow><mi>h</mi><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -1709,97 +2151,12 @@ Consider the multiple linear regression problem with regressors <math xmlns="htt
     </mrow>
    </msup>
   </mrow>
- </mrow></math>, and examples domain <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>Z</mi>
-   </mstyle><mo>=</mo>
-   <mstyle mathvariant='script'>
-    <mrow><mi>X</mi><mo> &times; </mo>
-     <mstyle mathvariant='script'><mi>Y</mi>
-     </mstyle>
-    </mrow>
-   </mstyle>
-  </mrow>
- </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>X</mi>
-   </mstyle><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>d</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>Y</mi>
-   </mstyle><mo> &isin; </mo>
-   <mstyle mathvariant='double-struck'><mi>R</mi>
-   </mstyle>
-  </mrow>
- </mrow></math>. Because learning problem involves only linear functions as predictors <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo>
-  </mrow>
- </mrow></math>, this learning problem could be defined equivalently (for presentation convenience) with a hypothesis class <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>H</mi>
-   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-   <mrow><mi>w</mi><mo> &isin; </mo>
-    <msup>
-     <mrow>
-      <mstyle mathvariant='double-struck'><mi>R</mi>
-      </mstyle>
-     </mrow>
-     <mrow><mi>d</mi>
-     </mrow>
-    </msup>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
-  </mrow>
- </mrow></math> and loss function loss <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>w</mi><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>x</mi><mo>,</mo><mi>y</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>-</mo><mi>y</mi>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. The latter will be mainly used.</div>
+ </mrow></math>.</div>
 </div>
-<h2 class="section" id='magicparlabel-105'><span class="section_label">A</span> Useful things</h2>
-<div class="standard" id='magicparlabel-106'>Below are some standard notation used as default in the notes except in cases that is defined otherwise. </div>
+<h2 class="section" id='magicparlabel-128'><span class="section_label">A</span> Useful things</h2>
+<div class="standard" id='magicparlabel-129'>Below are some standard notation used as default in the notes except in cases that is defined otherwise. </div>
 
-<ul class="itemize" id='magicparlabel-107'><li class="itemize_item"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-130'><li class="itemize_item"><math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>q</mi><mo>-</mo>
   </mrow>
@@ -2031,13 +2388,13 @@ Consider the multiple linear regression problem with regressors <math xmlns="htt
  </mrow></math></li>
 </ul>
 
-<div class="standard" id='magicparlabel-112'><br />
+<div class="standard" id='magicparlabel-135'><br />
 
 </div>
 
-<div class="standard" id='magicparlabel-113'>Also some standard formulas.</div>
+<div class="standard" id='magicparlabel-136'>Also some standard formulas.</div>
 
-<ul class="itemize" id='magicparlabel-114'><li class="itemize_item">Jensens' inequality: If If <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-137'><li class="itemize_item">Jensens' inequality: If If <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mo> &isin; </mo>
    <msup>
@@ -2181,7 +2538,7 @@ Consider the multiple linear regression problem with regressors <math xmlns="htt
  </mrow></math>. </li>
 </ul>
 
-<div class="standard" id='magicparlabel-116'><br />
+<div class="standard" id='magicparlabel-139'><br />
 
 </div>
 
