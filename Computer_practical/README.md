@@ -42,9 +42,7 @@ The aim of the computer practical handouts is for the students to be able to imp
 Preview:
 ========
 
-Stochastic learning methods (Computer practical 1)
-
-<!--
+Stochastic learning methods (Computer practical 1)  
 
 -   Complete document : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods.Rmd)  
 
@@ -52,7 +50,6 @@ Stochastic learning methods (Computer practical 1)
 
 -   Solutions : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_solutions.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_solutions.Rmd)  
 
--->
 
 <!--
 Stochastic learning methods SGLD (Computer practical 2)
