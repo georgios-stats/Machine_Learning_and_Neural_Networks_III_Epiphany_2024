@@ -47,12 +47,16 @@
 
 Learning problem: Definitions, notation, and formulation -A recap  
 
-+ [00.Statistical_learning_framework_recap.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/00.Statistical_learning_framework_recap.pdf)  
++ [01.Statistical_learning_framework_recap.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/01.Statistical_learning_framework_recap.pdf)  
 
 
 Elements of convex learning problems  
 
-+ [01.Convex_learning_problems.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/01.Convex_learning_problems.pdf)  
++ [02.Convex_learning_problems.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/02.Convex_learning_problems.pdf)  
+
+Learnability and stability  
+
++ [03.Learnability_and_stability.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/03.Learnability_and_stability.pdf)  
 
 <!--
 Stochastic gradient descent  
@@ -66,19 +70,17 @@ Stochastic gradient Langevin dynamics
 
 + [04.Stochastic_gradient_Langevine_dynamics.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/04.Stochastic_gradient_Langevine_dynamics.pdf)  
 
-Artificial Neural Networks  
-
-+ [05.Artificial_neural_networks.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/05.Artificial_neural_networks.pdf)  
-
-
 Support Vector Machines  
 
-+ [06.Support_Vector_Machines.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/06.Support_Vector_Machines.pdf)  
++ [05.Support_Vector_Machines.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/05.Support_Vector_Machines.pdf)  
 
 Kernel methods  
 
-+ [07.Kernel_Methods.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/07.Kernel_Methods.pdf)  
++ [06.Kernel_Methods.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/06.Kernel_Methods.pdf) 
 
+Artificial Neural Networks  
+
++ [07.Artificial_neural_networks.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/07.Artificial_neural_networks.pdf)  
 
 Gaussian process regression  
 
