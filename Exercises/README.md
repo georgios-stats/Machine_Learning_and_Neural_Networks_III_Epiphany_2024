@@ -50,13 +50,13 @@ All the exercises
 
 ### Homework sheets
 
-<!--
+
 Homework 1  
 
 + Questions [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_1_questions.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_1_questions_xhtml/Homework_1_questions_xhtml)  
 
 + Complete [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_1_complete.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_1_complete_xhtml/Homework_1_complete.xhtml)   
--->
+
 
 
 Homework 2  
