@@ -197,6 +197,22 @@ font-variant: normal;
 font-size: medium;
 
 }
+div.summary {
+font-style: normal;
+font-variant: normal;
+font-size: medium;
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+text-align: left;
+
+}
+span.summary_label {
+font-weight: normal;
+font-style: italic;
+font-variant: normal;
+font-size: medium;
+
+}
 div.Shadowbox { border: solid gray medium; border-bottom: solid black 1ex; border-right: solid black 1ex; padding: 0.5ex; }
 
 
@@ -1473,7 +1489,7 @@ The following result connects the need for upper bounding (and minimizing this b
  <mrow>
   <mstyle mathvariant='fraktur'><mi>A</mi>
   </mstyle>
- </mrow></math> satisfies the guarantee in PAC Definition <a href="#def__Agnostic_PAC_Learnability">4</a>:</i></div>
+ </mrow></math> satisfies the PAC guarantee in Definition <a href="#def__Agnostic_PAC_Learnability">4</a>:</i></div>
 
 <ul class="itemize" id='magicparlabel-65'><li class="itemize_item"><i>for every <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -2668,12 +2684,8 @@ A Regularized Loss Minimization (RLM) learning problem <math xmlns="http://www.w
       <mrow><mo>*</mo>
       </mrow>
      </msup><mo>=</mo><munder accent='false'>
-     <munder>
-      <mrow>
-       <mrow><mo> arg </mo><mo> min </mo>
-       </mrow>
-      </mrow><mo stretchy="true">&UnderBrace;</mo>
-     </munder>
+     <mrow><mo> arg </mo><mo> min </mo>
+     </mrow>
      <mrow><mi>h</mi><mo> &isin; </mo>
       <mstyle mathvariant='script'><mi>H</mi>
       </mstyle>
@@ -5272,12 +5284,420 @@ From <a href="#eq__16">4.11</a>, we see that there is a trade-off between Empiri
  </mrow></math> (but perhaps not too stable)!</div>
 </div>
 
-<div class="standard" id='magicparlabel-147'><br />
+<div class="assumption" id='magicparlabel-147'><div class="assumption_item"><span class="assumption_label">Assumption 45.</span>
+<a id="assu_The_loss_function_1_1" />
+ Assume that the learning problem is additionally <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>B</mi>
+ </mrow></math>-bounded by <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>B</mi><mo>&gt;</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>,; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mstyle mathvariant='script'><mi>H</mi>
+   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow><mi>w</mi><mo> &isin; </mo>
+    <msup>
+     <mrow>
+      <mstyle mathvariant='double-struck'><mi>R</mi>
+      </mstyle>
+     </mrow>
+     <mrow><mi>d</mi>
+     </mrow>
+    </msup><mo>:</mo>
+    <msubsup>
+     <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+    </msubsup><mo> &le; </mo><mi>B</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math>. </div>
+</div>
+
+<div class="standard" id='magicparlabel-148'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-148'><div class="note_item"><span class="note_label">Note 45.</span>
-Also according to Proposition <a href="#prop_Let__be">13</a> and Definition <a href="#def__Agnostic_PAC_Learnability">4</a>, <a href="#eq__16">(4.11)</a> implies that the Ridge RLM learning problem <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-149'><div class="note_item"><span class="note_label">Note 46.</span>
+If additionally the learning problem is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>B</mi>
+ </mrow></math>-bounded then the upper bound in <a href="#eq__16">(4.11)</a> becomes <a id="eq__16_1" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow>
+       <mstyle mathvariant='normal'><mi>E</mi>
+       </mstyle>
+      </mrow>
+      <mrow>
+       <mrow>
+        <mstyle mathvariant='script'><mi>S</mi>
+        </mstyle><mo> &sim; </mo><mi>g</mi>
+       </mrow>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>R</mi>
+       </mrow>
+       <mrow><mi>g</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <mstyle mathvariant='fraktur'><mi>A</mi>
+       </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mstyle mathvariant='script'><mi>S</mi>
+       </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo><munder accent='false'>
+     <munder>
+      <mrow>
+       <mrow>
+        <msub>
+         <mrow><mo> min </mo>
+         </mrow>
+         <mrow>
+          <mrow><mi>w</mi><mo> &isin; </mo>
+           <mstyle mathvariant='script'><mi>H</mi>
+           </mstyle>
+          </mrow>
+         </mrow>
+        </msub>
+        <msub>
+         <mrow><mi>R</mi>
+         </mrow>
+         <mrow><mi>g</mi>
+         </mrow>
+        </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mi> &lambda; </mi><mi>B</mi>
+       </mrow>
+      </mrow><mo stretchy="true">&UnderBrace;</mo>
+     </munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mstyle mathvariant='normal'><mi>I</mi>
+     </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+</munder><mo>+</mo><munder accent='false'>
+     <munder>
+      <mrow>
+       <mrow><mn>2</mn>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow><mi> &rho; </mi>
+           </mrow>
+           <mrow><mn>2</mn>
+           </mrow>
+          </msup>
+         </mrow>
+         <mrow>
+          <mrow><mi> &lambda; </mi><mi>m</mi>
+          </mrow>
+         </mrow>
+        </mfrac>
+       </mrow>
+      </mrow><mo stretchy="true">&UnderBrace;</mo>
+     </munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mstyle mathvariant='normal'>
+      <mrow><mi>I</mi><mi>I</mi>
+      </mrow>
+     </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+</munder>
+    </mrow>
+   </mtd>
+   <mtd>(4.12)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-150'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-151'><div class="note_item"><span class="note_label">Note 47.</span>
+Furthermore, if we choose a shrinkage parameter <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &lambda; </mi>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </msub><mo>=</mo>
+   <msqrt>
+    <mfrac>
+     <mrow><mn>2</mn>
+     </mrow>
+     <mrow><mi>m</mi>
+     </mrow>
+    </mfrac>
+   </msqrt>
+   <mfrac>
+    <mrow><mi> &rho; </mi>
+    </mrow>
+    <mrow><mi>B</mi>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math> in <a href="#eq__9">(4.2)</a> the upper bound in <a href="#eq__16">(4.11)</a> becomes <a id="eq__16_1_1" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow>
+       <mstyle mathvariant='normal'><mi>E</mi>
+       </mstyle>
+      </mrow>
+      <mrow>
+       <mrow>
+        <mstyle mathvariant='script'><mi>S</mi>
+        </mstyle><mo> &sim; </mo><mi>g</mi>
+       </mrow>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>R</mi>
+       </mrow>
+       <mrow><mi>g</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <mstyle mathvariant='fraktur'><mi>A</mi>
+       </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mstyle mathvariant='script'><mi>S</mi>
+       </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>w</mi><mo> &isin; </mo>
+        <mstyle mathvariant='script'><mi>H</mi>
+        </mstyle>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>R</mi>
+      </mrow>
+      <mrow><mi>g</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo>
+     <msub>
+      <mrow><mi> &lambda; </mi>
+      </mrow>
+      <mrow><mi>m</mi>
+      </mrow>
+     </msub><mi>B</mi>
+     <msqrt>
+      <mfrac>
+       <mrow><mn>8</mn>
+       </mrow>
+       <mrow><mi>m</mi>
+       </mrow>
+      </mfrac>
+     </msqrt>
+    </mrow>
+   </mtd>
+   <mtd>(4.13)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-152'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-153'><div class="note_item"><span class="note_label">Note 48.</span>
+In particular, if the size <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>m</mi>
+ </mrow></math> of the training sample <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mstyle mathvariant='script'><mi>S</mi>
+  </mstyle>
+ </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>m</mi><mo> &ge; </mo>
+   <mfrac>
+    <mrow>
+     <mrow>
+      <msubsup>
+       <mrow><mi> &lambda; </mi>
+       </mrow>
+       <mrow><mi>m</mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msubsup>
+      <msup>
+       <mrow><mi>B</mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msup><mn>8</mn>
+     </mrow>
+    </mrow>
+    <mrow>
+     <msup>
+      <mrow><mi> &epsi; </mi>
+      </mrow>
+      <mrow><mn>2</mn>
+      </mrow>
+     </msup>
+    </mrow>
+   </mfrac><mo>=</mo>
+   <mfrac>
+    <mrow>
+     <mrow><mn>8</mn>
+      <msup>
+       <mrow><mi> &rho; </mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msup>
+      <msup>
+       <mrow><mi>B</mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msup>
+     </mrow>
+    </mrow>
+    <mrow>
+     <msup>
+      <mrow><mi> &epsi; </mi>
+      </mrow>
+      <mrow><mn>2</mn>
+      </mrow>
+     </msup>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math> for some <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &epsi; </mi><mo>&gt;</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> then for every distribution <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>g</mi>
+ </mrow></math>, the upper bound in <a href="#eq__16">(4.11)</a> becomes <a id="eq__16_1_1_1" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow>
+       <mstyle mathvariant='normal'><mi>E</mi>
+       </mstyle>
+      </mrow>
+      <mrow>
+       <mrow>
+        <mstyle mathvariant='script'><mi>S</mi>
+        </mstyle><mo> &sim; </mo><mi>g</mi>
+       </mrow>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>R</mi>
+       </mrow>
+       <mrow><mi>g</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <mstyle mathvariant='fraktur'><mi>A</mi>
+       </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mstyle mathvariant='script'><mi>S</mi>
+       </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>w</mi><mo> &isin; </mo>
+        <mstyle mathvariant='script'><mi>H</mi>
+        </mstyle>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>R</mi>
+      </mrow>
+      <mrow><mi>g</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mi> &epsi; </mi>
+    </mrow>
+   </mtd>
+   <mtd>(4.14)
+   </mtd>
+  </mtr>
+ </mtable></math> and hence we can have a PAC guarantee that is summarized in the following. </div>
+</div>
+
+<div class="standard" id='magicparlabel-154'><br />
+
+</div>
+
+<div class="summary" id='magicparlabel-155'><div class="summary_item"><span class="summary_label">Summary 49.</span>
+Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
   <mrow>
@@ -5288,18 +5708,214 @@ Also according to Proposition <a href="#prop_Let__be">13</a> and Definition <a h
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> with the loss function being convex and Lipschitz is a PAC. </div>
+ </mrow></math> be a learning problem convex-Lipschitz-bounded with parameters <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi> &rho; </mi>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>B</mi>
+ </mrow></math>, and let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>m</mi>
+ </mrow></math> be the training data size.  The associated Ridge Regularized Loss Minimization rule with regularization function <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &lambda; </mi>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </msub><mo>=</mo>
+   <msqrt>
+    <mfrac>
+     <mrow><mn>2</mn>
+     </mrow>
+     <mrow><mi>m</mi>
+     </mrow>
+    </mfrac>
+   </msqrt>
+   <mfrac>
+    <mrow><mi> &rho; </mi>
+    </mrow>
+    <mrow><mi>B</mi>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math> satisfies <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow>
+     <mstyle mathvariant='normal'><mi>E</mi>
+     </mstyle>
+    </mrow>
+    <mrow>
+     <mrow>
+      <mstyle mathvariant='script'><mi>S</mi>
+      </mstyle><mo> &sim; </mo><mi>g</mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>R</mi>
+     </mrow>
+     <mrow><mi>g</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <mstyle mathvariant='fraktur'><mi>A</mi>
+     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mstyle mathvariant='script'><mi>S</mi>
+     </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi>w</mi><mo> &isin; </mo>
+      <mstyle mathvariant='script'><mi>H</mi>
+      </mstyle>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>g</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo>
+   <msub>
+    <mrow><mi> &lambda; </mi>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </msub><mi>B</mi>
+   <msqrt>
+    <mfrac>
+     <mrow><mn>8</mn>
+     </mrow>
+     <mrow><mi>m</mi>
+     </mrow>
+    </mfrac>
+   </msqrt>
+  </mrow>
+ </mrow></math> Moreover, if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>m</mi><mo> &ge; </mo>
+   <mfrac>
+    <mrow>
+     <mrow><mn>8</mn>
+      <msup>
+       <mrow><mi> &rho; </mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msup>
+      <msup>
+       <mrow><mi>B</mi>
+       </mrow>
+       <mrow><mn>2</mn>
+       </mrow>
+      </msup>
+     </mrow>
+    </mrow>
+    <mrow>
+     <msup>
+      <mrow><mi> &epsi; </mi>
+      </mrow>
+      <mrow><mn>2</mn>
+      </mrow>
+     </msup>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &epsi; </mi><mo>&gt;</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> then for every distribution <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>g</mi>
+ </mrow></math> we can get a PAC -guarantee <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow>
+     <mstyle mathvariant='normal'><mi>E</mi>
+     </mstyle>
+    </mrow>
+    <mrow>
+     <mrow>
+      <mstyle mathvariant='script'><mi>S</mi>
+      </mstyle><mo> &sim; </mo><mi>g</mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>R</mi>
+     </mrow>
+     <mrow><mi>g</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <mstyle mathvariant='fraktur'><mi>A</mi>
+     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mstyle mathvariant='script'><mi>S</mi>
+     </mstyle>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi>w</mi><mo> &isin; </mo>
+      <mstyle mathvariant='script'><mi>H</mi>
+      </mstyle>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>g</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mi> &epsi; </mi>
+  </mrow>
+ </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-149'><br />
+<div class="standard" id='magicparlabel-161'><br />
 
 </div>
 
-<div class="standard" id='magicparlabel-150'><br />
+<div class="standard" id='magicparlabel-162'><br />
 </div>
-<h2 class="section" id='magicparlabel-151'><span class="section_label">A</span> Recall strong convex functions from Handout <a href="#enu_Handout__Elements_of">enu:Handout:-Elements-of</a>.</h2>
+<h2 class="section" id='magicparlabel-163'><span class="section_label">A</span> Recall strong convex functions from Handout <a href="#enu_Handout__Elements_of">enu:Handout:-Elements-of</a>.</h2>
 
-<ul class="itemize" id='magicparlabel-152'><li class="itemize_item">A function <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-164'><li class="itemize_item">A function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>f</mi>
  </mrow></math> is <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &lambda; </mi>
