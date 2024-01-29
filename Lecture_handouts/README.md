@@ -61,9 +61,9 @@ Learnability and stability
 
 Stochastic gradient descent  
 
-+ [02.Gradient_descent.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/02.Gradient_descent.pdf)  
++ [04.Gradient_descent.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/04.Gradient_descent.pdf)  
 
-+ [03.Stochastic_gradient_descent.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/03.Stochastic_gradient_descent.pdf)  
++ [05.Stochastic_gradient_descent.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/05.Stochastic_gradient_descent.pdf)  
 
 <!--
 Stochastic gradient Langevin dynamics  
