@@ -65,11 +65,13 @@ Stochastic gradient descent
 
 + [05.Stochastic_gradient_descent.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/05.Stochastic_gradient_descent.pdf)  
 
-<!--
+
 Stochastic gradient Langevin dynamics  
 
-+ [04.Stochastic_gradient_Langevine_dynamics.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/04.Stochastic_gradient_Langevine_dynamics.pdf)  
++ [06.Stochastic_gradient_Langevine_dynamics.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/06.Stochastic_gradient_Langevine_dynamics.pdf)  
 
+
+<!--
 Support Vector Machines  
 
 + [05.Support_Vector_Machines.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/05.Support_Vector_Machines.pdf)  
