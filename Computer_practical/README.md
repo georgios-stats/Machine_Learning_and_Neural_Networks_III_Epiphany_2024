@@ -44,21 +44,22 @@ Preview:
 
 Stochastic learning methods (Computer practical 1)  
 
--   Supplementary : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_1.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_1.Rmd)  
+-   Supplementary : [HTML](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_1.xhtml) & [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_1.pdf)  
 
 -   Tasks : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_tasks.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_tasks.Rmd)  
 
 -   Solutions : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_solutions.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_learning_methods_solutions.Rmd)  
 
 
-<!--
 Stochastic learning methods SGLD (Computer practical 2)
+
+-   Supplementary : [HTML](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_2.xhtml) & [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/supplamentary_handout_computer_practical_2.pdf)  
 
 -   Tasks : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_gradient_langevin_dynamics_tasks.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_gradient_langevin_dynamics_tasks.Rmd)  
 
 -   Solutions : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_gradient_langevin_dynamics_solutions.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Stochastic_gradient_langevin_dynamics_solutions.Rmd) 
 
--->
+
 
 <!--
 Artificial Neural Networks (Computer practical 3)
