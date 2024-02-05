@@ -62,7 +62,7 @@ Students will become able to:
 
 + implement SGLD algorithm in R  
 
-+ recap logistic regression, Normal mixture model (optionally)  
++ recap logistic regression   
 
 In the computer room, students will practice on the binary classification problem. 
 

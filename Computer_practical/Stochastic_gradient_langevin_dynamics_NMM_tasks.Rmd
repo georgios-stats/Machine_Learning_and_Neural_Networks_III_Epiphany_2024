@@ -1,6 +1,6 @@
 ---
 title: "Stochastic gradient Langevin dynamics"
-subtitle: "...on a binary clasification problem"
+subtitle: "...on a mixture model problem"
 author: "Georgios P. Karagiannis @ MATH3431 Machine Learning and Neural Networks III"
 output:
   html_notebook: 
@@ -62,7 +62,7 @@ Students will become able to:
 
 + implement SGLD algorithm in R  
 
-+ recap logistic regression, Normal mixture model (optionally)  
++ use Normal mixture model   
 
 In the computer room, students will practice on the binary classification problem. 
 

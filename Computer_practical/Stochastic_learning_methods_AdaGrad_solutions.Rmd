@@ -58,7 +58,7 @@ rm(list=ls())
 
 + practice in R,  
 
-+ implement GD, batch/online SGD, AdaGrad, SGD with projection, SVRG algorithms in R
++ implement GD, AdaGrad algorithms in R
 
 + refresh logistic regression, with Ridge penalty from term 1  
 
