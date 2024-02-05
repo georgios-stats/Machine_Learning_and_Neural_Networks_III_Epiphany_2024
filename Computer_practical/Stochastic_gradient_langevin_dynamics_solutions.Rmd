@@ -45,7 +45,7 @@ header-includes:
 
 
 
-[Back to README](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2023/tree/main/Computer_practical#aim)
+[Back to README](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/tree/main/Computer_practical#aim)
 
 ```{r}
 rm(list=ls())
