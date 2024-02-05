@@ -60,11 +60,10 @@ Homework 1
 
 
 Homework 2  
-<!--
-+ Questions [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_2_questions.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_1_questions_xhtml/Homework_2_questions_xhtml)  
+
++ Questions [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_2_questions.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_2_questions_xhtml/Homework_2_questions_xhtml)  
 
 + Complete [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_2_complete.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_2_complete_xhtml/Homework_2_complete.xhtml)  
--->
 
 
 Homework 3  
