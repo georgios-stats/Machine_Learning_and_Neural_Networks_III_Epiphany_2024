@@ -193,7 +193,7 @@ The Bayesian model is
 \begin{cases}
 y_{i}|w\sim\text{Bernoulli}\left(h_{w}\left(x\right)\right),\,\,i=1,...,n & \text{( sampling distribution)}\\
 \,\,\,\,\,\,\,\,\,\,h_{w}\left(x\right)=\frac{\exp\left(x^{\top}w\right)}{1+\exp\left(x^{\top}w\right)}\\
-w\sim\text{N}_{d}\left(\mu=0.0,V=I_{d}\right) & \text{( prior distribution)}
+w\sim\text{N}_{d}\left(\mu=0.0,V\right) & \text{( prior distribution)}
 \end{cases}
 \]
 
@@ -333,7 +333,7 @@ while ( (Qterm != 1) ) {
   }
   w_new <- w_new +eta*numDeriv::grad(aux_fun, w) ;
   ## noise
-  w_new <- w_new +sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
+  w_new <- w_new +sqrt(2.0)*sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
   # record
   w <- w_new
   # termination criterion

@@ -133,6 +133,18 @@ div.Boxed {
 	border: solid thick black;
 	padding: 0.5ex;
 }
+div.marginal {
+	border: 2px solid black;
+	padding: 1ex;
+	margin: 1ex;
+	background-color: #F0F0F0;
+	float:right;
+	font-size: small;
+	font-weight: medium;
+	font-family: serif;
+	font-variant: normal;
+	font-style: normal;
+}
 span.foot_label {
 	vertical-align: super;
 	font-size: smaller;
@@ -197,27 +209,31 @@ Stochastic gradient Langevin dynamics <div style='height:3ex'></div></div>
 <div style='height:3ex'></div></div>
 <h3 class="subsection_" id='magicparlabel-25'>Reading list &amp; references:</h3>
 
-<ol class="enumerate" id='magicparlabel-26'><li class="enumerate_item">Welling, M., &amp; Teh, Y. W. (2011). Bayesian learning via stochastic gradient Langevin dynamics. In Proceedings of the 28th international conference on machine learning (ICML-11) (pp. 681-688).</li>
-<li class="enumerate_item">Bottou, L. (2012). Stochastic gradient descent tricks. In Neural networks: Tricks of the trade (pp. 421-436). Springer, Berlin, Heidelberg.
-
-</li><li class="enumerate_item">Sato, I., &amp; Nakagawa, H. (2014). Approximation analysis of stochastic gradient Langevin dynamics by using Fokker-Planck equation and Ito process. In International Conference on Machine Learning (pp. 982-990). PMLR. </li>
-<li class="enumerate_item">Teh, Y. W., Thiery, A. H., &amp; Vollmer, S. J. (2016). Consistency and fluctuations for stochastic gradient Langevin dynamics. Journal of Machine Learning Research, 17.</li>
-<li class="enumerate_item">Vollmer, S. J., Zygalakis, K. C., &amp; Teh, Y. W. (2016). Exploration of the (non-) asymptotic bias and variance of stochastic gradient Langevin dynamics. The Journal of Machine Learning Research, 17(1), 5504-5548. –&gt;further reading for theory</li>
-<li class="enumerate_item">Nemeth, C., &amp; Fearnhead, P. (2021). Stochastic gradient Markov chain Monte Carlo. Journal of the American Statistical Association, 116(533), 433-450.
-
-</li></ol>
+<ol class="enumerate" id='magicparlabel-26'><li class="enumerate_item"><a id="enu_Welling__M_____" />
+ Welling, M., &amp; Teh, Y. W. (2011). Bayesian learning via stochastic gradient Langevin dynamics. In Proceedings of the 28th international conference on machine learning (ICML-11) (pp. 681-688).</li>
+<li class="enumerate_item"><a id="enu_Bottou__L___2012__" />
+ Bottou, L. (2012). Stochastic gradient descent tricks. In Neural networks: Tricks of the trade (pp. 421-436). Springer, Berlin, Heidelberg.</li>
+<li class="enumerate_item"><a id="enu_Sato__I____" />
+ Sato, I., &amp; Nakagawa, H. (2014). Approximation analysis of stochastic gradient Langevin dynamics by using Fokker-Planck equation and Ito process. In International Conference on Machine Learning (pp. 982-990). PMLR. </li>
+<li class="enumerate_item"><a id="enu_Teh__Y__W__" />
+ Teh, Y. W., Thiery, A. H., &amp; Vollmer, S. J. (2016). Consistency and fluctuations for stochastic gradient Langevin dynamics. Journal of Machine Learning Research, 17.</li>
+<li class="enumerate_item"><a id="enu_Vollmer__S__J__" />
+ Vollmer, S. J., Zygalakis, K. C., &amp; Teh, Y. W. (2016). Exploration of the (non-) asymptotic bias and variance of stochastic gradient Langevin dynamics. The Journal of Machine Learning Research, 17(1), 5504-5548. –&gt;further reading for theory</li>
+<li class="enumerate_item"><a id="enu_Nemeth__C____" />
+ Nemeth, C., &amp; Fearnhead, P. (2021). Stochastic gradient Markov chain Monte Carlo. Journal of the American Statistical Association, 116(533), 433-450.</li>
+</ol>
 </div></div>
-<h2 class="section" id='magicparlabel-51'><span class="section_label">1</span> Bayesian learning and motivations</h2>
+<h2 class="section" id='magicparlabel-57'><span class="section_label">1</span> Bayesian learning and motivations</h2>
 
-<div class="note" id='magicparlabel-52'><div class="note_item"><span class="note_label">Note 1.</span>
+<div class="note" id='magicparlabel-58'><div class="note_item"><span class="note_label">Note 1.</span>
 Bayesian methods are appealing in their ability to capture uncertainty in learned parameters and avoid overﬁtting. Arguably with large datasets there will be little overﬁtting. Alternatively, as we have access to larger datasets and more computational resources, we become interested in building more complex models (eg from a logistic regression to a deep neural network), so that there will always be a need to quantify the amount of parameter uncertainty.</div>
 </div>
 
-<div class="standard" id='magicparlabel-53'><br />
+<div class="standard" id='magicparlabel-59'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-54'><div class="note_item"><span class="note_label">Note 2.</span>
+<div class="note" id='magicparlabel-60'><div class="note_item"><span class="note_label">Note 2.</span>
 <a id="note_Consider_a_Bayesian" />
  Consider a Bayesian statistical model with sampling distribution (statistical model) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -383,11 +399,11 @@ Bayesian methods are appealing in their ability to capture uncertainty in learne
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-55'><br />
+<div class="standard" id='magicparlabel-61'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-56'><div class="note_item"><span class="note_label">Note 3.</span>
+<div class="note" id='magicparlabel-62'><div class="note_item"><span class="note_label">Note 3.</span>
 With regards to the Bayesian model in Note <a href="#note_Consider_a_Bayesian">2</a>, we denote the likelihood of the observables <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
@@ -465,11 +481,11 @@ With regards to the Bayesian model in Note <a href="#note_Consider_a_Bayesian">2
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-57'><br />
+<div class="standard" id='magicparlabel-63'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-58'><div class="note_item"><span class="note_label">Note 4.</span>
+<div class="note" id='magicparlabel-64'><div class="note_item"><span class="note_label">Note 4.</span>
 <a id="rem_Bayesian_learning_heavily" />
  Bayesian learning (inference) relies on the posterior distribution density <a id="eq__1" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -561,11 +577,11 @@ With regards to the Bayesian model in Note <a href="#note_Consider_a_Bayesian">2
  </mrow></math>. It is often intractable; hence there is often a need to numerically compute it. (Section <a href="#sec_Full_Bayesian_learning">3</a>)</div>
 </div>
 
-<div class="standard" id='magicparlabel-59'><br />
+<div class="standard" id='magicparlabel-65'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-60'><div class="note_item"><span class="note_label">Note 5.</span>
+<div class="note" id='magicparlabel-66'><div class="note_item"><span class="note_label">Note 5.</span>
 <a id="enu_a_posteriori_averaging" />
  Point estimation of a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>h</mi>
@@ -639,11 +655,11 @@ With regards to the Bayesian model in Note <a href="#note_Consider_a_Bayesian">2
  </mtable></math>It is often intractable; hence there is often a need to numerically compute it. (Section <a href="#sec_Full_Bayesian_learning">3</a>)</div>
 </div>
 
-<div class="standard" id='magicparlabel-61'><br />
+<div class="standard" id='magicparlabel-67'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-62'><div class="note_item"><span class="note_label">Note 6.</span>
+<div class="note" id='magicparlabel-68'><div class="note_item"><span class="note_label">Note 6.</span>
 Point estimation of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math> can also be performed via maximum a-posteriori (MAP) estimator <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -792,11 +808,11 @@ Point estimation of <math xmlns="http://www.w3.org/1998/Math/MathML">
 </div>
 </div>
 
-<div class="standard" id='magicparlabel-63'><br />
+<div class="standard" id='magicparlabel-69'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-64'><div class="note_item"><span class="note_label">Note 7.</span>
+<div class="note" id='magicparlabel-70'><div class="note_item"><span class="note_label">Note 7.</span>
 To describe the learning algorithms Gradient Descent (GD), Stochastic Gradient Descent (SGD), and Stochastic Gradient Langevin Dynamics (SGLD), we consider that the examples (data) in <a href="#eq_">(1.1)</a> are independent realizations from the sampling distribution i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -821,17 +837,17 @@ To describe the learning algorithms Gradient Descent (GD), Stochastic Gradient D
  </mrow></math> is continuous (not discrete). </div>
 </div>
 
-<div class="standard" id='magicparlabel-65'><br />
+<div class="standard" id='magicparlabel-71'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-66'><div class="note_item"><span class="note_label">Note 8.</span>
+<div class="note" id='magicparlabel-72'><div class="note_item"><span class="note_label">Note 8.</span>
 In what follows, we first present the implementation of GD and SGD addressing MAP learning, and then we introduce the implementation of SGLD addressing posterior density and expectation learning. </div>
 </div>
-<h2 class="section" id='magicparlabel-82'><span class="section_label">2</span> <a id="sec_Maximum_A_Posteriori" />
+<h2 class="section" id='magicparlabel-88'><span class="section_label">2</span> <a id="sec_Maximum_A_Posteriori" />
 Maximum A Posteriori (MAP) learning via GD and SGD</h2>
 
-<div class="problem" id='magicparlabel-83'><div class="problem_item"><span class="problem_label">Problem 9.</span>
+<div class="problem" id='magicparlabel-89'><div class="problem_item"><span class="problem_label">Problem 9.</span>
 <a id="prob_Given_the_Bayesian" />
  Given the Bayesian model <a href="#eq_">(1.1)</a>, and rearranging <a href="#eq__5">(1.5)</a>, MAP estimate <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -934,22 +950,22 @@ Maximum A Posteriori (MAP) learning via GD and SGD</h2>
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-84'><br />
+<div class="standard" id='magicparlabel-90'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-85'><div class="note_item"><span class="note_label">Note 10.</span>
+<div class="note" id='magicparlabel-91'><div class="note_item"><span class="note_label">Note 10.</span>
 GD is particularly suitable to solve <a href="#eq__5_1">(2.1)</a> when <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math> has high dimensionality.</div>
 </div>
 
-<div class="standard" id='magicparlabel-86'><br />
+<div class="standard" id='magicparlabel-92'><br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-87'><div class='Boxed'><div class="algorithm" id='magicparlabel-91'><div class="algorithm_item"><span class="algorithm_label">Algorithm 11.</span>
+<div class="standard" id='magicparlabel-93'><div class='Boxed'><div class="algorithm" id='magicparlabel-97'><div class="algorithm_item"><span class="algorithm_label">Algorithm 11.</span>
 <a id="alg_Gradient_descent__Algorithm" />
  Gradient descent (Algorithm <a href="#alg_Gradient_descent_algorithm">alg:Gradient-descent-algorithm</a> &ldquo;Handout <a href="#enu_Handout___Gradient">enu:Handout-:-Gradient</a>: Gradient descent &rdquo;) with learning rate <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -965,13 +981,13 @@ GD is particularly suitable to solve <a href="#eq__5_1">(2.1)</a> when <math xml
 <div class="algorithm_item"><hr />
 
 </div>
-<div class="plain_layout" style='text-align: left;' id='magicparlabel-93'><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" style='text-align: left;' id='magicparlabel-99'><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>...</mn>
   </mrow>
  </mrow></math> iterate: </i></div>
 
-<ol class="enumerate" id='magicparlabel-94'><li class="enumerate_item"><i>Compute<a id="eq__6" />
+<ol class="enumerate" id='magicparlabel-100'><li class="enumerate_item"><i>Compute<a id="eq__6" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -1085,31 +1101,31 @@ GD is particularly suitable to solve <a href="#eq__5_1">(2.1)</a> when <math xml
 </div></div>
 
 
-<div class="standard" id='magicparlabel-95'><br />
+<div class="standard" id='magicparlabel-101'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-96'><div class="note_item"><span class="note_label">Note 12.</span>
+<div class="note" id='magicparlabel-102'><div class="note_item"><span class="note_label">Note 12.</span>
 The implementation of other GD variants (eg <a href="#eq_sbGD_update_mechanism">eq:sbGD-update-mechanism</a> in Handout 2) is straightforward, based on Algorithm <a href="#alg_Gradient_descent__Algorithm">11</a>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-97'><br />
+<div class="standard" id='magicparlabel-103'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-98'><div class="note_item"><span class="note_label">Note 13.</span>
+<div class="note" id='magicparlabel-104'><div class="note_item"><span class="note_label">Note 13.</span>
 <a id="rem_SGD_is_particularly" />
  SGD is particularly suitable to solve <a href="#eq__5_1">(2.1)</a> when <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math> has high dimensionality, and in big-data problems since the repetitive computation of the sum in <a href="#eq__6">(2.2)</a> is prohibitively expensive. Yet consider the benefits of SGD against GD as discussed in (Remarks <a href="#rem_In_practice__using">rem:In-practice,-using</a> and <a href="#rem_In_practice__for">rem:In-practice,-for</a> of Handout 3). </div>
 </div>
 
-<div class="standard" id='magicparlabel-99'><br />
+<div class="standard" id='magicparlabel-105'><br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-100'><div class='Boxed'><div class="algorithm" id='magicparlabel-104'><div class="algorithm_item"><span class="algorithm_label">Algorithm 14.</span>
+<div class="standard" id='magicparlabel-106'><div class='Boxed'><div class="algorithm" id='magicparlabel-110'><div class="algorithm_item"><span class="algorithm_label">Algorithm 14.</span>
 <a id="alg_Batch_Stochastic_Gradient" />
  Batch Stochastic Gradient Descent (Algorithm <a href="#alg_batch_Stochastic_Gradient">alg:batch-Stochastic-Gradient</a> in &ldquo;Handout <a href="#enu_Handout___Stochastic">enu:Handout-:-Stochastic</a>: Stochastic gradient descent&rdquo;) with learning rate <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1127,13 +1143,13 @@ The implementation of other GD variants (eg <a href="#eq_sbGD_update_mechanism">
 <div class="algorithm_item"><hr />
 
 </div>
-<div class="plain_layout" style='text-align: left;' id='magicparlabel-106'><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" style='text-align: left;' id='magicparlabel-112'><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>...</mn>
   </mrow>
  </mrow></math> iterate: </i></div>
 
-<ol class="enumerate" id='magicparlabel-107'><li class="enumerate_item"><i>generate a random set <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-113'><li class="enumerate_item"><i>generate a random set <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -1333,11 +1349,11 @@ The implementation of other GD variants (eg <a href="#eq_sbGD_update_mechanism">
 </div></div>
 
 
-<div class="standard" id='magicparlabel-109'><br />
+<div class="standard" id='magicparlabel-115'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-110'><div class="note_item"><span class="note_label">Note 15.</span>
+<div class="note" id='magicparlabel-116'><div class="note_item"><span class="note_label">Note 15.</span>
 Recursion <a href="#eq__6_1">(2.3)</a> is justified in terms of SGD theory as <a id="eq__10" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -1479,21 +1495,21 @@ Recursion <a href="#eq__6_1">(2.3)</a> is justified in terms of SGD theory as <a
  </mtable></math> see Exercise <a href="#exer____2_1_1_1_1">exer:()-2-1-1-1-1</a> from the Exercise sheet. </div>
 </div>
 
-<div class="standard" id='magicparlabel-111'><br />
+<div class="standard" id='magicparlabel-117'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-112'><div class="note_item"><span class="note_label">Note 16.</span>
+<div class="note" id='magicparlabel-118'><div class="note_item"><span class="note_label">Note 16.</span>
 The implementation of the SGD variants (Algorithms <a href="#alg_batch_Stochastic_Gradient">alg:batch-Stochastic-Gradient</a>, <a href="#alg_Stochastic_Variance_Reduced">alg:Stochastic-Variance-Reduced</a>, <a href="#alg_Stochastic_Gradient_descent_2">alg:Stochastic-Gradient-descent-2</a>, <a href="#def_Adaptive_Stochastic_Gradient">def:Adaptive-Stochastic-Gradient</a> in Handout 3)) is straightforward based on Algorithm <a href="#alg_Batch_Stochastic_Gradient">14</a> and <a href="#eq__10">(2.4)</a>. </div>
 </div>
-<h2 class="section" id='magicparlabel-113'><span class="section_label">3</span> <a id="sec_Full_Bayesian_learning" />
-Fully Bayesian learning via SGLD</h2>
+<h2 class="section" id='magicparlabel-119'><span class="section_label">3</span> <a id="sec_Full_Bayesian_learning" />
+ Fully Bayesian learning via SGLD</h2>
 
-<div class="standard" id='magicparlabel-114'><br />
+<div class="standard" id='magicparlabel-120'><br />
 
 </div>
 
-<div class="problem" id='magicparlabel-115'><div class="problem_item"><span class="problem_label">Problem 17.</span>
+<div class="problem" id='magicparlabel-121'><div class="problem_item"><span class="problem_label">Problem 17.</span>
 Fully Bayesian learning, computationally, is the problem of recovering the posterior distribution <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -1545,11 +1561,11 @@ Fully Bayesian learning, computationally, is the problem of recovering the poste
  </mrow></math> </div>
 </div>
 
-<div class="standard" id='magicparlabel-124'><br />
+<div class="standard" id='magicparlabel-130'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-125'><div class="note_item"><span class="note_label">Note 18.</span>
+<div class="note" id='magicparlabel-131'><div class="note_item"><span class="note_label">Note 18.</span>
 <a id="rem_Monte_Carlo_integration" />
  Monte Carlo integration aims at approximating <a href="#eq__2">(1.3)</a>, by using Central Limit Theorem or Law of Large Numbers arguments as <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1645,19 +1661,19 @@ Fully Bayesian learning, computationally, is the problem of recovering the poste
  </mrow></math> simulations drawn (approximately) from the posterior distribution <a href="#eq__1">1.2</a>. This theory is subject to conditions we skip. </div>
 </div>
 
-<div class="standard" id='magicparlabel-131'><br />
+<div class="standard" id='magicparlabel-137'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-132'><div class="note_item"><span class="note_label">Note 19.</span>
+<div class="note" id='magicparlabel-138'><div class="note_item"><span class="note_label">Note 19.</span>
 Stochastic gradient Langevin dynamics (SGLD) algorithm is able to generate a sample approximately distributed according to the posterior distribution <a href="#eq__1">(1.2)</a>. That allows to recover the whole posterior distribution (hence account for uncertainty in parameters) and approximate posterior expectations based on the Monte Carlo integration (Remark <a href="#rem_Monte_Carlo_integration">18</a>). </div>
 </div>
 
-<div class="standard" id='magicparlabel-140'><br />
+<div class="standard" id='magicparlabel-146'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-141'><div class="note_item"><span class="note_label">Note 20.</span>
+<div class="note" id='magicparlabel-147'><div class="note_item"><span class="note_label">Note 20.</span>
 SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generates as output a random chain <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -1801,19 +1817,19 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
  </mrow></math> under regularity conditions. </div>
 </div>
 
-<div class="standard" id='magicparlabel-142'><br />
+<div class="standard" id='magicparlabel-148'><br />
 
 </div>
 
 
 
 
-<div class="standard" id='magicparlabel-149'><br />
+<div class="standard" id='magicparlabel-155'><br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-150'><div class='Boxed'><div class="algorithm" id='magicparlabel-154'><div class="algorithm_item"><span class="algorithm_label">Algorithm 21.</span>
+<div class="standard" id='magicparlabel-156'><div class='Boxed'><div class="algorithm" id='magicparlabel-160'><div class="algorithm_item"><span class="algorithm_label">Algorithm 21.</span>
 <a id="alg_Stochastic_Gradient_Langevin" />
  Stochastic Gradient Langevin Dynamics (SGLD) with learning rate <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1836,7 +1852,7 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
 
 </div>
 
-<ol class="enumerate" id='magicparlabel-156'><li class="enumerate_item"><i>Generate a random set <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-162'><li class="enumerate_item"><i>Generate a random set <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -2073,17 +2089,18 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
  </mrow></math>.</i></li>
 </ol>
 </div>
+</div><div class="marginal"><div class="plain_layout" id='magicparlabel-168'>Ref [<a href="#enu_Welling__M_____">1.</a>]</div>
 </div>
 <br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-159'><br />
+<div class="standard" id='magicparlabel-169'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-160'><div class="note_item"><span class="note_label">Note 22.</span>
+<div class="note" id='magicparlabel-170'><div class="note_item"><span class="note_label">Note 22.</span>
 SGLD (Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) relies on injecting the `right' amount of noise to a standard stochastic gradient optimization recursion <a href="#eq__6">(2.2)</a>, such that, as the stepsize <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -2111,19 +2128,19 @@ SGLD (Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) relies on in
  </mrow></math> converges to samples that could have been drawn from the true posterior distribution.</div>
 </div>
 
-<div class="standard" id='magicparlabel-165'><br />
+<div class="standard" id='magicparlabel-175'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-166'><div class="note_item"><span class="note_label">Note 23.</span>
+<div class="note" id='magicparlabel-176'><div class="note_item"><span class="note_label">Note 23.</span>
 The first few iterations of Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a> involve values generated at the beginning of the running algorithm while the chain have not yet converged to (or reached) an area of substantial posterior mass. Hence they are discarded from the output of the SGLD. These values are called burn-in. </div>
 </div>
 
-<div class="standard" id='magicparlabel-167'><br />
+<div class="standard" id='magicparlabel-177'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-168'><div class="note_item"><span class="note_label">Note 24.</span>
+<div class="note" id='magicparlabel-178'><div class="note_item"><span class="note_label">Note 24.</span>
 The output of SGLD (Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -2143,11 +2160,11 @@ The output of SGLD (Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>
  </mrow></math> produced during the last few iterations of the running algorithm (aka the end tail of the generated chain). </div>
 </div>
 
-<div class="standard" id='magicparlabel-174'><br />
+<div class="standard" id='magicparlabel-184'><br />
 
 </div>
 
-<div class="condition" id='magicparlabel-175'><div class="condition_item"><span class="condition_label">Condition 25.</span>
+<div class="condition" id='magicparlabel-185'><div class="condition_item"><span class="condition_label">Condition 25.</span>
 <a id="cond_Regarding_the_learning" />
 Regarding the learning rate (or gain) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
@@ -2176,7 +2193,7 @@ Regarding the learning rate (or gain) <math xmlns="http://www.w3.org/1998/Math/M
 
  </mrow></math> i approximately distributed according to <a href="#eq__3">(3.3)</a></div>
 
-<ol class="enumerate" id='magicparlabel-176'><li class="enumerate_item"><a id="enu__" />
+<ol class="enumerate" id='magicparlabel-186'><li class="enumerate_item"><a id="enu__" />
 <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -2237,11 +2254,11 @@ Regarding the learning rate (or gain) <math xmlns="http://www.w3.org/1998/Math/M
 </ol>
 </div>
 
-<div class="standard" id='magicparlabel-179'><br />
+<div class="standard" id='magicparlabel-189'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-180'><div class="note_item"><span class="note_label">Note 26.</span>
+<div class="note" id='magicparlabel-190'><div class="note_item"><span class="note_label">Note 26.</span>
 The popular learning rates <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -2264,11 +2281,11 @@ The popular learning rates <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> can be tuned based on pilot runs using a reasonably small number of data.</div>
 </div>
 
-<div class="standard" id='magicparlabel-181'><br />
+<div class="standard" id='magicparlabel-191'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-182'><div class="note_item"><span class="note_label">Note 27.</span>
+<div class="note" id='magicparlabel-192'><div class="note_item"><span class="note_label">Note 27.</span>
 The temperature parameter <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &tau; </mi><mo>&gt;</mo><mn>0</mn>
@@ -2276,11 +2293,11 @@ The temperature parameter <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> is user specified and aims at controlling (eg; inflating) the variance of the produced chain for instance with practical purpose to escape from local modes (otherwise energy barriers) in non-convex problems. </div>
 </div>
 
-<div class="standard" id='magicparlabel-183'><br />
+<div class="standard" id='magicparlabel-193'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-184'><div class="note_item"><span class="note_label">Note 28.</span>
+<div class="note" id='magicparlabel-194'><div class="note_item"><span class="note_label">Note 28.</span>
 SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &tau; </mi><mo>=</mo><mn>1</mn>
@@ -2289,13 +2306,14 @@ SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
 <div class="note_item"></div>
 </div>
 
-<div class="standard" id='magicparlabel-191'><br />
+<div class="standard" id='magicparlabel-201'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-192'><div class="note_item"><span class="note_label">Note 29.</span>
+<div class="note" id='magicparlabel-202'><div class="note_item"><span class="note_label">Note 29.</span>
 <a id="rem__Mathematically_speaking__The" />
-&nbsp;(Mathematically speaking) The stochastic chain in <a href="#eq__7">(3.4)</a> can be viewed as a discretization of the continuous-time Langevin diffusion described by the stochastic differential equation<a id="eq__8" />
+ (Mathematically speaking)<div class="marginal"><div class="plain_layout" id='magicparlabel-206'>Ref [<a href="#enu_Sato__I____">3.</a>]</div>
+</div> The stochastic chain in <a href="#eq__7">(3.4)</a> can be viewed as a discretization of the continuous-time Langevin diffusion described by the stochastic differential equation<a id="eq__8" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -2359,7 +2377,7 @@ SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> is a standard Brownian motion<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-196'>A a continuous-time stochastic process: (1) <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> is a standard Brownian motion<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-210'>A a continuous-time stochastic process: (1) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>B</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mn>0</mn>
@@ -2497,11 +2515,11 @@ SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
 
 
 
-<div class="standard" id='magicparlabel-202'><br />
+<div class="standard" id='magicparlabel-216'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-203'><div class="note_item"><span class="note_label">Note 30.</span>
+<div class="note" id='magicparlabel-217'><div class="note_item"><span class="note_label">Note 30.</span>
 (Heuristically speaking) In the initial phase of running, the stochastic gradient noise will dominate the injected noise <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -2547,11 +2565,11 @@ SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> will dominate the stochastic gradient noise, so the SGLD will imitate a Langevin dynamics for the target distribution <a href="#eq__1">(1.2)</a>. The aim is for to the algorithm to transition smoothly between the two phases. Whether the algorithm is in the stochastic optimization phase or Langevin dynamics phase depends on the variance of the injected noise versus that of the stochastic gradient. </div>
 </div>
 
-<div class="standard" id='magicparlabel-204'><br />
+<div class="standard" id='magicparlabel-218'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-205'><div class="note_item"><span class="note_label">Note 31.</span>
+<div class="note" id='magicparlabel-219'><div class="note_item"><span class="note_label">Note 31.</span>
 One can argue that, the output of SGLD is also an &ldquo;almost&rdquo; minimizer of the empirical risk for large enough <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>t</mi>
  </mrow></math>. A draw from the Gibbs distribution <a href="#eq__9">(3.6)</a> is approximately a minimizer of <a href="#eq__5_1">(2.1)</a>. Also one can show that the SGLD recursion tracks the Langevin diffusion <a href="#eq__8">(3.5)</a> in a suitable sense. Hence, both imply that the distributions of <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2566,11 +2584,11 @@ One can argue that, the output of SGLD is also an &ldquo;almost&rdquo; minimizer
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-206'><br />
+<div class="standard" id='magicparlabel-220'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-207'><div class="note_item"><span class="note_label">Note 32.</span>
+<div class="note" id='magicparlabel-221'><div class="note_item"><span class="note_label">Note 32.</span>
 To guarantee the algorithm to work it is important for the step sizes <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -2592,11 +2610,11 @@ To guarantee the algorithm to work it is important for the step sizes <math xmln
  </mrow></math> constant once it has decreased below a critical level.</div>
 </div>
 
-<div class="standard" id='magicparlabel-208'><br />
+<div class="standard" id='magicparlabel-222'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-209'><div class="note_item"><span class="note_label">Note 33.</span>
+<div class="note" id='magicparlabel-223'><div class="note_item"><span class="note_label">Note 33.</span>
 Expectation <a href="#eq__2">(1.3)</a>,  can be estimated as an arithmetic average<a id="eq__4" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -2697,11 +2715,11 @@ Expectation <a href="#eq__2">(1.3)</a>,  can be estimated as an arithmetic avera
  </mrow></math> based on LLN arguments.</div>
 </div>
 
-<div class="standard" id='magicparlabel-214'><br />
+<div class="standard" id='magicparlabel-228'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-215'><div class="note_item"><span class="note_label">Note 34.</span>
+<div class="note" id='magicparlabel-229'><div class="note_item"><span class="note_label">Note 34.</span>
 Another more efficient estimator for the expectation <a href="#eq__2">(1.3)</a> is the weighted arithmetic average<a id="eq__4_1" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -2815,11 +2833,11 @@ Another more efficient estimator for the expectation <a href="#eq__2">(1.3)</a> 
 
 
 
-<div class="standard" id='magicparlabel-222'><br />
+<div class="standard" id='magicparlabel-236'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-223'><div class="note_item"><span class="note_label">Note 35.</span>
+<div class="note" id='magicparlabel-237'><div class="note_item"><span class="note_label">Note 35.</span>
 Certain dimensions may have a vastly larger curvature leading to much bigger gradients. In this case a symmetric preconditioning matrix <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -3013,11 +3031,11 @@ Certain dimensions may have a vastly larger curvature leading to much bigger gra
 
 
 
-<div class="standard" id='magicparlabel-229'><br />
+<div class="standard" id='magicparlabel-243'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-230'><div class="note_item"><span class="note_label">Note 36.</span>
+<div class="note" id='magicparlabel-244'><div class="note_item"><span class="note_label">Note 36.</span>
 `Exploding gradients' is the practical phenomenon in which large updates to weights during training can cause a numerical overflow or underflow due to the machine error of the computer. Practical solutions involve, at each iteration <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>t</mi>
  </mrow></math>, checking the magnitude of the gradient <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3041,7 +3059,7 @@ Certain dimensions may have a vastly larger curvature leading to much bigger gra
 
  </mrow></math>), and instantly changing it (e.g., truncating it) if it is gonna result an overflow. </div>
 
-<dl class='description' id='magicparlabel-239'><dt class="description_label">Gradient&nbsp;scaling</dt>
+<dl class='description' id='magicparlabel-253'><dt class="description_label">Gradient&nbsp;scaling</dt>
 <dd class="description_item"> involves normalizing the gradient vector such that vector norm (magnitude) equals a defined value. More formally, given any gradient <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>v</mi>
  </mrow></math> on an example, gradient clipping can be used in a standard recursion <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3173,16 +3191,16 @@ Certain dimensions may have a vastly larger curvature leading to much bigger gra
 <dt class="description_label">Gradient&nbsp;clipping</dt>
 <dd class="description_item"> involves forcing the gradient values (element-wise) to a specific minimum or maximum value if the gradient exceeded an expected range.</dd>
 </dl>
-<div class="standard" id='magicparlabel-241'>Beware that unreasonable clipping may introduce significant bias and hence it should not be applied unnecessarily.</div>
+<div class="standard" id='magicparlabel-255'>Beware that unreasonable clipping may introduce significant bias and hence it should not be applied unnecessarily.</div>
 </div>
 
-<div class="standard" id='magicparlabel-242'><br />
+<div class="standard" id='magicparlabel-256'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-243'><span class="section_label">4</span> <a id="sec_Examples" />
-Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-247'>Code is available from <span class="flex_url">https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2023/tree/main/Lecture_handouts/code/04.Stochastic_gradient_Langevine_dynamics</span></div>
+<h2 class="section" id='magicparlabel-257'><span class="section_label">4</span> <a id="sec_Examples" />
+Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-261'>Code is available from <span class="flex_url">https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2023/tree/main/Lecture_handouts/code/04.Stochastic_gradient_Langevine_dynamics</span></div>
 </div></div></h2>
-<div class="standard" id='magicparlabel-252'>We continue the Example <a href="#exa_Consider_the_simple">exa:Consider-the-simple</a> in Handout 1, and Example <a href="#sec_Example">sec:Example</a> in Handout 2. Consider the Bayesian Normal linear regression model<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-266'>We continue the Example <a href="#exa_Consider_the_simple">exa:Consider-the-simple</a> in Handout 1, and Example <a href="#sec_Example">sec:Example</a> in Handout 2. Consider the Bayesian Normal linear regression model<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
   <mtable>
    <mtr>
@@ -4931,7 +4949,7 @@ Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inn
 
  </mrow></math>.</div>
 
-<div class="standard" id='magicparlabel-274'>We consider <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-288'>We consider <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &mu; </mi><mo>=</mo><mn>0</mn>
   </mrow>
@@ -4955,7 +4973,7 @@ Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inn
   </mrow>
  </mrow></math>, for our simulations below. </div>
 
-<ul class="itemize" id='magicparlabel-275'><li class="itemize_item">In Figures <a href="#fig_">4.1</a>, we ran the SGD for different batch sizes <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-289'><li class="itemize_item">In Figures <a href="#fig_">4.1</a>, we ran the SGD for different batch sizes <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> and compared it against the exact MLE. We observe that SGD trace converges to the exact MLE. The oscillations are due to the stochastic gradient (ie, noise in the gradient). </li>
 <li class="itemize_item">In Figures <a href="#fig__2">4.2</a>, we ran the SGLD for different batch sizes <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4998,57 +5016,57 @@ Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inn
  </mrow></math>. </li>
 </ul>
 
-<div class="standard" id='magicparlabel-278'><br />
+<div class="standard" id='magicparlabel-292'><br />
 
 </div>
 
 
 
-<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-287'><img style='width:33%;' src='0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w1_batch_size=10.png' alt='image: 0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w1_batch_size=10.png' />
+<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-301'><img style='width:33%;' src='0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w1_batch_size=10.png' alt='image: 0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w1_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  <a id="fig__1" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-295'><img style='width:33%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w1_batch_size=100.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w1_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-309'><img style='width:33%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w1_batch_size=100.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w1_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure b:  <a id="fig__1_1" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-303'><img style='width:33%;' src='2_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w1_batch_size=1000.png' alt='image: 2_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w1_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-317'><img style='width:33%;' src='2_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w1_batch_size=1000.png' alt='image: 2_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w1_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure c:  <a id="fig__1_2" />
  </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-312'><img style='width:33%;' src='3_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w2_batch_size=10.png' alt='image: 3_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w2_batch_size=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-326'><img style='width:33%;' src='3_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w2_batch_size=10.png' alt='image: 3_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w2_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure d:  <a id="fig__1_3" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-320'><img style='width:33%;' src='4_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w2_batch_size=100.png' alt='image: 4_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w2_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-334'><img style='width:33%;' src='4_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w2_batch_size=100.png' alt='image: 4_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w2_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure e:  <a id="fig__1_1_1" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-328'><img style='width:33%;' src='5_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w2_batch_size=1000.png' alt='image: 5_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w2_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-342'><img style='width:33%;' src='5_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w2_batch_size=1000.png' alt='image: 5_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w2_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure f:  <a id="fig__1_2_1" />
  </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-337'><img style='width:33%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w3_batch_size=10.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w3_batch_size=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-351'><img style='width:33%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w3_batch_size=10.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___ent_Langevine_dynamics_SGD_w3_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure g:  <a id="fig__1_3_1" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-345'><img style='width:33%;' src='7_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w3_batch_size=100.png' alt='image: 7_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w3_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-359'><img style='width:33%;' src='7_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w3_batch_size=100.png' alt='image: 7_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGD_w3_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure h:  <a id="fig__1_1_1_1" />
  </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-353'><img style='width:33%;' src='8_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w3_batch_size=1000.png' alt='image: 8_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w3_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-367'><img style='width:33%;' src='8_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w3_batch_size=1000.png' alt='image: 8_extra_tmp_mffk55_Dropbox_Teaching_material_on___t_Langevine_dynamics_SGD_w3_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure i:  <a id="fig__1_2_1_1" />
  </span></div>
 </div>
 
 
-<div class="plain_layout" id='magicparlabel-358'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.1:  <a id="fig_" />
+<div class="plain_layout" id='magicparlabel-372'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.1:  <a id="fig_" />
  Bayesian learning via SGD (SGD vs (exact)MLE) Study on batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math>. </span></div>
@@ -5059,51 +5077,51 @@ Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inn
 
 
 
-<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-372'><img style='width:33%;' src='9_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGLD_w1_batch_size=10.png' alt='image: 9_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGLD_w1_batch_size=10.png' />
+<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-386'><img style='width:33%;' src='9_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGLD_w1_batch_size=10.png' alt='image: 9_extra_tmp_mffk55_Dropbox_Teaching_material_on___nt_Langevine_dynamics_SGLD_w1_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  <a id="fig__1_4" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-380'><img style='width:33%;' src='10_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w1_batch_size=100.png' alt='image: 10_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w1_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-394'><img style='width:33%;' src='10_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w1_batch_size=100.png' alt='image: 10_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w1_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure b:  <a id="fig__1_1_2" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-388'><img style='width:33%;' src='11_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w1_batch_size=1000.png' alt='image: 11_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w1_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-402'><img style='width:33%;' src='11_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w1_batch_size=1000.png' alt='image: 11_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w1_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure c:  <a id="fig__1_2_2" />
 </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-397'><img style='width:33%;' src='12_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w2_batch_size=10.png' alt='image: 12_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w2_batch_size=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-411'><img style='width:33%;' src='12_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w2_batch_size=10.png' alt='image: 12_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w2_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure d:  <a id="fig__1_3_2" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-405'><img style='width:33%;' src='13_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w2_batch_size=100.png' alt='image: 13_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w2_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-419'><img style='width:33%;' src='13_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w2_batch_size=100.png' alt='image: 13_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w2_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure e:  <a id="fig__1_1_1_2" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-413'><img style='width:33%;' src='14_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w2_batch_size=1000.png' alt='image: 14_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w2_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-427'><img style='width:33%;' src='14_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w2_batch_size=1000.png' alt='image: 14_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w2_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure f:  <a id="fig__1_2_1_2" />
 </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-422'><img style='width:33%;' src='15_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w3_batch_size=10.png' alt='image: 15_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w3_batch_size=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-436'><img style='width:33%;' src='15_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w3_batch_size=10.png' alt='image: 15_extra_tmp_mffk55_Dropbox_Teaching_material_o___nt_Langevine_dynamics_SGLD_w3_batch_size=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure g:  <a id="fig__1_3_1_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-430'><img style='width:33%;' src='16_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w3_batch_size=100.png' alt='image: 16_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w3_batch_size=100.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-444'><img style='width:33%;' src='16_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w3_batch_size=100.png' alt='image: 16_extra_tmp_mffk55_Dropbox_Teaching_material_o___t_Langevine_dynamics_SGLD_w3_batch_size=100.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure h:  <a id="fig__1_1_1_1_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-438'><img style='width:33%;' src='17_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w3_batch_size=1000.png' alt='image: 17_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w3_batch_size=1000.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-452'><img style='width:33%;' src='17_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w3_batch_size=1000.png' alt='image: 17_extra_tmp_mffk55_Dropbox_Teaching_material_o____Langevine_dynamics_SGLD_w3_batch_size=1000.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure i:  <a id="fig__1_2_1_1_1" />
 </span></div>
 </div>
 
 
-<div class="plain_layout" id='magicparlabel-443'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.2:  <a id="fig__2" />
+<div class="plain_layout" id='magicparlabel-457'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.2:  <a id="fig__2" />
  Bayesian learning: SGLD vs exact posterior (in red). Temperature <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &tau; </mi><mo>=</mo><mn>1</mn>
@@ -5116,51 +5134,51 @@ Examples <div class="foot"><span class="foot_label">2</span><div class="foot_inn
 
 
 
-<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-456'><img style='width:33%;' src='18_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w1_tau=0_01.png' alt='image: 18_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w1_tau=0_01.png' />
+<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-470'><img style='width:33%;' src='18_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w1_tau=0_01.png' alt='image: 18_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w1_tau=0_01.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  <a id="fig__1_4_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-464'><img style='width:33%;' src='19_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w1_tau=1.png' alt='image: 19_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w1_tau=1.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-478'><img style='width:33%;' src='19_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w1_tau=1.png' alt='image: 19_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w1_tau=1.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure b:  <a id="fig__1_1_2_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-472'><img style='width:33%;' src='20_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w1_tau=10.png' alt='image: 20_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w1_tau=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-486'><img style='width:33%;' src='20_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w1_tau=10.png' alt='image: 20_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w1_tau=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure c:  <a id="fig__1_2_2_1" />
 </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-481'><img style='width:33%;' src='21_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w2_tau=0_01.png' alt='image: 21_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w2_tau=0_01.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-495'><img style='width:33%;' src='21_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w2_tau=0_01.png' alt='image: 21_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w2_tau=0_01.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure d:  <a id="fig__1_3_2_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-489'><img style='width:33%;' src='22_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w2_tau=1.png' alt='image: 22_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w2_tau=1.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-503'><img style='width:33%;' src='22_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w2_tau=1.png' alt='image: 22_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w2_tau=1.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure e:  <a id="fig__1_1_1_2_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-497'><img style='width:33%;' src='23_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w2_tau=10.png' alt='image: 23_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w2_tau=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-511'><img style='width:33%;' src='23_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w2_tau=10.png' alt='image: 23_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w2_tau=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure f:  <a id="fig__1_2_1_2_1" />
 </span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-506'><img style='width:33%;' src='24_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w3_tau=0_01.png' alt='image: 24_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w3_tau=0_01.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-520'><img style='width:33%;' src='24_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w3_tau=0_01.png' alt='image: 24_extra_tmp_mffk55_Dropbox_Teaching_material_o___radient_Langevine_dynamics_SGLD_w3_tau=0_01.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure g:  <a id="fig__1_3_1_1_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-514'><img style='width:33%;' src='25_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w3_tau=1.png' alt='image: 25_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w3_tau=1.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-528'><img style='width:33%;' src='25_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w3_tau=1.png' alt='image: 25_extra_tmp_mffk55_Dropbox_Teaching_material_o___c_gradient_Langevine_dynamics_SGLD_w3_tau=1.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure h:  <a id="fig__1_1_1_1_1_1" />
 </span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-522'><img style='width:33%;' src='26_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w3_tau=10.png' alt='image: 26_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w3_tau=10.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-536'><img style='width:33%;' src='26_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w3_tau=10.png' alt='image: 26_extra_tmp_mffk55_Dropbox_Teaching_material_o____gradient_Langevine_dynamics_SGLD_w3_tau=10.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure i:  <a id="fig__1_2_1_1_1_1" />
 </span></div>
 </div>
 
 
-<div class="plain_layout" id='magicparlabel-527'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.3:  <a id="fig__2_1" />
+<div class="plain_layout" id='magicparlabel-541'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.3:  <a id="fig__2_1" />
  Bayesian learning: SGLD vs exact posterior (in red). Batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mo>=</mo><mn>100</mn>

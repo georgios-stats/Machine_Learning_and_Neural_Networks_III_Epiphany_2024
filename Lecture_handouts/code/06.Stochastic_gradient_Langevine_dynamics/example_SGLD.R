@@ -156,7 +156,8 @@ for (batch_size in batch_size_vec ) {
     }
     grad_est_lik <- ( n_obs / batch_size) * grad_est_lik 
     #eta <- comp_learning_rate(t, eta_C, eta_s)
-    w <- w +eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) +sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
+    w <- w + eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) 
+    w <- w + sqrt(2.0)*sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
     #    w <- w +eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) 
     # termination criterion
     if  ( t >= Tmax ) {
@@ -256,7 +257,8 @@ for (tau in tau_vec ) {
     }
     grad_est_lik <- ( n_obs / batch_size) * grad_est_lik 
     #eta <- comp_learning_rate(t, eta_C, eta_s)
-    w <- w +eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) +sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
+    w <- w +eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) 
+    w <- w +sqrt(2.0)*sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
     #    w <- w +eta*grad_est_lik +eta*numDeriv::grad(log_prior_pdf, w) 
     # termination criterion
     if  ( t >= Tmax ) {

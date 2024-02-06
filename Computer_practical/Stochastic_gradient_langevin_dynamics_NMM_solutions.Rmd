@@ -347,7 +347,7 @@ while ( (Qterm != 1) ) {
   }
   w_new <- w_new +eta*numDeriv::grad(aux_fun, w) ;
   ## noise
-  w_new <- w_new +sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
+  w_new <- w_new +sqrt(2.0)*sqrt(eta)*sqrt(tau)*rnorm(n = length(w), mean = 0, sd = 1)
   # record
   w <- w_new
   # termination criterion
