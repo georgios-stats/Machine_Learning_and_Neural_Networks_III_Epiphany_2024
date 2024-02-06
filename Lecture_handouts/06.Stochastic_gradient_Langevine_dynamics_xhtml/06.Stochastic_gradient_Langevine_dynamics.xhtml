@@ -740,7 +740,7 @@ Point estimation of <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mi>I</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-      </mstyle></munder><munder accent='false'>
+      </mstyle></munder><mo>+</mo><munder accent='false'>
       <munder>
        <mrow>
         <mrow><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -1708,29 +1708,22 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
        </mrow>
        <mrow><mi> &tau; </mi>
        </mrow>
-      </mfrac>
-      <msubsup>
-       <mrow><mo> &prod; </mo>
-       </mrow>
-       <mrow>
-        <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
-        </mrow>
-       </mrow>
-       <mrow><mi>n</mi>
-       </mrow>
-      </msubsup><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+      </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <mrow>
+      <mrow><mo> log </mo>
        <msub>
-        <mrow><mi>z</mi>
+        <mrow><mi>L</mi>
         </mrow>
-        <mrow><mi>i</mi>
+        <mrow><mi>n</mi>
         </mrow>
-       </msub><mo>|</mo><mi>w</mi>
-      </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mo> log </mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
      </mrow>
@@ -1753,17 +1746,44 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
        </mrow>
        <mrow><mi> &tau; </mi>
        </mrow>
-      </mfrac>
-      <msub>
-       <mrow><mi>L</mi>
+      </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <msubsup>
+        <mrow><mo> &sum; </mo>
+        </mrow>
+        <mrow>
+         <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
+         </mrow>
+        </mrow>
+        <mrow><mi>n</mi>
+        </mrow>
+       </msubsup><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+        <mrow>
+         <msub>
+          <mrow><mi>z</mi>
+          </mrow>
+          <mrow><mi>i</mi>
+          </mrow>
+         </msub><mo>|</mo><mi>w</mi>
+        </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
        </mrow>
-       <mrow><mi>n</mi>
-       </mrow>
-      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>w</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
+
+       </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
      </mrow>
@@ -1980,14 +2000,14 @@ SGLD (see Algorithm <a href="#alg_Stochastic_Gradient_Langevin">21</a>) generate
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>+</mo>
      <msqrt>
-      <msub>
-       <mrow><mi> &eta; </mi>
-       </mrow>
-       <mrow><mi>t</mi>
-       </mrow>
-      </msub>
-     </msqrt>
-     <msqrt><mi> &tau; </mi>
+      <mrow><mn>2</mn>
+       <msub>
+        <mrow><mi> &eta; </mi>
+        </mrow>
+        <mrow><mi>t</mi>
+        </mrow>
+       </msub><mi> &tau; </mi>
+      </mrow>
      </msqrt>
      <msub>
       <mrow><mi> &epsi; </mi>
@@ -2430,10 +2450,7 @@ SGLD for <math xmlns="http://www.w3.org/1998/Math/MathML">
 
       <mrow><mo>-</mo><mo> log </mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-       <mrow><mi>W</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>|</mo>
+       <mrow><mi>w</mi><mo>|</mo>
         <msub>
          <mrow><mi>z</mi>
          </mrow>
@@ -2894,14 +2911,14 @@ Certain dimensions may have a vastly larger curvature leading to much bigger gra
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>+</mo>
      <msqrt>
-      <msub>
-       <mrow><mi> &eta; </mi>
-       </mrow>
-       <mrow><mi>t</mi>
-       </mrow>
-      </msub>
-     </msqrt>
-     <msqrt><mi> &tau; </mi>
+      <mrow><mn>2</mn>
+       <msub>
+        <mrow><mi> &eta; </mi>
+        </mrow>
+        <mrow><mi>t</mi>
+        </mrow>
+       </msub><mi> &tau; </mi>
+      </mrow>
      </msqrt>
      <msubsup>
       <mrow><mi>P</mi>

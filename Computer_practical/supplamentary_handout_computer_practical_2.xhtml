@@ -544,7 +544,7 @@ div.Boxed {
    </mtd>
   </mtr>
  </mtable></math></div>
-<h2 class="section_" id='magicparlabel-23'>Gradient descent algorithm</h2>
+<h2 class="section_" id='magicparlabel-23'>Stochastic Gradient Langevin Dynamics (SGLD)</h2>
 <div class="standard" id='magicparlabel-24'>Provide: </div>
 
 <ul class="itemize" id='magicparlabel-25'><li class="itemize_item">A seed (initial value) <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -830,14 +830,14 @@ div.Boxed {
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>+</mo>
      <msqrt>
-      <msub>
-       <mrow><mi> &eta; </mi>
-       </mrow>
-       <mrow><mi>t</mi>
-       </mrow>
-      </msub>
-     </msqrt>
-     <msqrt><mi> &tau; </mi>
+      <mrow><mn>2</mn>
+       <msub>
+        <mrow><mi> &eta; </mi>
+        </mrow>
+        <mrow><mi>t</mi>
+        </mrow>
+       </msub><mi> &tau; </mi>
+      </mrow>
      </msqrt>
      <msub>
       <mrow><mi> &epsi; </mi>
@@ -874,7 +874,7 @@ div.Boxed {
  </mrow></math> .</li>
 <li class="enumerate_item">Terminate if a termination criterion is satisfied; E.g., <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow><mi>t</mi><mo> &le; </mo>
+  <mrow><mi>t</mi><mo> &ge; </mo>
    <msub>
     <mrow><mi>T</mi>
     </mrow>
