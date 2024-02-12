@@ -95,22 +95,6 @@ font-variant: normal;
 font-size: medium;
 
 }
-div.example {
-font-style: normal;
-font-variant: normal;
-font-size: medium;
-margin-top: 0.7ex;
-margin-bottom: 0.7ex;
-text-align: left;
-
-}
-span.example_label {
-font-weight: bold;
-font-style: normal;
-font-variant: normal;
-font-size: medium;
-
-}
 div.assumption {
 font-style: italic;
 font-variant: normal;
@@ -174,6 +158,22 @@ font-variant: normal;
 font-size: medium;
 
 }
+div.example {
+font-style: normal;
+font-variant: normal;
+font-size: medium;
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+text-align: left;
+
+}
+span.example_label {
+font-weight: bold;
+font-style: normal;
+font-variant: normal;
+font-size: medium;
+
+}
 h3.subsection {
 font-weight: bold;
 font-size: medium;
@@ -203,22 +203,6 @@ font-variant: normal;
 font-size: medium;
 
 }
-div.lemma {
-font-style: italic;
-font-variant: normal;
-font-size: medium;
-margin-top: 0.7ex;
-margin-bottom: 0.7ex;
-text-align: left;
-
-}
-span.lemma_label {
-font-weight: bold;
-font-style: normal;
-font-variant: normal;
-font-size: medium;
-
-}
 div.Shadowbox { border: solid gray medium; border-bottom: solid black 1ex; border-right: solid black 1ex; padding: 0.5ex; }
 div.float {
 	border: 2px solid black;
@@ -229,27 +213,6 @@ div.float-caption {
 	border: 2px solid black;
 	padding: 1ex;
 	margin: 1ex;
-}
-span.foot_label {
-	vertical-align: super;
-	font-size: smaller;
-	font-weight: bold;
-	text-decoration: underline;
-}
-div.foot {
-	display: inline;
-	font-size: small;
-	font-weight: medium;
-	font-family: serif;
-	font-variant: normal;
-	font-style: normal;
-}
-div.foot_inner { display: none; }
-div.foot:hover div.foot_inner {
-	display: block;
-	border: 1px double black;
-	margin: 0em 1em;
-	padding: 1em;
 }
 div.Frameless { margin: 1em; }
 
@@ -283,26 +246,31 @@ Shalev-Shwartz, S., &amp; Ben-David, S. (2014). Understanding machine learning: 
 </ul>
 </li><li class="enumerate_item">Bishop, C. M. (2006). Pattern recognition and machine learning (Vol. 4, No. 4, p. 738). New York: Springer.
 
-<ul class="itemize" id='magicparlabel-55'><li class="itemize_item">Ch. 7.1 Sparse Kernel Machines/Maximum marginal classifiers </li>
+<ul class="itemize" id='magicparlabel-42'><li class="itemize_item">Ch. 7.1 Sparse Kernel Machines/Maximum marginal classifiers </li>
+</ul>
+</li><li class="enumerate_item"><a id="enu_Boyd__S__P__" />
+ Boyd, S. P., &amp; Vandenberghe, L. (2004). Convex optimization. Cambridge university press.
+
+<ul class="itemize" id='magicparlabel-44'><li class="itemize_item">Ch. 4, 5</li>
 </ul>
 </li></ol>
 </div></div>
-<h2 class="section" id='magicparlabel-56'><span class="section_label">1</span> Intro and motivation</h2>
+<h2 class="section" id='magicparlabel-45'><span class="section_label">1</span> Intro and motivation</h2>
 
-<div class="note" id='magicparlabel-57'><div class="note_item"><span class="note_label">Note 1.</span>
+<div class="note" id='magicparlabel-46'><div class="note_item"><span class="note_label">Note 1.</span>
 Support Vector Machines (SVM) is a ML procedure for learning linear predictors in high-dimensional feature spaces with regards the sample complexity challenges. Due to a duality property, SVM have sparse solutions, so that predictions for new inputs depend only on quantities evaluated at a subset of the whole training dataset. </div>
 </div>
 
-<div class="standard" id='magicparlabel-58'><br />
+<div class="standard" id='magicparlabel-47'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-59'><div class="definition_item"><span class="definition_label">Definition 2.</span>
+<div class="definition" id='magicparlabel-48'><div class="definition_item"><span class="definition_label">Definition 2.</span>
 Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>w</mi><mo> &ne; </mo><mn>0</mn>
   </mrow>
- </mrow></math>. Hyperplane in space <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>. <b>Hyperplane</b> in space <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>X</mi>
@@ -316,24 +284,39 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msup>
   </mrow>
- </mrow></math> is called the sub-set <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>S</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+ </mrow></math> is called the sub-set <a id="eq__20" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow><mi>S</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
-   <mrow><mi>x</mi><mo> &isin; </mo>
-    <msup>
-     <mrow>
-      <mstyle mathvariant='double-struck'><mi>R</mi>
-      </mstyle>
+     <mrow><mi>x</mi><mo> &isin; </mo>
+      <msup>
+       <mrow>
+        <mstyle mathvariant='double-struck'><mi>R</mi>
+        </mstyle>
+       </mrow>
+       <mrow><mi>d</mi>
+       </mrow>
+      </msup><mo>:</mo><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi><mo>=</mo><mn>0</mn>
      </mrow>
-     <mrow><mi>d</mi>
-     </mrow>
-    </msup><mo>:</mo><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi><mo>=</mo><mn>0</mn>
-   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 <mn>.</mn>
-  </mrow>
- </mrow></math>It separates <math xmlns="http://www.w3.org/1998/Math/MathML">
+    </mrow>
+   </mtd>
+   <mtd>(1.1)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-49'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-50'><div class="note_item"><span class="note_label">Note 3.</span>
+Hyperplane <a href="#eq__20">(1.1)</a> separates <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>X</mi>
   </mstyle>
@@ -386,11 +369,11 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-60'><br />
+<div class="standard" id='magicparlabel-51'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-61'><div class="definition_item"><span class="definition_label">Definition 3.</span>
+<div class="definition" id='magicparlabel-52'><div class="definition_item"><span class="definition_label">Definition 4.</span>
 <b>Halfspace</b> (hypothesis space) is hypotheses class <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>H</mi>
@@ -421,18 +404,18 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 
   </mrow>
  </mrow></math> defined as 
-<div style = "text-align: center;"><img src="lyxpreviewfltxoC1.png" alt="Mathematical Equation" />
+<div style = "text-align: center;"><img src="lyxpreviewZrSlCf1.png" alt="Mathematical Equation" />
 </div>
  where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>b</mi>
  </mrow></math> is called bias. </div>
 </div>
 
-<div class="standard" id='magicparlabel-62'><br />
+<div class="standard" id='magicparlabel-53'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-63'><div class="definition_item"><span class="definition_label">Definition 4.</span>
+<div class="definition" id='magicparlabel-54'><div class="definition_item"><span class="definition_label">Definition 5.</span>
 Each <b>halfspace hypothesis</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>h</mi><mo> &isin; </mo>
@@ -464,13 +447,13 @@ Each <b>halfspace hypothesis</b> <math xmlns="http://www.w3.org/1998/Math/MathML
      <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi>
      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+<mn>.</mn>
     </mrow>
    </mtd>
-   <mtd>(1.1)
+   <mtd>(1.2)
    </mtd>
   </mtr>
- </mtable></math>, it takes an input in <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math>It takes an input in <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>X</mi>
@@ -502,11 +485,11 @@ Each <b>halfspace hypothesis</b> <math xmlns="http://www.w3.org/1998/Math/MathML
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> as this setting determines it.</div>
+ </mrow></math> as well.</div>
 </div>
 
-<div class="note" id='magicparlabel-64'><div class="note_item"><span class="note_label">Note 5.</span>
-&nbsp;Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-55'><div class="note_item"><span class="note_label">Note 6.</span>
+Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>S</mi><mo>=</mo>
    <msubsup>
@@ -576,11 +559,46 @@ Each <b>halfspace hypothesis</b> <math xmlns="http://www.w3.org/1998/Math/MathML
  </mrow></math> the labels. </div>
 </div>
 
-<div class="standard" id='magicparlabel-65'><br />
+<div class="standard" id='magicparlabel-56'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-66'><div class="definition_item"><span class="definition_label">Definition 6.</span>
+<div class="note" id='magicparlabel-57'><div class="note_item"><span class="note_label">Note 7.</span>
+Our goal is to train a halfspace hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>h</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> in <a href="#eq__13">(1.2)</a> against a training dataset <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>S</mi>
+ </mrow></math>, with puppose to be able to classify a future feature <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>x</mi>
+ </mrow></math> as <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>y</mi><mo>=</mo><mo>-</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> or <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>y</mi><mo>=</mo><mn>1</mn>
+  </mrow>
+ </mrow></math>. </div>
+</div>
+
+<div class="standard" id='magicparlabel-58'><br />
+
+</div>
+
+<div class="definition" id='magicparlabel-59'><div class="definition_item"><span class="definition_label">Definition 8.</span>
 The training set <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>S</mi>
  </mrow></math> is <b>linearly separable</b> if there exists a halfspace <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -619,38 +637,76 @@ The training set <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math>or equivalently <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi>y</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+ </mrow></math>or equivalently <a id="eq__21" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow><mi>y</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-   <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
-    <msub>
-     <mrow><mi>x</mi>
+     <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
+      <msub>
+       <mrow><mi>x</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
      </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
-   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>&gt;</mo><mn>0</mn>
+    </mrow>
+   </mtd>
+   <mtd>(1.3)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-60'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-61'><div class="note_item"><span class="note_label">Note 9.</span>
+Halfspaces <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+  <mrow>
+   <msup>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo>,</mo>
+   <msup>
+    <mrow><mi>b</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup>
   </mrow>
- </mrow></math></div>
-</div>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-<div class="standard" id='magicparlabel-67'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-68'><div class="note_item"><span class="note_label">Note 7.</span>
-Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> satisfying the linearly separable condition <a href="#eq__21">(1.3)</a> are ERM hypothesis under the <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> loss function <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -661,44 +717,54 @@ Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
    </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>=</mo>
-   <mstyle mathvariant='normal'><mn>1</mn>
-   </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msub>
-     <mrow><mi>y</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo> &ne; </mo>
-    <mstyle mathvariant='normal'>
-     <mrow><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi>
-     </mrow>
-    </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
-     <msub>
-      <mrow><mi>x</mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
+   <msub>
+    <mrow>
+     <mstyle mathvariant='normal'><mn>1</mn>
+     </mstyle>
     </mrow>
+    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>y</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub><mo> &ne; </mo>
+      <mstyle mathvariant='normal'>
+       <mrow><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi>
+       </mrow>
+      </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
+       <msub>
+        <mrow><mi>x</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
+      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-   </mrow>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
+    </mrow>
+   </msub>
   </mrow>
- </mrow></math>, and hence the Empirical Risk Function be <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> and Empirical Risk <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
-   <msub>
+   <msubsup>
     <mrow><mi>R</mi>
     </mrow>
     <mrow><mi>S</mi>
     </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
    </mrow>
@@ -735,28 +801,9 @@ Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
     </msub>
    </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+<mo> &ge; </mo><mn>0</mn>
   </mrow>
- </mrow></math>. The Empirical Risk Minimisation (ERM) halfspace <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-  <mrow>
-   <msup>
-    <mrow><mi>w</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo>,</mo>
-   <msup>
-    <mrow><mi>b</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-  </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
- </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, i.e. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -782,12 +829,16 @@ Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
    </mrow></munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
    <mrow>
-    <msub>
+    <msubsup>
      <mrow><mi>R</mi>
      </mrow>
      <mrow><mi>S</mi>
      </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow>
+      <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+      </mrow>
+     </mrow>
+    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
     <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
     </mrow>
@@ -817,7 +868,15 @@ Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
      </mrow>
      <mrow><mi>m</mi>
      </mrow>
-    </msubsup><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+    </msubsup>
+    <msup>
+     <mrow><mi> &ell; </mi>
+     </mrow>
+     <mrow>
+      <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+      </mrow>
+     </mrow>
+    </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
     <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -838,43 +897,112 @@ Let the loss be <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math></div>
+ </mrow></math> as <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msubsup>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>S</mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msup>
+     <mrow><mi>w</mi>
+     </mrow>
+     <mrow><mo>*</mo>
+     </mrow>
+    </msup><mo>,</mo>
+    <msup>
+     <mrow><mi>b</mi>
+     </mrow>
+     <mrow><mo>*</mo>
+     </mrow>
+    </msup>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>.</div>
+</div>
+
+<div class="definition" id='magicparlabel-62'><div class="definition_item"><span class="definition_label">Definition 10.</span>
+<b>Margin of a hyperplane</b> with respect to a training set is defined to be the minimal distance between a point in the training set and the hyperplane.</div>
+</div>
+
+<div class="standard" id='magicparlabel-63'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-64'><div class="note_item"><span class="note_label">Note 11.</span>
+There are several different halfspaces <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+  <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+  </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+ </mrow></math> satisfying <a href="#eq__21">(1.3)</a> for the same linearly separable training dataset <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>S</mi>
+ </mrow></math>; see Figure (<a href="#fig__1">1.1</a>; left). </div>
 </div>
 
 <div class="standard" id='magicparlabel-69'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-70'><div class="definition_item"><span class="definition_label">Definition 8.</span>
-<b>Margin of a hyperplane</b> with respect to a training set is defined to be the minimal distance between a point in the training set and the hyperplane.</div>
+<div class="note" id='magicparlabel-70'><div class="note_item"><span class="note_label">Note 12.</span>
+The rational is that if a hyperplane has a large margin, then it will still separate the training set even if we slightly perturb each instance.</div>
 </div>
 
-<div class="note" id='magicparlabel-71'><div class="note_item"><span class="note_label">Note 9.</span>
-<a id="note_Support_Vector_Machines" />
-Support Vector Machines (SVM) aims at learning the maximum margin separating hyperplane Figure (<a href="#fig__1">1.1</a>; Right). The rational is that if a hyperplane has a large margin, then it will still separate the training set even if we slightly perturb each instance.</div>
-</div>
-
-<div class="standard" id='magicparlabel-72'><br />
+<div class="standard" id='magicparlabel-71'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-73'><div class="example_item"><span class="example_label">Example 10.</span>
-Figure (<a href="#fig__1">1.1</a>; Left) shows two different separating hyperplanes for the same data set, Figure (<a href="#fig__1">1.1</a>; Right) shows the maximum margin hyperplane: the margin <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-72'><div class="note_item"><span class="note_label">Note 13.</span>
+There are several different halfspaces <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+  <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+  </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+ </mrow></math> satisfying <a href="#eq__21">(1.3)</a> for the same linearly separable training dataset <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>S</mi>
+ </mrow></math>; see Figure (<a href="#fig__1">1.1</a>; left). In Figure (<a href="#fig__1">1.1</a>; right) the margin <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &gamma; </mi>
- </mrow></math> is the distance from the hyperplane (solid line) to the closest points in either class (which touch the parallel dotted lines). It is reasonable to prefer as a predictive rule the hyperplane on the right due to Note <a href="#note_Support_Vector_Machines">9</a>.  <div class='float-figure'><div class="plain_layout" id='magicparlabel-77'><img src='/home/georgios/Dropbox/Teaching material ongoing/2024.term2.Machine_Learning_and_Neural_Networks_III/Handouts/figures/06.Support_Vector_Machines/margin.pdf' alt='image: ' />
+ </mrow></math> is the distance from the hyperplane (solid line) to the closest points in either class (which touch the parallel dotted lines). Among the hyperplanes satisfying <a href="#eq__21">(1.3)</a>, a reasonable/desirable halfspace <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+  <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+  </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+ </mrow></math> is the one with the maximum margin <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi> &gamma; </mi>
+ </mrow></math>; see Figure (<a href="#fig__1">1.1</a>; right). The rational is that if a hyperplane has a large margin, then it will still separate the training set even if we slightly perturb each instance.  <div class='float-figure'><div class="plain_layout" id='magicparlabel-76'><img style='width:50%;' src='0_extra_tmp_mffk55_Dropbox_Teaching_material_on___s_figures_06_Support_Vector_Machines_margin.png' alt='image: 0_extra_tmp_mffk55_Dropbox_Teaching_material_on___s_figures_06_Support_Vector_Machines_margin.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Figure 1.1:  <a id="fig__1" />
 </span></div>
 </div>
 </div>
 </div>
-<h2 class="section" id='magicparlabel-82'><span class="section_label">2</span> Hard Support Vector Machine </h2>
 
-<div class="note" id='magicparlabel-83'><div class="note_item"><span class="note_label">Note 11.</span>
-<a id="note_Hard_SVM_is_the" />
-Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return an ERM hyperplane that separates the training set with the largest possible margin.</div>
+<div class="standard" id='magicparlabel-81'><br />
+
 </div>
 
-<div class="assumption" id='magicparlabel-84'><div class="assumption_item"><span class="assumption_label">Assumption 12.</span>
+<div class="note" id='magicparlabel-82'><div class="note_item"><span class="note_label">Note 14.</span>
+<a id="note_Support_Vector_Machines" />
+ Support Vector Machines (SVM) aims at learning the maximum margin separating hyperplane Figure (<a href="#fig__1">1.1</a>; Right). </div>
+</div>
+<h2 class="section" id='magicparlabel-83'><span class="section_label">2</span> Hard Support Vector Machine </h2>
+
+<div class="assumption" id='magicparlabel-84'><div class="assumption_item"><span class="assumption_label">Assumption 15.</span>
 <a id="assu_Assume_the_training" />
  Assume the training sample <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -917,7 +1045,16 @@ Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return a
 
 </div>
 
-<div class="problem" id='magicparlabel-86'><div class="problem_item"><span class="problem_label">Problem 13.</span>
+<div class="definition" id='magicparlabel-86'><div class="definition_item"><span class="definition_label">Definition 16.</span>
+<a id="note_Hard_SVM_is_the" />
+ Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return an ERM hyperplane that separates the training set with the largest possible margin given Assumption <a href="#assu_Assume_the_training">15</a>.</div>
+</div>
+
+<div class="standard" id='magicparlabel-87'><br />
+
+</div>
+
+<div class="problem" id='magicparlabel-88'><div class="problem_item"><span class="problem_label">Problem 17.</span>
 <a id="alg__Hard_SVM__Given_a" />
  (Hard-SVM) Given a linearly separable training sample <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -953,9 +1090,8 @@ Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return a
     </mrow>
    </msubsup>
   </mrow>
- </mrow></math> the Hard-SVM rule for the binary classification problem is:</div>
-<div class="standard" id='magicparlabel-87'>Solve<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-91'>It is a quadratic programming problem.</div>
-</div></div> <a id="eq__2" />
+ </mrow></math> the Hard-SVM rule for the binary classification problem is the solution to the quadratic optimization problem:</div>
+<div class="standard" id='magicparlabel-89'>Solve<a id="eq__2" />
 <a id="eq__3" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -1033,7 +1169,7 @@ Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return a
   </mtr>
  </mtable></math></div>
 
-<div class="standard" id='magicparlabel-92'>Scale <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-98'>Scale <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mover>
@@ -1086,19 +1222,19 @@ Hard Support Vector Machine (Hard-SVM) is the learning rule in which we return a
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-93'><br />
+<div class="standard" id='magicparlabel-99'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-94'><div class="note_item"><span class="note_label">Note 14.</span>
-Following we show why Problem <a href="#alg__Hard_SVM__Given_a">13</a> produces a Hard-SVM hyperplane stated in Note <a href="#note_Hard_SVM_is_the">11</a>.</div>
+<div class="note" id='magicparlabel-100'><div class="note_item"><span class="note_label">Note 18.</span>
+Following we show why Problem <a href="#alg__Hard_SVM__Given_a">17</a> produces a Hard-SVM hyperplane stated in Note <a href="#note_Hard_SVM_is_the">16</a>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-95'><br />
+<div class="standard" id='magicparlabel-101'><br />
 
 </div>
 
-<div class="proposition" id='magicparlabel-96'><div class="proposition_item"><span class="proposition_label">Proposition 15.</span>
+<div class="proposition" id='magicparlabel-102'><div class="proposition_item"><span class="proposition_label">Proposition 19.</span>
 <a id="fact_The_distance_between" />
 The distance between a point <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>x</mi>
@@ -1109,88 +1245,105 @@ The distance between a point <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> with is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
+
+   <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
+<mo>/</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+
+  </mrow>
+ </mrow></math>.</div>
+
+<div class="proof" id='magicparlabel-107'><div class="proof_item"><span class="proof_label">Proof.</span>
+We skip it. </div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-108'><div class='Frameless'><div class="plain_layout" id='magicparlabel-112'><div class='Frameless' style='width: 60%; '><div class="note" id='magicparlabel-116'><div class="note_item"><span class="note_label">Note 20.</span>
+On the right, see the geometry of Problem <a href="#alg__Hard_SVM__Given_a">17</a>. </div>
+</div>
+
+<div class="plain_layout" id='magicparlabel-117'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-118'><div class="note_item"><span class="note_label">Note 21.</span>
+Hard-SVM selects two parallel hyperplanes that separate the two classes of data so that the distance between them is as large as possible. The predictive hyperplane (rule) is the hyperplane that lies halfway between them.</div>
+</div>
+
+<div class="plain_layout" id='magicparlabel-119'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-120'><div class="note_item"><span class="note_label">Note 22.</span>
+Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">17</a> searches for the hyperplane with minimum norm <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>w</mi>
+ </mrow></math> among all those that separate the data and have distance greater or equal to <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mn>1</mn>
+ </mrow></math>. </div>
+</div>
+</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Frameless' style='width: 40%; '><div class="plain_layout" id='magicparlabel-124'><img style='width:100%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___gures_06_Support_Vector_Machines_SVM_margin.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___gures_06_Support_Vector_Machines_SVM_margin.png' />
+</div>
+</div></div>
+</div></div>
+
+
+<div class="standard" id='magicparlabel-125'><br />
+
+</div>
+
+<div class="proof" id='magicparlabel-126'><div class="proof_item"><span class="proof_label">Proof.</span>
+(Sketch of the proof of Problem <a href="#alg__Hard_SVM__Given_a">17</a>)&nbsp; </div>
+
+<ol class="enumerate" id='magicparlabel-127'><li class="enumerate_item">Based on Note <a href="#note_Hard_SVM_is_the">16</a>, and Proposition <a href="#fact_The_distance_between">19</a>, the closest point in the training set to the separating hyperplane has distance <a id="eq__22" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
+
+      <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
+       <msub>
+        <mrow><mi>x</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
+<mo>/</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mi>w</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+   <mtd>(2.3)
+   </mtd>
+  </mtr>
+ </mtable></math>Without loss of generality, we make <a href="#eq__22">2.3</a> identifiable by just pick those with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
 <mi>w</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
 <mo>=</mo><mn>1</mn>
   </mrow>
- </mrow></math> is <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-  <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi>
-  </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
- </mrow></math>.</div>
-
-<div class="proof" id='magicparlabel-97'><div class="proof_item"><span class="proof_label">Proof.</span>
-We skip it. </div>
-</div>
-</div>
-
-<div class="standard" id='magicparlabel-102'><div class='Frameless'><div class="plain_layout" id='magicparlabel-106'><div class='Frameless' style='width: 60%; '><div class="note" id='magicparlabel-110'><div class="note_item"><span class="note_label">Note 16.</span>
-On the right, see the geometry of Algorithm <a href="#alg__Hard_SVM__Given_a">13</a>. </div>
-</div>
-
-<div class="plain_layout" id='magicparlabel-111'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-112'><div class="note_item"><span class="note_label">Note 17.</span>
-Hard-SVM selects two parallel hyperplanes that separate the two classes of data so that the distance between them is as large as possible. The predictive hyperplane (rule) is the hyperplane that lies halfway between them.</div>
-</div>
-
-<div class="plain_layout" id='magicparlabel-113'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-114'><div class="note_item"><span class="note_label">Note 18.</span>
-Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hyperplane with minimum norm <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>w</mi>
- </mrow></math> among all those that separate the data and have distance greater or equal to <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mn>1</mn>
- </mrow></math>. </div>
-</div>
-</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Frameless' style='width: 40%; '><div class="plain_layout" id='magicparlabel-118'><img src='/home/georgios/Dropbox/Teaching material ongoing/2024.term2.Machine_Learning_and_Neural_Networks_III/Handouts/figures/06.Support_Vector_Machines/SVM_margin.pdf' alt='image: ' />
-</div>
-</div></div>
-</div></div>
-
-
-<div class="standard" id='magicparlabel-119'><br />
-
-</div>
-
-<div class="proof" id='magicparlabel-120'><div class="proof_item"><span class="proof_label">Proof.</span>
-(Sketch of the proof of Problem <a href="#alg__Hard_SVM__Given_a">13</a>)&nbsp; </div>
-
-<ol class="enumerate" id='magicparlabel-121'><li class="enumerate_item">Based on Note <a href="#note_Hard_SVM_is_the">11</a>, and Fact <a href="#fact_The_distance_between">15</a>, the closest point in the training set to the separating hyperplane has distance <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo> min </mo>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-   <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo>
-    <msub>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo> &rang; </mo><mo>+</mo><mi>b</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> hence, by definition, the Hard-SVM hypothesis should be such as <a id="eq_" />
+ </mrow></math>. Hence, by Definition <a href="#note_Hard_SVM_is_the">16</a>, the Hard-SVM hypothesis should be such as <a id="eq_" />
 <a id="eq__6" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -1255,7 +1408,7 @@ Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hy
 
     </mrow>
    </mtd>
-   <mtd>(2.3)
+   <mtd>(2.4)
    </mtd>
   </mtr>
   <mtr>
@@ -1290,11 +1443,11 @@ Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hy
 <mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
     </mrow>
    </mtd>
-   <mtd>(2.4)
+   <mtd>(2.5)
    </mtd>
   </mtr>
  </mtable></math> </li>
-<li class="enumerate_item">If there is a solution in <a href="#eq_">(2.4)</a> then <a href="#eq_">(2.4)</a> is equivalent to (proof is omitted)<a id="eq__1" />
+<li class="enumerate_item">If there is a solution in <a href="#eq_">(2.5)</a> (namely, linearly separable dataset), then <a href="#eq_">(2.5)</a> is equivalent to (proof is omitted)<a id="eq__1" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -1364,11 +1517,11 @@ Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hy
 
     </mrow>
    </mtd>
-   <mtd>(2.5)
+   <mtd>(2.6)
    </mtd>
   </mtr>
  </mtable></math></li>
-<li class="enumerate_item">Next we show that <a href="#eq__1">2.5</a> is equivalent to the output of Algorithm <a href="#alg__Hard_SVM__Given_a">13</a>; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="enumerate_item">Next we show that <a href="#eq__1">(2.6)</a> is equivalent to the solution of Problem <a href="#alg__Hard_SVM__Given_a">17</a>; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -1403,7 +1556,7 @@ Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hy
 
   </mrow>
  </mrow></math>. 
-<div class="standard" id='magicparlabel-124'>Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-130'>Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -1742,40 +1895,40 @@ Hard-SVM in Problem <a href="#alg__Hard_SVM__Given_a">13</a> searches for the hy
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> is the optimal solution of <a href="#eq__1">(2.5)</a>.</div>
+ </mrow></math> is the optimal solution of <a href="#eq__1">(2.6)</a>.</div>
 </li></ol>
-</div>
-
-<div class="standard" id='magicparlabel-125'><br />
-
-</div>
-
-<div class="definition" id='magicparlabel-126'><div class="definition_item"><span class="definition_label">Definition 19.</span>
-<b>Homogeneous halfspaces</b> in SVM is the case where the halfspaces pass from the origin; that is when the bias term in <a href="#eq__3">2.2</a> is zero <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>b</mi><mo>=</mo><mn>0</mn>
-  </mrow>
- </mrow></math>. </div>
-</div>
-<h2 class="section" id='magicparlabel-127'><span class="section_label">3</span> Soft Support Vector Machine </h2>
-
-<div class="note" id='magicparlabel-128'><div class="note_item"><span class="note_label">Note 20.</span>
-Hard-SVM assumes the strong Assumption <a href="#assu_Assume_the_training">12</a> that the training set is linearly separable, that might not always the case, and hence there is need to derive a procedure that weakens this assumption.</div>
-</div>
-
-<div class="standard" id='magicparlabel-129'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-130'><div class="note_item"><span class="note_label">Note 21.</span>
-Soft Support Vector Machine (Soft-SVM) aims to relax the strong assumption of Hard-SVM that the training set is linearly separable <a href="#eq__6">(2.4)</a> with purpose to be extend the scope of application. Soft-SVM is given below. I.e., Soft-SVM does not assume Assumption <a href="#assu_Assume_the_training">12</a>.</div>
 </div>
 
 <div class="standard" id='magicparlabel-131'><br />
 
 </div>
 
-<div class="problem" id='magicparlabel-132'><div class="problem_item"><span class="problem_label">Problem 22.</span>
+<div class="definition" id='magicparlabel-132'><div class="definition_item"><span class="definition_label">Definition 23.</span>
+<b>Homogeneous halfspaces</b> in SVM is the case where the halfspaces pass from the origin; that is when the bias term in <a href="#eq__3">(2.2)</a> is zero <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>b</mi><mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>. </div>
+</div>
+<h2 class="section" id='magicparlabel-133'><span class="section_label">3</span> Soft Support Vector Machine </h2>
+
+<div class="note" id='magicparlabel-134'><div class="note_item"><span class="note_label">Note 24.</span>
+Hard-SVM assumes the strong Assumption <a href="#assu_Assume_the_training">15</a> that the training set is linearly separable. This might not always the case, and hence there is need to derive a procedure that weakens this assumption.</div>
+</div>
+
+<div class="standard" id='magicparlabel-135'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-136'><div class="note_item"><span class="note_label">Note 25.</span>
+Soft Support Vector Machine (Soft-SVM) aims to relax the strong assumption of Hard-SVM that the training set is linearly separable <a href="#eq__6">(2.5)</a> with purpose to extend the scope of application. Soft-SVM does not assume Assumption <a href="#assu_Assume_the_training">15</a>. Soft-SVM rule is given as the solution to the quadratic optimization problem <a href="#alg__Hard_SVM__Given_a_1">26</a>. </div>
+</div>
+
+<div class="standard" id='magicparlabel-137'><br />
+
+</div>
+
+<div class="problem" id='magicparlabel-138'><div class="problem_item"><span class="problem_label">Problem 26.</span>
 <a id="alg__Hard_SVM__Given_a_1" />
  (Soft-SVM) Given a training sample <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1811,8 +1964,8 @@ Soft Support Vector Machine (Soft-SVM) aims to relax the strong assumption of Ha
     </mrow>
    </msubsup>
   </mrow>
- </mrow></math> the Soft-SVM rule for the binary classification problem is:</div>
-<div class="standard" id='magicparlabel-133'>Solve <a id="eq__2_1" />
+ </mrow></math> the Soft-SVM rule for the binary classification learning problem is solution to the quadratic optimization problem</div>
+<div class="standard" id='magicparlabel-139'>Solve <a id="eq__2_1" />
 <a id="eq__3_1" />
 <a id="eq__5" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1953,8 +2106,8 @@ Soft Support Vector Machine (Soft-SVM) aims to relax the strong assumption of Ha
  </mtable></math></div>
 </div>
 
-<div class="note" id='magicparlabel-134'><div class="note_item"><span class="note_label">Note 23.</span>
-To relax the linearly separable training set assumption, Soft-SVM relies on replacing the &ldquo;harder&rdquo; constraint <a href="#eq__3">(2.2)</a> with the &ldquo;softer&rdquo; one in <a href="#eq__3_1">3.3</a> through the introduction of non-negative unknown quantities <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-140'><div class="note_item"><span class="note_label">Note 27.</span>
+To relax the linearly separable training set Assumption <a href="#assu_Assume_the_training">15</a>, Soft-SVM relies on replacing the &ldquo;harder&rdquo; constraint <a href="#eq__3">(2.2)</a> with the &ldquo;softer&rdquo; one in <a href="#eq__3_1">(3.3)</a> through the introduction of non-negative unknown quantities <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
@@ -1975,7 +2128,15 @@ To relax the linearly separable training set assumption, Soft-SVM relies on repl
    <mrow><mi>m</mi>
    </mrow>
   </msubsup>
- </mrow></math> controlling how much the separability assumption <a href="#eq__3">(2.2)</a> is violated. Soft-SVM learns all <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> controlling how much the separability assumption <a href="#eq__3">(2.2)</a> is violated. </div>
+</div>
+
+<div class="standard" id='magicparlabel-141'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-142'><div class="note_item"><span class="note_label">Note 28.</span>
+Soft-SVM learns all <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
   <mrow><mi>w</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi> &xi; </mi>
@@ -1987,13 +2148,21 @@ To relax the linearly separable training set assumption, Soft-SVM relies on repl
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-135'><br />
+<div class="standard" id='magicparlabel-143'><br />
 
 </div>
 
-<div class="proposition" id='magicparlabel-136'><div class="proposition_item"><span class="proposition_label">Proposition 24.</span>
+<div class="note" id='magicparlabel-144'><div class="note_item"><span class="note_label">Note 29.</span>
+Proposition <a href="#prop_Consider_the_hinge">30</a> shows that the Soft-SVM is a binary classification problem with hinge loss function and regularization term biasing toward low norm separators. </div>
+</div>
+
+<div class="standard" id='magicparlabel-145'><br />
+
+</div>
+
+<div class="proposition" id='magicparlabel-146'><div class="proposition_item"><span class="proposition_label">Proposition 30.</span>
 <a id="prop_Consider_the_hinge" />
- The solution of Problem <a href="#alg__Hard_SVM__Given_a_1">22</a> is equivalent to the regularization learning problem <a id="eq__19" />
+ The solution of Problem <a href="#alg__Hard_SVM__Given_a_1">26</a> is equivalent to the Ridge regularized loss minimization problem <a id="eq__19" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -2025,20 +2194,18 @@ To relax the linearly separable training set assumption, Soft-SVM relies on repl
 </munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
      <mrow>
-      <msub>
+      <msubsup>
        <mrow><mi>R</mi>
        </mrow>
        <mrow><mi>S</mi>
        </mrow>
-      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-      <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
-      </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo><mi> &lambda; </mi>
+       <mrow>
+        <mstyle mathvariant='normal'>
+         <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+         </mrow>
+        </mstyle>
+       </mrow>
+      </msubsup><mo>+</mo><mi> &lambda; </mi>
       <msubsup>
        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
 <mi>w</mi>
@@ -2058,7 +2225,41 @@ To relax the linearly separable training set assumption, Soft-SVM relies on repl
    <mtd>(3.4)
    </mtd>
   </mtr>
- </mtable></math>where the Empirical Risk Function <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math> corresponding to a learning problem under the hinge loss function <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+      </mrow>
+     </mstyle>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo> max </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>-</mo><mi>y</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>and hence the hinge Empirical Risk Function <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msubsup>
@@ -2120,44 +2321,23 @@ To relax the linearly separable training set assumption, Soft-SVM relies on repl
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> is under the hinge loss function <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>and regularization term <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi> &ell; </mi>
-    </mrow>
-    <mrow>
-     <mstyle mathvariant='normal'>
-      <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
-      </mrow>
-     </mstyle>
-    </mrow>
-   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mi>z</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mo> max </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>-</mo><mi>y</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo>+</mo><mi>b</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  <msubsup>
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
 
    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+   <mrow><mn>2</mn>
+   </mrow>
+   <mrow><mn>2</mn>
+   </mrow>
+  </msubsup>
+ </mrow></math>. </div>
 
-  </mrow>
- </mrow></math></div>
-
-<div class="proof" id='magicparlabel-145'><div class="proof_item"><span class="proof_label">Proof.</span>
-In Algorithm <a href="#alg__Hard_SVM__Given_a_1">22</a>, we consider <a id="eq__4" />
+<div class="proof" id='magicparlabel-147'><div class="proof_item"><span class="proof_label">Proof.</span>
+In Algorithm <a href="#alg__Hard_SVM__Given_a_1">26</a>, we consider <a href="#eq__2_1">(3.3)</a> as <a id="eq__4" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -2378,8 +2558,14 @@ In Algorithm <a href="#alg__Hard_SVM__Given_a_1">22</a>, we consider <a id="eq__
 
   </mrow>
  </mrow></math> because I need to minimize w.r.t <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi> &xi; </mi>
- </mrow></math>. Hence <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi> &xi; </mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math>'s. Hence <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -2415,20 +2601,17 @@ In Algorithm <a href="#alg__Hard_SVM__Given_a_1">22</a>, we consider <a id="eq__
 </div>
 </div>
 
-<div class="standard" id='magicparlabel-146'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-147'><div class="note_item"><span class="note_label">Note 25.</span>
-Hence the Soft-SVM is a binary classification problem with hinge loss function and regularization term biasing toward low norm separators. </div>
-</div>
-
 <div class="standard" id='magicparlabel-148'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-149'><div class="example_item"><span class="example_label">Example 26.</span>
-Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)</a> on a training dataset <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+<div class="standard" id='magicparlabel-149'><br />
+
+</div>
+
+<div class="example" id='magicparlabel-150'><div class="example_item"><span class="example_label">Example 31.</span>
+Consider the Soft-SVM as a Ridge regularized loss minimization problem in <a href="#eq__19">(3.4)</a> on a training dataset <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>S</mi><mo>=</mo>
    <msubsup>
@@ -2506,7 +2689,7 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
   </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>X</mi>
@@ -2530,163 +2713,8 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
 
   </mrow>
  </mrow></math> be the solution of the Soft-SVM. Then: </div>
-</div>
 
-<ul class="itemize" id='magicparlabel-150'><li class="itemize_item">Assume non-convex <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi> &ell; </mi>
-    </mrow>
-    <mrow>
-     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
-     </mrow>
-    </mrow>
-   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mi>z</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>:</mo><mo>=</mo>
-   <msub>
-    <mrow>
-     <mstyle mathvariant='normal'><mn>1</mn>
-     </mstyle>
-    </mrow>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mi>y</mi><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo> &le; </mo><mn>0</mn>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math>. Because <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi> &ell; </mi>
-    </mrow>
-    <mrow>
-     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
-     </mrow>
-    </mrow>
-   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mi>z</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo> &le; </mo>
-   <msup>
-    <mrow><mi> &ell; </mi>
-    </mrow>
-    <mrow>
-     <mstyle mathvariant='normal'>
-      <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
-      </mrow>
-     </mstyle>
-    </mrow>
-   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mi>z</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>E</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>S</mi><mo> &sim; </mo><mi>g</mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msubsup>
-     <mrow><mi>R</mi>
-     </mrow>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow>
-      <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
-      </mrow>
-     </mrow>
-    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow>
-     <mstyle mathvariant='fraktur'><mi>A</mi>
-     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>S</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo> &le; </mo>
-   <msub>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>E</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>S</mi><mo> &sim; </mo><mi>g</mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msubsup>
-     <mrow><mi>R</mi>
-     </mrow>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow>
-      <mstyle mathvariant='normal'>
-       <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
-       </mrow>
-      </mstyle>
-     </mrow>
-    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow>
-     <mstyle mathvariant='fraktur'><mi>A</mi>
-     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>S</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math></li>
-<li class="itemize_item">Because <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-158'><li class="itemize_item">Because <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -2728,41 +2756,6 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
  </mrow></math>-Lipschitz, it is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
-   <msub>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>E</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>S</mi><mo> &sim; </mo><mi>g</mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msubsup>
-     <mrow><mi>R</mi>
-     </mrow>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow>
-      <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
-      </mrow>
-     </mrow>
-    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow>
-     <mstyle mathvariant='fraktur'><mi>A</mi>
-     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>S</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo> &le; </mo>
    <msub>
     <mrow>
      <mstyle mathvariant='normal'><mi>E</mi>
@@ -2842,7 +2835,7 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
    </mfrac>
   </mrow>
  </mrow></math>[Hint: Note <a href="#note_Given_the_bounds">note:Given-the-bounds</a> Handout <a href="#enu_Handout___Learnability_">enu:Handout-:-Learnability,</a>: Learnability and stability in learning problems]</li>
-<li class="itemize_item">If I assume a bonded learning problem <math xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="itemize_item">If we assume a bounded learning problem, i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>H</mi>
@@ -2868,41 +2861,6 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
  </mrow></math> then<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
-   <msub>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>E</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>S</mi><mo> &sim; </mo><mi>g</mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msubsup>
-     <mrow><mi>R</mi>
-     </mrow>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow>
-      <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
-      </mrow>
-     </mrow>
-    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow>
-     <mstyle mathvariant='fraktur'><mi>A</mi>
-     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>S</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo> &le; </mo>
    <msub>
     <mrow>
      <mstyle mathvariant='normal'><mi>E</mi>
@@ -3000,7 +2958,7 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
    </mfrac>
   </mrow>
  </mrow></math></li>
-<li class="itemize_item">If <math xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="itemize_item">If we choose <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &lambda; </mi><mo>=</mo>
    <msqrt>
@@ -3028,7 +2986,263 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
     </mfrac>
    </msqrt>
   </mrow>
- </mrow></math>then<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> then<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow>
+     <mstyle mathvariant='normal'><mi>E</mi>
+     </mstyle>
+    </mrow>
+    <mrow>
+     <mrow><mi>S</mi><mo> &sim; </mo><mi>g</mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msubsup>
+     <mrow><mi>R</mi>
+     </mrow>
+     <mrow><mi>g</mi>
+     </mrow>
+     <mrow>
+      <mstyle mathvariant='normal'>
+       <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+       </mrow>
+      </mstyle>
+     </mrow>
+    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <mstyle mathvariant='fraktur'><mi>A</mi>
+     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>S</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow>
+     <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mo> &le; </mo><mi>B</mi>
+     </mrow>
+    </mrow>
+   </msub>
+   <msubsup>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+      </mrow>
+     </mstyle>
+    </mrow>
+   </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo>
+   <msqrt>
+    <mfrac>
+     <mrow>
+      <mrow><mn>8</mn>
+       <msup>
+        <mrow><mi> &rho; </mi>
+        </mrow>
+        <mrow><mn>2</mn>
+        </mrow>
+       </msup>
+       <msup>
+        <mrow><mi>B</mi>
+        </mrow>
+        <mrow><mn>2</mn>
+        </mrow>
+       </msup>
+      </mrow>
+     </mrow>
+     <mrow><mi>m</mi>
+     </mrow>
+    </mfrac>
+   </msqrt>
+  </mrow>
+ </mrow></math></li>
+<li class="itemize_item">Assume one was interested in minimizing a <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> Risk <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msubsup>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> under the <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> loss <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>:</mo><mo>=</mo>
+   <msub>
+    <mrow>
+     <mstyle mathvariant='normal'><mn>1</mn>
+     </mstyle>
+    </mrow>
+    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mi>y</mi><mo> &lang; </mo><mi>w</mi><mo>,</mo><mi>x</mi><mo> &rang; </mo><mo> &le; </mo><mn>0</mn>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math>. But <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo> &sdot; </mo><mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> is non-convex for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>z</mi>
+ </mrow></math>. It is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo>
+   <msup>
+    <mrow><mi> &ell; </mi>
+    </mrow>
+    <mrow>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+      </mrow>
+     </mstyle>
+    </mrow>
+   </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>z</mi>
+ </mrow></math>. By using the convex hinge loss <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi> &ell; </mi>
+   </mrow>
+   <mrow>
+    <mstyle mathvariant='normal'>
+     <mrow><mi>h</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi>
+     </mrow>
+    </mstyle>
+   </mrow>
+  </msup>
+ </mrow></math> as a surrogate loss and implementing the Soft-SVM procedure, the error under <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> Risk <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msubsup>
+    <mrow><mi>R</mi>
+    </mrow>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow>
+     <mrow><mn>0</mn><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -3164,13 +3378,14 @@ Consider the Soft-SVM as a Regularized Learning problem <a href="#eq__19">(3.4)<
   </mrow>
  </mrow></math></li>
 </ul>
+</div>
 
-<div class="standard" id='magicparlabel-154'><br />
+<div class="standard" id='magicparlabel-162'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-155'><div class="note_item"><span class="note_label">Note 27.</span>
-Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem <a href="#alg__Hard_SVM__Given_a_1">22</a> can be learned via any variation of SGD, eg online SGD (batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="example" id='magicparlabel-163'><div class="example_item"><span class="example_label">Example 32.</span>
+Given Proposition <a href="#prop_Consider_the_hinge">30</a>, Soft-SVM in Problem <a href="#alg__Hard_SVM__Given_a_1">26</a> can be learned via any variation of SGD, eg online SGD (batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>m</mi><mo>=</mo><mn>1</mn>
   </mrow>
@@ -3210,46 +3425,139 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
     </mrow>
    </msub>
   </mrow>
+ </mrow></math><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>[</mo>
+   <mtable>
+    <mtr>
+     <mtd>
+      <msup>
+       <mrow><mi>w</mi>
+       </mrow>
+       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+        <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+        </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+       </mrow>
+      </msup>
+     </mtd>
+    </mtr>
+    <mtr>
+     <mtd>
+      <msup>
+       <mrow><mi>b</mi>
+       </mrow>
+       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+        <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+        </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+       </mrow>
+      </msup>
+     </mtd>
+    </mtr>
+   </mtable><mo form='postfix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>]</mo><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>[</mo>
+   <mtable>
+    <mtr>
+     <mtd>
+      <msup>
+       <mrow><mi>w</mi>
+       </mrow>
+       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+       </mrow>
+      </msup>
+     </mtd>
+    </mtr>
+    <mtr>
+     <mtd>
+      <msup>
+       <mrow><mi>b</mi>
+       </mrow>
+       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+       </mrow>
+      </msup>
+     </mtd>
+    </mtr>
+   </mtable><mo form='postfix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>]</mo><mo>-</mo>
+   <msub>
+    <mrow><mi> &eta; </mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>[</mo>
+   <mtable>
+    <mtr>
+     <mtd>
+      <msub>
+       <mrow><mi>v</mi>
+       </mrow>
+       <mrow>
+        <mrow><mi>w</mi><mo>,</mo><mi>t</mi>
+        </mrow>
+       </mrow>
+      </msub>
+     </mtd>
+    </mtr>
+    <mtr>
+     <mtd>
+      <msub>
+       <mrow><mi>v</mi>
+       </mrow>
+       <mrow>
+        <mrow><mi>b</mi><mo>,</mo><mi>t</mi>
+        </mrow>
+       </mrow>
+      </msub>
+     </mtd>
+    </mtr>
+   </mtable><mo form='postfix' fence='true' stretchy='true' symmetric='true' lspace='thinmathspace'>]</mo>
+  </mrow>
  </mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
     <mrow><mi>v</mi>
     </mrow>
-    <mrow><mi>t</mi>
+    <mrow>
+     <mrow><mi>w</mi><mo>,</mo><mi>t</mi>
+     </mrow>
     </mrow>
    </msub><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
    <mtable>
     <mtr>
      <mtd>
-      <mrow>
-       <msup>
+      <mrow><mo>-</mo>
+       <msubsup>
         <mrow><mi>y</mi>
         </mrow>
-        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-        </mrow>
-       </msup><mo> &lang; </mo>
-       <msup>
-        <mrow><mi> &piv; </mi>
+        <mrow><mi>i</mi>
         </mrow>
         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
         </mrow>
-       </msup><mo>,</mo>
-       <msup>
-        <mrow><mi> &chi; </mi>
+       </msubsup>
+       <msubsup>
+        <mrow><mi>x</mi>
+        </mrow>
+        <mrow><mi>i</mi>
         </mrow>
         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
         </mrow>
-       </msup><mo> &rang; </mo>
+       </msubsup>
       </mrow>
      </mtd>
      <mtd>
@@ -3258,49 +3566,56 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
         <mrow><mi>i</mi><mi>f</mi>
         </mrow>
        </mstyle><mspace width="6px" />
-       <msup>
+       <msubsup>
         <mrow><mi>y</mi>
         </mrow>
-        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-        </mrow>
-       </msup><mo> &lang; </mo><mi> &piv; </mi><mo>,</mo>
-       <msup>
-        <mrow><mi> &chi; </mi>
+        <mrow><mi>i</mi>
         </mrow>
         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
         </mrow>
-       </msup><mo> &rang; </mo><mo> &ge; </mo><mn>1</mn>
+       </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mrow><mo> &lang; </mo>
+        <msup>
+         <mrow><mi>w</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msup><mo>,</mo>
+        <msubsup>
+         <mrow><mi>x</mi>
+         </mrow>
+         <mrow><mi>i</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msubsup><mo> &rang; </mo><mo>+</mo>
+        <msup>
+         <mrow><mi>b</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msup>
+       </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>&lt;</mo><mn>1</mn>
       </mrow>
      </mtd>
     </mtr>
     <mtr>
-     <mtd>
-      <mrow><mo>-</mo>
-       <msup>
-        <mrow><mi>y</mi>
-        </mrow>
-        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-        </mrow>
-       </msup>
-       <msup>
-        <mrow><mi> &chi; </mi>
-        </mrow>
-        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-        </mrow>
-       </msup>
-      </mrow>
+     <mtd><mn>0</mn>
      </mtd>
      <mtd>
       <mstyle mathvariant='normal'>
@@ -3311,74 +3626,111 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
     </mtr>
    </mtable>
   </mrow>
- </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi> &piv; </mi><mo>=</mo>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow>
-      <msup>
-       <mrow><mi>b</mi>
-       </mrow>
-       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-      </msup><mo>,</mo>
-      <msup>
-       <mrow><mi>w</mi>
-       </mrow>
-       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>t</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-      </msup>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-    <mrow><mi> &top; </mi>
-    </mrow>
-   </msup>
-  </mrow>
  </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow><mi> &chi; </mi><mo>=</mo>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mn>1</mn><mo>,</mo>
-      <msup>
-       <mrow><mi>x</mi>
-       </mrow>
-       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>b</mi><mo>,</mo><mi>t</mi>
+     </mrow>
+    </mrow>
+   </msub><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+   <mtable>
+    <mtr>
+     <mtd>
+      <mrow><mo>-</mo>
+       <msubsup>
+        <mrow><mi>y</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-       </mrow>
-      </msup>
-     </mrow>
+        </mrow>
+       </msubsup>
+      </mrow>
+     </mtd>
+     <mtd>
+      <mrow>
+       <mstyle mathvariant='normal'>
+        <mrow><mi>i</mi><mi>f</mi>
+        </mrow>
+       </mstyle><mspace width="6px" />
+       <msubsup>
+        <mrow><mi>y</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-    </mrow>
-    <mrow><mi> &top; </mi>
-    </mrow>
-   </msup>
+        </mrow>
+       </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mrow><mo> &lang; </mo>
+        <msup>
+         <mrow><mi>w</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msup><mo>,</mo>
+        <msubsup>
+         <mrow><mi>x</mi>
+         </mrow>
+         <mrow><mi>i</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msubsup><mo> &rang; </mo><mo>+</mo>
+        <msup>
+         <mrow><mi>b</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>t</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+         </mrow>
+        </msup>
+       </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>&lt;</mo><mn>1</mn>
+      </mrow>
+     </mtd>
+    </mtr>
+    <mtr>
+     <mtd><mn>0</mn>
+     </mtd>
+     <mtd>
+      <mstyle mathvariant='normal'>
+       <mrow><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi>
+       </mrow>
+      </mstyle>
+     </mtd>
+    </mtr>
+   </mtable>
   </mrow>
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-161'><br />
+<div class="standard" id='magicparlabel-169'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-162'><span class="section_label">4</span> Duality </h2>
+<h2 class="section" id='magicparlabel-170'><span class="section_label">4</span> Duality and sparsity</h2>
 
-<h3 class="subsection" id='magicparlabel-168'><span class="subsection_label">4.1</span> Convex optimization results</h3>
+<h3 class="subsection" id='magicparlabel-176'><span class="subsection_label">4.1</span> Lagrangian duality</h3>
 
-<div class="notation" id='magicparlabel-169'><div class="notation_item"><span class="notation_label">Notation 28.</span>
+<div class="notation" id='magicparlabel-177'><div class="notation_item"><span class="notation_label">Notation 33.</span>
 <a id="fact__Karush_Kuhn_Tucker__KKT__condit" />
  Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -3394,7 +3746,7 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
    <mstyle mathvariant='double-struck'><mi>R</mi>
    </mstyle>
   </mrow>
- </mrow></math> be an objective convex function, let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> be an objective function, let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
@@ -3460,42 +3812,32 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
    <mrow><mi>n</mi>
    </mrow>
   </msubsup>
- </mrow></math> equality constraint functions<div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-173'>In our application of SVM, we do not have equality constrained and hence they will be omitted. However, for the shake of completeness we consider them in the general presentation of the Langrangian problem.</div>
-</div></div>. </div>
+ </mrow></math> equality constraint functions.</div>
 </div>
 
-<div class="standard" id='magicparlabel-174'><br />
+<div class="standard" id='magicparlabel-186'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-175'><div class="definition_item"><span class="definition_label">Definition 29.</span>
-(Primal problem) Consider the following convex nonlinear minimization problem, with solution <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msup>
-   <mrow><mi>x</mi>
-   </mrow>
-   <mrow><mo>*</mo>
-   </mrow>
-  </msup>
- </mrow></math><a id="eq__16" />
+<div class="definition" id='magicparlabel-187'><div class="definition_item"><span class="definition_label">Definition 34.</span>
+<a id="def__Primal_problem__Consider" />
+ (Primal problem) Consider we have the following minimization problem that we will call Primal problem<a id="eq__16" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
-   <mtd><munder accent='false'>
+   <mtd>
     <mrow>
      <msup>
       <mrow><mi>p</mi>
       </mrow>
       <mrow><mo>*</mo>
       </mrow>
-     </msup><mo>=</mo>
+     </msup><mo>=</mo><munder accent='false'>
      <mstyle mathvariant='normal'>
-      <mstyle mathvariant='normal'>
-       <mrow><mi>m</mi><mi>i</mi><mi>n</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>z</mi><mi>e</mi>
-       </mrow>
-      </mstyle>
-     </mstyle>
-    </mrow><mi>x</mi></munder>
+      <mrow><mi>m</mi><mi>i</mi><mi>n</mi>
+      </mrow>
+     </mstyle><mi>x</mi></munder>
+    </mrow>
    </mtd>
    <mtd><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -3555,12 +3897,12 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-176'><br />
+<div class="standard" id='magicparlabel-192'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-177'><div class="definition_item"><span class="definition_label">Definition 30.</span>
-(Lagrangian function) To the problem we associate the Lagrangian <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="definition" id='magicparlabel-193'><div class="definition_item"><span class="definition_label">Definition 35.</span>
+(Lagrangian function) To the Primal problem <a href="#def__Primal_problem__Consider">34</a>, we associate the Lagrangian function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>L</mi><mo>:</mo>
    <msup>
@@ -3588,77 +3930,636 @@ Given Proposition <a href="#prop_Consider_the_hinge">24</a>, Soft-SVM in Problem
     </mrow>
    </msup>
   </mrow>
- </mrow></math> with <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+ </mrow></math> with <a id="eq__23" />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-   <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-   </mrow>
+     <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    </mrow>
+   </mtd>
+   <mtd>
+    <mrow><mo>=</mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>+</mo>
-   <msubsup>
-    <mrow><mo> &sum; </mo>
+     <msubsup>
+      <mrow><mo> &sum; </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+      <mrow><mi>m</mi>
+      </mrow>
+     </msubsup>
+     <msub>
+      <mrow><mi> &alpha; </mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>g</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo>
+     <msubsup>
+      <mrow><mo> &sum; </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>j</mi><mo>=</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+      <mrow><mi>n</mi>
+      </mrow>
+     </msubsup>
+     <msub>
+      <mrow><mi> &beta; </mi>
+      </mrow>
+      <mrow><mi>j</mi>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>h</mi>
+      </mrow>
+      <mrow><mi>j</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+   <mtd>(4.2)
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-202'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-203'><div class="note_item"><span class="note_label">Note 36.</span>
+Note that the Primal problem is equivalent to <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo>=</mo><munder accent='false'>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>m</mi><mi>i</mi><mi>n</mi>
+    </mrow>
+   </mstyle><mi>x</mi></munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mo> max </mo>
+     </mrow>
+     <mrow>
+      <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
+      </mrow>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>For instance, if I ignore the <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+  <msub>
+   <mrow><mi>h</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+ </mrow></math> terms which is zero for a suitable solution for simplicity, I observe that<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mo> max </mo>
     </mrow>
     <mrow>
-     <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
+     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
      </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+   <mtable>
+    <mtr>
+     <mtd>
+      <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+     </mtd>
+     <mtd>
+      <mrow>
+       <msub>
+        <mrow><mi>g</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &le; </mo><mn>0</mn><mo>,</mo><mi> &forall; </mi><mi>i</mi>
+      </mrow>
+     </mtd>
+    </mtr>
+    <mtr>
+     <mtd>
+      <mrow><mn>0</mn><mo>,</mo>
+      </mrow>
+     </mtd>
+     <mtd>
+      <mrow>
+       <msub>
+        <mrow><mi>g</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>&gt;</mo><mn>0</mn><mo>,</mo><mi> &exist; </mi><mi>i</mi>
+      </mrow>
+     </mtd>
+    </mtr>
+   </mtable>
+  </mrow>
+ </mrow></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-204'><br />
+
+</div>
+
+<div class="definition" id='magicparlabel-205'><div class="definition_item"><span class="definition_label">Definition 37.</span>
+(Lagrangian dual problem) The associated Lagrangian dual problem is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow>
+     <msup>
+      <mrow><mi>d</mi>
+      </mrow>
+      <mrow><mo>*</mo>
+      </mrow>
+     </msup><mo>=</mo><munder accent='false'>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>m</mi><mi>a</mi><mi>x</mi>
+      </mrow>
+     </mstyle>
+     <mrow><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+     </mrow></munder>
+    </mrow>
+   </mtd>
+   <mtd><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <msub>
+      <mrow><mo> min </mo>
+      </mrow>
+      <mrow><mi>x</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mstyle mathvariant='normal'>
+     <mrow><mi>s</mi><mn>.</mn><mi>t</mi><mn>.</mn>
+     </mrow>
+    </mstyle>
+   </mtd>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow><mi> &alpha; </mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo> &ge; </mo><mn>0</mn>
+    </mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd><mrow/>
+   </mtd>
+   <mtd>
+    <mrow>
+     <msub>
+      <mrow><mi> &beta; </mi>
+      </mrow>
+      <mrow><mi>j</mi>
+      </mrow>
+     </msub><mo> &isin; </mo>
+     <mstyle mathvariant='double-struck'><mi>R</mi>
+     </mstyle>
+    </mrow>
+   </mtd>
+  </mtr>
+ </mtable></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-206'><br />
+
+</div>
+
+<div class="definition" id='magicparlabel-207'><div class="definition_item"><span class="definition_label">Definition 38.</span>
+(Dual function) To the Dual problem, we associate a function <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mover>
+    <mrow><mi>L</mi>
+    </mrow><mo stretchy="true">&tilde;</mo>
+   </mover><mo>:</mo>
+   <msup>
+    <mrow>
+     <mstyle mathvariant='double-struck'><mi>R</mi>
+     </mstyle>
     </mrow>
     <mrow><mi>m</mi>
     </mrow>
-   </msubsup>
-   <msub>
-    <mrow><mi> &alpha; </mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>g</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo>
-   <msubsup>
-    <mrow><mo> &sum; </mo>
-    </mrow>
+   </msup><mo> &times; </mo>
+   <msup>
     <mrow>
-     <mrow><mi>j</mi><mo>=</mo><mn>1</mn>
-     </mrow>
+     <mstyle mathvariant='double-struck'><mi>R</mi>
+     </mstyle>
     </mrow>
     <mrow><mi>n</mi>
     </mrow>
-   </msubsup>
+   </msup>
+  </mrow>
+ </mrow></math> with <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mover>
+    <mrow><mi>L</mi>
+    </mrow><mo stretchy="true">&tilde;</mo>
+   </mover><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>:</mo><mo>=</mo>
    <msub>
-    <mrow><mi> &beta; </mi>
+    <mrow><mo> min </mo>
     </mrow>
-    <mrow><mi>j</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>h</mi>
-    </mrow>
-    <mrow><mi>j</mi>
+    <mrow><mi>x</mi>
     </mrow>
    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> called dual function.</div>
+</div>
+
+<div class="standard" id='magicparlabel-208'><br />
+
+</div>
+
+<div class="proposition" id='magicparlabel-209'><div class="proposition_item"><span class="proposition_label">Proposition 39.</span>
+In general it is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo> &ge; </mo>
+   <msup>
+    <mrow><mi>d</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math>; i.e. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><munder accent='false'>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>m</mi><mi>i</mi><mi>n</mi>
+    </mrow>
+   </mstyle><mi>x</mi></munder>
+   <msub>
+    <mrow><mo> max </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &ge; </mo><munder accent='false'>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>m</mi><mi>a</mi><mi>x</mi>
+    </mrow>
+   </mstyle>
+   <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
+   </mrow></munder>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow><mi>x</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-178'><br />
+<div class="standard" id='magicparlabel-210'><br />
 
 </div>
 
-<div class="proposition" id='magicparlabel-179'><div class="proposition_item"><span class="proposition_label">Proposition 31.</span>
-Karush–Kuhn–Tucker (KKT) conditions are necessary and sufficient conditions for <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="definition" id='magicparlabel-211'><div class="definition_item"><span class="definition_label">Definition 40.</span>
+We call the general case <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo> &ge; </mo>
+   <msup>
+    <mrow><mi>d</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> weak duality.</div>
+</div>
+
+<div class="standard" id='magicparlabel-212'><br />
+
+</div>
+
+<div class="definition" id='magicparlabel-213'><div class="definition_item"><span class="definition_label">Definition 41.</span>
+When <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo>=</mo>
+   <msup>
+    <mrow><mi>d</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> we say we have a strong duality.</div>
+</div>
+
+<div class="standard" id='magicparlabel-214'><br />
+
+</div>
+
+<div class="proposition" id='magicparlabel-215'><div class="proposition_item"><span class="proposition_label">Proposition 42.</span>
+(Strong&nbsp;duality&nbsp;via&nbsp;Slater&nbsp;condition) If the primal problem <a href="#eq__16">(4.1)</a> is convex, and satisfies the weak Slater’s condition, i.e.<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi> &exist; </mi>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>0</mn>
+     </mrow>
+    </msub><mo> &isin; </mo>
+    <mstyle mathvariant='script'><mi>D</mi>
+    </mstyle>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mspace width="6px" /><mspace width="6px" /><mo>:</mo><mspace width="6px" /><mspace width="6px" /><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>g</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>0</mn>
+     </mrow>
+    </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>&lt;</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mspace width="6px" />
+   <mstyle mathvariant='normal'>
+    <mrow><mi>a</mi><mi>n</mi><mi>d</mi>
+    </mrow>
+   </mstyle><mspace width="6px" /><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>h</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>0</mn>
+     </mrow>
+    </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>then strong duality holds, that is: <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup><mo>=</mo>
+   <msup>
+    <mrow><mi>d</mi>
+    </mrow>
+    <mrow><mo>*</mo>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math>. It other words<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow><mi>x</mi>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mo> max </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
+     </mrow>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+   <msub>
+    <mrow><mo> max </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mo> min </mo>
+    </mrow>
+    <mrow><mi>x</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math></div>
+</div>
+
+<div class="standard" id='magicparlabel-221'><br />
+
+</div>
+
+<div class="proposition" id='magicparlabel-222'><div class="proposition_item"><span class="proposition_label">Proposition 43.</span>
+When <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>f</mi>
+ </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+  <msub>
+   <mrow><mi>h</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+ </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+  <msub>
+   <mrow><mi>g</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+ </mrow></math> are convex and the Slater condition holds, Karush–Kuhn–Tucker (KKT) conditions are necessary and sufficient conditions for <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msup>
    <mrow><mi>x</mi>
@@ -3872,410 +4773,19 @@ Karush–Kuhn–Tucker (KKT) conditions are necessary and sufficient conditions 
      </mrow>
     </mstyle>
    </mtd>
-   <mtd>(4.2)
+   <mtd>(4.3)
    </mtd>
   </mtr>
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-180'><br />
+<div class="standard" id='magicparlabel-223'><br />
 
 </div>
+<h3 class="subsection" id='magicparlabel-224'><span class="subsection_label">4.2</span> Implementation in the Hand SVM</h3>
 
-<div class="note" id='magicparlabel-181'><div class="note_item"><span class="note_label">Note 32.</span>
-With an optimal vector <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msup>
-   <mrow><mi>x</mi>
-   </mrow>
-   <mrow><mo>*</mo>
-   </mrow>
-  </msup>
- </mrow></math> in <a href="#eq__16">(4.1)</a> there is associated a non-negative vector <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msup>
-   <mrow><mi> &alpha; </mi>
-   </mrow>
-   <mrow><mo>*</mo>
-   </mrow>
-  </msup>
- </mrow></math> and vector <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msup>
-   <mrow><mi> &beta; </mi>
-   </mrow>
-   <mrow><mo>*</mo>
-   </mrow>
-  </msup>
- </mrow></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mn>0</mn><mo>=</mo>
-   <msub>
-    <mrow><mi> &nabla; </mi>
-    </mrow>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-   </msub><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msup>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mo>*</mo>
-     </mrow>
-    </msup><mo>,</mo>
-    <msup>
-     <mrow><mi> &alpha; </mi>
-     </mrow>
-     <mrow><mo>*</mo>
-     </mrow>
-    </msup><mo>,</mo>
-    <msup>
-     <mrow><mi> &beta; </mi>
-     </mrow>
-     <mrow><mo>*</mo>
-     </mrow>
-    </msup>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math></div>
-</div>
-
-<div class="standard" id='magicparlabel-182'><br />
-
-</div>
-
-<div class="definition" id='magicparlabel-183'><div class="definition_item"><span class="definition_label">Definition 33.</span>
-(Lagrangian&nbsp;dual&nbsp;problem) The associated Lagrangian&nbsp;dual&nbsp;problem is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable>
-  <mtr>
-   <mtd>
-    <mrow>
-     <msup>
-      <mrow><mi>d</mi>
-      </mrow>
-      <mrow><mo>*</mo>
-      </mrow>
-     </msup><mo>=</mo><munder accent='false'>
-     <mstyle mathvariant='normal'>
-      <mrow><mi>m</mi><mi>a</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>z</mi><mi>e</mi>
-      </mrow>
-     </mstyle><mi> &alpha; </mi></munder>
-    </mrow>
-   </mtd>
-   <mtd><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow>
-     <msub>
-      <mrow><mo> min </mo>
-      </mrow>
-      <mrow><mi>x</mi>
-      </mrow>
-     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-      <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-      </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mstyle mathvariant='normal'>
-     <mrow><mi>s</mi><mn>.</mn><mi>t</mi><mn>.</mn>
-     </mrow>
-    </mstyle>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mi> &alpha; </mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo> &ge; </mo><mn>0</mn>
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd><mrow/>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mi> &beta; </mi>
-      </mrow>
-      <mrow><mi>j</mi>
-      </mrow>
-     </msub><mo> &isin; </mo>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-   </mtd>
-  </mtr>
- </mtable></math>where<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mover>
-    <mrow><mi>L</mi>
-    </mrow><mo stretchy="true">&tilde;</mo>
-   </mover><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>:</mo><mo>=</mo>
-   <msub>
-    <mrow><mo> min </mo>
-    </mrow>
-    <mrow><mi>x</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> is called dual function.</div>
-</div>
-
-<div class="standard" id='magicparlabel-184'><br />
-
-</div>
-
-<div class="proposition" id='magicparlabel-185'><div class="proposition_item"><span class="proposition_label">Proposition 34.</span>
-In general it is <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi>p</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo> &ge; </mo>
-   <msup>
-    <mrow><mi>d</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>.</div>
-</div>
-
-<div class="standard" id='magicparlabel-186'><br />
-
-</div>
-
-<div class="definition" id='magicparlabel-187'><div class="definition_item"><span class="definition_label">Definition 35.</span>
-Weak&nbsp;duality is when <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi>p</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo> &ge; </mo>
-   <msup>
-    <mrow><mi>d</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> </div>
-</div>
-
-<div class="standard" id='magicparlabel-188'><br />
-
-</div>
-
-<div class="definition" id='magicparlabel-189'><div class="definition_item"><span class="definition_label">Definition 36.</span>
-Strong duality is when <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi>p</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo>=</mo>
-   <msup>
-    <mrow><mi>d</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math></div>
-</div>
-
-<div class="standard" id='magicparlabel-190'><br />
-
-</div>
-
-<div class="proposition" id='magicparlabel-191'><div class="proposition_item"><span class="proposition_label">Proposition 37.</span>
-(Strong&nbsp;duality&nbsp;via&nbsp;Slater&nbsp;condition) If the primal problem <a href="#eq__16">(4.1)</a> is convex, and satisfies the weak Slater’s condition, i.e.<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi> &exist; </mi>
-    <msub>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mn>0</mn>
-     </mrow>
-    </msub><mo> &isin; </mo>
-    <mstyle mathvariant='script'><mi>D</mi>
-    </mstyle>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mspace width="6px" /><mspace width="6px" /><mo>:</mo><mspace width="6px" /><mspace width="6px" /><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msub>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <msub>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mn>0</mn>
-     </mrow>
-    </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>&lt;</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mspace width="6px" />
-   <mstyle mathvariant='normal'>
-    <mrow><mi>a</mi><mi>n</mi><mi>d</mi>
-    </mrow>
-   </mstyle><mspace width="6px" /><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow>
-    <msub>
-     <mrow><mi>h</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <msub>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mn>0</mn>
-     </mrow>
-    </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math>then strong duality holds, that is: <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msup>
-    <mrow><mi>p</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup><mo>=</mo>
-   <msup>
-    <mrow><mi>d</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. It other words<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo> min </mo>
-    </mrow>
-    <mrow><mi>x</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mo> max </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
-     </mrow>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo>
-   <msub>
-    <mrow><mo> max </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn><mo>,</mo><mi> &beta; </mi>
-     </mrow>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mo> min </mo>
-    </mrow>
-    <mrow><mi>x</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>L</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mi>x</mi><mo>,</mo><mi> &alpha; </mi><mo>,</mo><mi> &beta; </mi>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math></div>
-</div>
-
-<div class="standard" id='magicparlabel-192'><br />
-
-</div>
-<h3 class="subsection" id='magicparlabel-193'><span class="subsection_label">4.2</span> Hand SVM</h3>
-
-<div class="note" id='magicparlabel-194'><div class="note_item"><span class="note_label">Note 38.</span>
-The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a href="#eq__3">(2.2)</a> and <a href="#eq__3">(2.2)</a>, can be rewritten in the form <a id="eq__10" />
+<div class="note" id='magicparlabel-225'><div class="note_item"><span class="note_label">Note 44.</span>
+The Hard-SVM Problem <a href="#alg__Hard_SVM__Given_a">17</a> <a href="#eq__3">(2.2)</a> and <a href="#eq__3">(2.2)</a>, can be rewritten in the form <a id="eq__10" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -4314,10 +4824,10 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
 
     </mrow>
    </mtd>
-   <mtd>(4.3)
+   <mtd>(4.4)
    </mtd>
   </mtr>
- </mtable></math>for<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math>with <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>w</mi>
@@ -4327,15 +4837,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
     <mrow><mo> max </mo>
     </mrow>
     <mrow>
-     <mrow><mi> &alpha; </mi><mo> &isin; </mo>
-      <msup>
-       <mrow>
-        <mstyle mathvariant='double-struck'><mi>R</mi>
-        </mstyle>
-       </mrow>
-       <mrow><mi>m</mi>
-       </mrow>
-      </msup><mo>:</mo><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
+     <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
      </mrow>
     </mrow>
    </msub>
@@ -4419,7 +4921,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
     </mtr>
    </mtable>
   </mrow>
- </mrow></math>Hence <a href="#eq__10">(4.3)</a> is equivalent to <a id="eq__11" />
+ </mrow></math>Hence we get the weak duality<a id="eq__11" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -4427,7 +4929,9 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
     <msub>
      <mrow><mo> min </mo>
      </mrow>
-     <mrow><mi>w</mi>
+     <mrow>
+      <mrow><mi>w</mi><mo>,</mo><mi>b</mi>
+      </mrow>
      </mrow>
     </msub>
    </mtd>
@@ -4437,15 +4941,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
       <mrow><mo> max </mo>
       </mrow>
       <mrow>
-       <mrow><mi> &alpha; </mi><mo> &isin; </mo>
-        <msup>
-         <mrow>
-          <mstyle mathvariant='double-struck'><mi>R</mi>
-          </mstyle>
-         </mrow>
-         <mrow><mi>m</mi>
-         </mrow>
-        </msup><mo>:</mo><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
+       <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
        </mrow>
       </mrow>
      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -4523,15 +5019,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
       <mrow><mo> max </mo>
       </mrow>
       <mrow>
-       <mrow><mi> &alpha; </mi><mo> &isin; </mo>
-        <msup>
-         <mrow>
-          <mstyle mathvariant='double-struck'><mi>R</mi>
-          </mstyle>
-         </mrow>
-         <mrow><mi>m</mi>
-         </mrow>
-        </msup><mo>:</mo><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
+       <mrow><mi> &alpha; </mi><mo> &ge; </mo><mn>0</mn>
        </mrow>
       </mrow>
      </msub><munder accent='false'>
@@ -4618,10 +5106,10 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
      </mrow></munder>
     </mrow>
    </mtd>
-   <mtd>(4.4)
+   <mtd>(4.5)
    </mtd>
   </mtr>
- </mtable></math>where <a href="#eq__11">(4.4)</a> is called the weak duality. Strong duality is when the equality hold. In our case the equality holds, but we do not go into details. Here, keeping <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math>Strong duality (equality) holds because of the convexity. Here, keeping <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &alpha; </mi>
  </mrow></math> fixed, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -4718,7 +5206,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
      </msub>
     </mrow>
    </mtd>
-   <mtd>(4.5)
+   <mtd>(4.6)
    </mtd>
   </mtr>
   <mtr>
@@ -4791,7 +5279,7 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
      </msub>
     </mrow>
    </mtd>
-   <mtd>(4.6)
+   <mtd>(4.7)
    </mtd>
   </mtr>
  </mtable></math> The dual function is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5136,13 +5624,13 @@ The problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> <a hr
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-199'><br />
+<div class="standard" id='magicparlabel-230'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-200'><div class="note_item"><span class="note_label">Note 39.</span>
+<div class="note" id='magicparlabel-231'><div class="note_item"><span class="note_label">Note 45.</span>
 <a id="note_The_Dual_problem" />
-The Dual problem of the (Primal) problem in Hard-SVM Algorithm <a href="#alg__Hard_SVM__Given_a">13</a> is <a id="eq__15" />
+The Dual problem of the Hard-SVM (primal) problem <a href="#alg__Hard_SVM__Given_a">17</a> is <a id="eq__15" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -5259,7 +5747,7 @@ The Dual problem of the (Primal) problem in Hard-SVM Algorithm <a href="#alg__Ha
 
     </mrow>
    </mtd>
-   <mtd>(4.7)
+   <mtd>(4.8)
    </mtd>
   </mtr>
   <mtr>
@@ -5303,11 +5791,11 @@ The Dual problem of the (Primal) problem in Hard-SVM Algorithm <a href="#alg__Ha
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-201'><br />
+<div class="standard" id='magicparlabel-232'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-202'><div class="note_item"><span class="note_label">Note 40.</span>
+<div class="note" id='magicparlabel-233'><div class="note_item"><span class="note_label">Note 46.</span>
 Once the optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msup>
@@ -5316,7 +5804,7 @@ Once the optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mrow><mo>*</mo>
    </mrow>
   </msup>
- </mrow></math> is computed from <a href="#eq__15">(4.7)</a>, the optimal weights <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> is computed from <a href="#eq__15">(4.8)</a>, the optimal weights <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msup>
    <mrow><mi>w</mi>
@@ -5324,7 +5812,7 @@ Once the optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mrow><mo>*</mo>
    </mrow>
   </msup>
- </mrow></math> can be computed (from <a href="#eq__8_1_1">(4.6)</a>) as<a id="eq__17" />
+ </mrow></math> can be computed (from <a href="#eq__8_1_1">(4.7)</a>) as<a id="eq__17" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -5368,17 +5856,17 @@ Once the optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
      </msub>
     </mrow>
    </mtd>
-   <mtd>(4.8)
+   <mtd>(4.9)
    </mtd>
   </mtr>
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-203'><br />
+<div class="standard" id='magicparlabel-234'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-204'><div class="note_item"><span class="note_label">Note 41.</span>
+<div class="note" id='magicparlabel-235'><div class="note_item"><span class="note_label">Note 47.</span>
 If <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -5410,7 +5898,7 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> does not contribute to <a href="#eq__17">(4.8)</a>. If <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> does not contribute to <a href="#eq__17">(4.9)</a>. If <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msubsup>
@@ -5441,7 +5929,7 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math> contributes to <a href="#eq__17">(4.8)</a>. Moreover if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> contributes to <a href="#eq__17">(4.9)</a>. Moreover if <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msubsup>
@@ -5453,7 +5941,7 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msubsup><mo> &ne; </mo><mn>0</mn>
   </mrow>
- </mrow></math> KKT condition <a href="#eq__12">(4.2)</a> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> the KKT condition <a href="#eq__12">(4.3)</a> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msubsup>
@@ -5578,14 +6066,20 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </mrow>
   </msub>
- </mrow></math> are called <b>supporting vectors</b> (see Figure <a href="#fig_">4.1</a>). </div>
+ </mrow></math> are called <b>supporting vectors</b> (see Figure <a href="#fig_">4.1</a>). <div class='float-figure'><div class="plain_layout" id='magicparlabel-239'><img style='width:45%;' src='2_extra_tmp_mffk55_Dropbox_Teaching_material_on___Support_Vector_Machines_svm-support-vectors.png' alt='image: 2_extra_tmp_mffk55_Dropbox_Teaching_material_on___Support_Vector_Machines_svm-support-vectors.png' />
 </div>
 
-<div class="standard" id='magicparlabel-205'><br />
+<div class="plain_layout" id='magicparlabel-240'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.1:  <a id="fig_" />
+</span></div>
+</div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-245'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-206'><div class="note_item"><span class="note_label">Note 42.</span>
+<div class="note" id='magicparlabel-246'><div class="note_item"><span class="note_label">Note 48.</span>
 <a id="note_Given_optimal__" />
  Given optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -5595,47 +6089,7 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mrow><mo>*</mo>
    </mrow>
   </msup>
- </mrow></math>, and letting <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mstyle mathvariant='script'><mi>I</mi>
-   </mstyle><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-   <mrow><mi>i</mi><mo>:</mo>
-    <msub>
-     <mrow><mi>y</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <mrow><mo> &lang; </mo>
-     <msup>
-      <mrow><mi>w</mi>
-      </mrow>
-      <mrow><mo>*</mo>
-      </mrow>
-     </msup><mo>,</mo>
-     <msub>
-      <mrow><mi>x</mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo> &rang; </mo><mo>+</mo>
-     <msup>
-      <mrow><mi>b</mi>
-      </mrow>
-      <mrow><mo>*</mo>
-      </mrow>
-     </msup>
-    </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>-</mo><mn>1</mn><mo>=</mo><mn>0</mn>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
-  </mrow>
- </mrow></math>, <a href="#eq__17">(4.8)</a> becomes <a id="eq__17_2" />
+ </mrow></math> <a href="#eq__17">(4.9)</a> becomes <a id="eq__17_2" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -5679,31 +6133,10 @@ If <math xmlns="http://www.w3.org/1998/Math/MathML">
      </msub>
     </mrow>
    </mtd>
-   <mtd>(4.9)
+   <mtd>(4.10)
    </mtd>
   </mtr>
- </mtable></math></div>
-</div>
-
-<div class="standard" id='magicparlabel-207'><br />
-
-</div>
-
-<div class="definition" id='magicparlabel-208'><div class="definition_item"><span class="definition_label">Definition 43.</span>
-Support vectors are called the examples <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-  <mrow>
-   <msub>
-    <mrow><mi>x</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo>:</mo><mi>i</mi><mo> &isin; </mo><mi>I</mi>
-  </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
- </mrow></math> in the training data set where <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>I</mi>
@@ -5746,37 +6179,14 @@ Support vectors are called the examples <math xmlns="http://www.w3.org/1998/Math
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-209'><br />
+<div class="standard" id='magicparlabel-257'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-210'><div class="note_item"><span class="note_label">Note 44.</span>
-The support vectors have distance <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mn>1</mn><mo>/</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
-
-   <mover>
-    <mrow><mi>w</mi>
-    </mrow><mo stretchy="true">&circ;</mo>
-   </mover>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
-
-  </mrow>
- </mrow></math> from the separating hyperplane. See Figure <a href="#fig_">4.1</a>. <div class='float-figure'><div class="plain_layout" id='magicparlabel-214'><img src='/home/georgios/Dropbox/Teaching material ongoing/2024.term2.Machine_Learning_and_Neural_Networks_III/Handouts/figures/06.Support_Vector_Machines/svm-support-vectors.pdf' alt='image: ' />
-</div>
-
-<div class="plain_layout" id='magicparlabel-215'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 4.1:  <a id="fig_" />
-</span></div>
-</div>
-</div>
-</div>
-
-<div class="standard" id='magicparlabel-220'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-221'><div class="note_item"><span class="note_label">Note 45.</span>
-The bias can be computed by KKT condition <a href="#eq__12">(4.2)</a>, it is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-258'><div class="note_item"><span class="note_label">Note 49.</span>
+The bias <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>b</mi>
+ </mrow></math> parameter can be computed by KKT condition <a href="#eq__12">(4.3)</a>, it is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msubsup>
@@ -6046,19 +6456,19 @@ The bias can be computed by KKT condition <a href="#eq__12">(4.2)</a>, it is <ma
 
     </mrow>
    </mtd>
-   <mtd>(4.10)
+   <mtd>(4.11)
    </mtd>
   </mtr>
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-222'><br />
+<div class="standard" id='magicparlabel-259'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-223'><div class="note_item"><span class="note_label">Note 46.</span>
+<div class="note" id='magicparlabel-260'><div class="note_item"><span class="note_label">Note 50.</span>
 <a id="note_Therefore_the_predictive" />
-Therefore the predictive halfspace hypothesis is given as <a id="eq__14" />
+ Therefore the predictive halfspace hypothesis is given as <a id="eq__14" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -6157,7 +6567,7 @@ Therefore the predictive halfspace hypothesis is given as <a id="eq__14" />
 
     </mrow>
    </mtd>
-   <mtd>(4.11)
+   <mtd>(4.12)
    </mtd>
   </mtr>
  </mtable></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6200,15 +6610,15 @@ Therefore the predictive halfspace hypothesis is given as <a id="eq__14" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
   </mrow>
- </mrow></math> .</div>
+ </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-224'><br />
+<div class="standard" id='magicparlabel-261'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-225'><div class="note_item"><span class="note_label">Note 47.</span>
-Compared to the Primal problem (Algorithm <a href="#alg__Hard_SVM__Given_a">13</a>), the dual problem (Note <a href="#note_The_Dual_problem">39</a>) is computationally desirable in cases that the training data size <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-262'><div class="note_item"><span class="note_label">Note 51.</span>
+Compared to the Primal problem (Problem <a href="#alg__Hard_SVM__Given_a">17</a>), the dual problem (Note <a href="#note_The_Dual_problem">45</a>) is computationally desirable in cases that the training data size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> is smaller than the number of the dimensions <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>d</mi>
@@ -6241,20 +6651,20 @@ Compared to the Primal problem (Algorithm <a href="#alg__Hard_SVM__Given_a">13</
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-226'><br />
+<div class="standard" id='magicparlabel-263'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-227'><div class="note_item"><span class="note_label">Note 48.</span>
-Compared to the Primal problem, the dual problem (Note <a href="#note_The_Dual_problem">39</a>), can provide sparse solutions relying on a small number of support vectors (see Eq. <a href="#eq__17_2">4.9</a>, <a href="#eq__18">4.10</a>, and <a href="#eq__14">4.11</a>).</div>
+<div class="note" id='magicparlabel-264'><div class="note_item"><span class="note_label">Note 52.</span>
+Compared to the Primal problem, the dual problem (Note <a href="#note_The_Dual_problem">45</a>), can provide sparse solutions relying on a small number of support vectors (see Eq. <a href="#eq__17_2">4.10</a>, <a href="#eq__18">4.11</a>, and <a href="#eq__14">4.12</a>).</div>
 </div>
 
-<div class="standard" id='magicparlabel-228'><br />
+<div class="standard" id='magicparlabel-265'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-229'><div class="note_item"><span class="note_label">Note 49.</span>
-The importance of the existence of the dual problem is that eg <a href="#eq__15">(4.7)</a> and <a href="#eq__14">(4.11)</a> involves the inner products between instances and does not require the direct access to specific elements of features within instance. For instance, if we consider the hypothesis <a href="#eq__13">(1.1)</a> as an expansion of bases <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-266'><div class="note_item"><span class="note_label">Note 53.</span>
+The importance of the existence of the dual problem is that eg <a href="#eq__15">(4.8)</a> and <a href="#eq__14">(4.12)</a> involves the inner products between instances and does not require the direct access to specific elements of features within instance. For instance, if we consider the hypothesis <a href="#eq__13">(1.2)</a> as an expansion of bases <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -6317,7 +6727,7 @@ The importance of the existence of the dual problem is that eg <a href="#eq__15"
  <mrow>
   <mrow><mi>d</mi><mo> &gg; </mo><mi>m</mi>
   </mrow>
- </mrow></math> then, based on <a href="#eq__14">(4.11)</a>, the separation rule is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> then, based on <a href="#eq__14">(4.12)</a>, the separation rule is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -6368,7 +6778,7 @@ The importance of the existence of the dual problem is that eg <a href="#eq__15"
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> and <a href="#eq__15">4.7</a> becomes <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> and <a href="#eq__15">4.8</a> becomes <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -6515,17 +6925,17 @@ The importance of the existence of the dual problem is that eg <a href="#eq__15"
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-230'><br />
+<div class="standard" id='magicparlabel-267'><br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-231'><br />
+<div class="standard" id='magicparlabel-268'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-232'><div class="note_item"><span class="note_label">Note 50.</span>
-In the Soft-SVM case, the solution is the same as in the Hard-SVM <a href="#eq__17">(4.8)</a> and <a href="#eq__14">(4.11)</a>, the only difference is that in the quadratic programming problem <a href="#eq__15">(4.7)</a> it is subject to <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-269'><div class="note_item"><span class="note_label">Note 54.</span>
+In the Soft-SVM case, the solution is the same as in the Hard-SVM <a href="#eq__17">(4.9)</a> and <a href="#eq__14">(4.12)</a>, the only difference is that in the quadratic programming problem <a href="#eq__15">(4.8)</a> it is subject to <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -6554,385 +6964,8 @@ In the Soft-SVM case, the solution is the same as in the Hard-SVM <a href="#eq__
     </mrow>
    </msub><mo>'</mo><mi>s</mi>
   </mrow>
- </mrow></math>. (See Exercise <a href="#exer____3">exer:()-3</a> from the Exercise sheet).</div>
+ </mrow></math>. (See Exercise <a href="#exer____3">exer:()-3</a> from the Exercise sheet). </div>
 </div>
-<h2 class="section" id='magicparlabel-233'><span class="section_label">A</span> Support vectors (More rigorously)</h2>
-
-
-<div class="lemma" id='magicparlabel-240'><div class="lemma_item"><span class="lemma_label">Lemma 51.</span>
-(Fritz John optimality conditions) Suppose that<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable>
-  <mtr>
-   <mtd>
-    <msup>
-     <mrow><mi>w</mi>
-     </mrow>
-     <mrow><mo>*</mo>
-     </mrow>
-    </msup>
-   </mtd>
-   <mtd>
-    <mrow><mo>=</mo><munder accent='false'>
-     <mrow><mo> arg </mo><mo> min </mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow><mi>w</mi></munder>
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mstyle mathvariant='normal'>
-     <mrow><mi>s</mi><mn>.</mn><mi>t</mi><mn>.</mn>
-     </mrow>
-    </mstyle>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mi>g</mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo> &le; </mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd><mrow/>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mi>h</mi>
-      </mrow>
-      <mrow><mi>j</mi>
-      </mrow>
-     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mn>0</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>j</mi><mo>=</mo><mi>m</mi><mo>+</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
-    </mrow>
-   </mtd>
-  </mtr>
- </mtable></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>f</mi>
- </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msub>
-   <mrow><mi>g</mi>
-   </mrow>
-   <mrow><mn>1</mn>
-   </mrow>
-  </msub>
- </mrow></math>, ..., <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msub>
-   <mrow><mi>g</mi>
-   </mrow>
-   <mrow><mi>m</mi>
-   </mrow>
-  </msub>
- </mrow></math> are differentiable. Then there exists <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi> &alpha; </mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo> &ge; </mo><mn>0</mn>
-  </mrow>
- </mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi> &beta; </mi>
-    </mrow>
-    <mrow><mi>j</mi>
-    </mrow>
-   </msub><mo> &isin; </mo>
-   <mstyle mathvariant='double-struck'><mi>R</mi>
-   </mstyle>
-  </mrow>
- </mrow></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi> &nabla; </mi>
-    </mrow>
-    <mrow><mi>w</mi>
-    </mrow>
-   </msub><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <msup>
-    <mrow><mi>w</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo>
-   <msub>
-    <mrow><mo> &sum; </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo> &isin; </mo><mi>I</mi>
-     </mrow>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi> &alpha; </mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi> &nabla; </mi>
-    </mrow>
-    <mrow><mi>w</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>g</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <msup>
-    <mrow><mi>w</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo>
-   <msub>
-    <mrow><mo> &sum; </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi>j</mi><mo> &isin; </mo>
-      <mstyle mathvariant='script'><mi>J</mi>
-      </mstyle>
-     </mrow>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi> &beta; </mi>
-    </mrow>
-    <mrow><mi>j</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi> &nabla; </mi>
-    </mrow>
-    <mrow><mi>w</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>h</mi>
-    </mrow>
-    <mrow><mi>j</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <msup>
-    <mrow><mi>w</mi>
-    </mrow>
-    <mrow><mo>*</mo>
-    </mrow>
-   </msup>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mn>0</mn>
-  </mrow>
- </mrow></math>where <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>I</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-   <mrow><mi>i</mi><mo>:</mo>
-    <msub>
-     <mrow><mi>g</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <msup>
-     <mrow><mi>w</mi>
-     </mrow>
-     <mrow><mo>*</mo>
-     </mrow>
-    </msup>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mn>0</mn>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
-  </mrow>
- </mrow></math>.</div>
-</div>
-
-<div class="standard" id='magicparlabel-245'><br />
-
-</div>
-
-<div class="theorem" id='magicparlabel-246'><div class="theorem_item"><span class="theorem_label">Theorem 52.</span>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mover>
-   <mrow><mi>w</mi>
-   </mrow><mo stretchy="true">&circ;</mo>
-  </mover>
- </mrow></math> such that <a id="eq__2_2" />
-<a id="eq__3_2" />
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable>
-  <mtr>
-   <mtd>
-    <mover>
-     <mrow><mi>w</mi>
-     </mrow><mo stretchy="true">&circ;</mo>
-    </mover>
-   </mtd>
-   <mtd>
-    <mrow><mo>=</mo><munder accent='false'>
-     <mrow><mo> arg </mo><mo> min </mo>
-     </mrow><mi>w</mi></munder>
-     <msubsup>
-      <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
-
-      </mrow>
-      <mrow><mn>2</mn>
-      </mrow>
-      <mrow><mn>2</mn>
-      </mrow>
-     </msubsup>
-    </mrow>
-   </mtd>
-   <mtd>(A.1)
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd>
-    <mstyle mathvariant='normal'>
-     <mrow><mi>s</mi><mi>u</mi><mi>b</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi>&nbsp;<mi>t</mi><mi>o</mi><mo>:</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" />
-     </mrow>
-    </mstyle>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mi>y</mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo> &lang; </mo><mi>w</mi><mo>,</mo>
-     <msub>
-      <mrow><mi>x</mi>
-      </mrow>
-      <mrow><mi>i</mi>
-      </mrow>
-     </msub><mo> &rang; </mo><mo> &ge; </mo><mn>1</mn><mo>,</mo><mspace width="6px" /><mspace width="6px" /><mi> &forall; </mi><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
-    </mrow>
-   </mtd>
-   <mtd>(A.2)
-   </mtd>
-  </mtr>
- </mtable></math> then there exists coefficients <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi> &alpha; </mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo> &isin; </mo>
-   <mstyle mathvariant='double-struck'><mi>R</mi>
-   </mstyle>
-  </mrow>
- </mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
-  </mrow>
- </mrow></math> such that <div class="foot"><span class="foot_label">3</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-250'><math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msub>
-   <mrow><mi>y</mi>
-   </mrow>
-   <mrow><mi>i</mi>
-   </mrow>
-  </msub>
- </mrow></math> is absorbed in <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msub>
-   <mrow><mi> &alpha; </mi>
-   </mrow>
-   <mrow><mi>i</mi>
-   </mrow>
-  </msub>
- </mrow></math>'s</div>
-</div></div><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mover>
-    <mrow><mi>w</mi>
-    </mrow><mo stretchy="true">&circ;</mo>
-   </mover><mo>=</mo>
-   <msub>
-    <mrow><mo> &sum; </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo> &isin; </mo><mi>I</mi>
-     </mrow>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi> &alpha; </mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>x</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math>where <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>I</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-   <mrow><mi>i</mi><mo>:</mo><mo> &lang; </mo>
-    <mover>
-     <mrow><mi>w</mi>
-     </mrow><mo stretchy="true">&circ;</mo>
-    </mover><mo>,</mo>
-    <msub>
-     <mrow><mi>x</mi>
-     </mrow>
-     <mrow><mi>i</mi>
-     </mrow>
-    </msub><mo> &rang; </mo><mo>=</mo><mn>1</mn>
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
-  </mrow>
- </mrow></math>.</div>
-</div>
-
-
 
 
 
