@@ -75,12 +75,13 @@ Support Vector Machines
 
 + [07.Support_Vector_Machines.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/07.Support_Vector_Machines.pdf)  
 
-<!--
 
 Kernel methods  
 
-+ [06.Kernel_Methods.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/06.Kernel_Methods.pdf) 
++ [08.Kernel_Methods.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/08.Kernel_Methods.pdf) 
 
+
+<!--
 Artificial Neural Networks  
 
 + [07.Artificial_neural_networks.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/07.Artificial_neural_networks.pdf)  

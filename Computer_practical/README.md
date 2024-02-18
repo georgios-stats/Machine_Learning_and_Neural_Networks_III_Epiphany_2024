@@ -61,8 +61,14 @@ Stochastic learning methods SGLD (Computer practical 2)
 
 
 
+Support Vector Machines (Computer practical 3)
+
+-   Tasks : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_tasks.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_tasks.Rmd)  
+
+-   Solutions : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_solutions.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_solutions.Rmd) 
+
 <!--
-Artificial Neural Networks (Computer practical 3)
+Artificial Neural Networks (Computer practical 4)
 
 -   Tasks : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Artificial_Neural_Networks_tasks.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Artificial_Neural_Networks_tasks.Rmd)  
 
@@ -70,14 +76,6 @@ Artificial Neural Networks (Computer practical 3)
 
 -->
 
-<!--
-Support Vector Machines (Computer practical 4)
-
--   Tasks : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_tasks.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_tasks.Rmd)  
-
--   Solutions : [Rnotebook](http://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_solutions.nb.html) & [Rmd](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Computer_practical/Support_Vector_Machines_solutions.Rmd)  
-
--->
 
 ------------------------------------------------------------------------
 
