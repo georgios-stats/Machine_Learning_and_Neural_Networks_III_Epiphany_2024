@@ -678,7 +678,7 @@ So we can use the arguments
 
 + **gamma**, for $\gamma$ 
 
-Fit the SVM classifier by using a radial kernel with parameter $\gamma=2$.   
+Fit the SVM classifier by using a radial kernel with parameter $\gamma=1/2$.   
 
 ```{r}
 #
