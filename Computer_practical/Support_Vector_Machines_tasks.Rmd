@@ -68,7 +68,7 @@ Students will become able to:
 
 
 + Lecture notes:  
-    + [Handout 8: Support Vector Machines](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/08.Support_Vector_Machines.pdf)  
+    + [Handout 7: Support Vector Machines](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/07.Support_Vector_Machines.pdf)    
     
 + References for the R package (optional supplementary material for your information)  
     + [e1071 in R Cran](https://cran.r-project.org/web/packages/e1071/)  
