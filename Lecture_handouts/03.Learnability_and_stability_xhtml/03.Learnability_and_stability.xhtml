@@ -2173,7 +2173,7 @@ The following result demonstrates the direct association of stability and over-f
         </mover>
        </mrow>
        <mrow>
-        <mstyle mathvariant='script'><mi>D</mi>
+        <mstyle mathvariant='script'><mi>S</mi>
         </mstyle>
        </mrow>
       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -5293,7 +5293,7 @@ From <a href="#eq__16">4.11</a>, we see that there is a trade-off between Empiri
  <mrow>
   <mrow><mi>B</mi><mo>&gt;</mo><mn>0</mn>
   </mrow>
- </mrow></math>,; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>H</mi>
@@ -5308,7 +5308,7 @@ From <a href="#eq__16">4.11</a>, we see that there is a trade-off between Empiri
      <mrow><mi>d</mi>
      </mrow>
     </msup><mo>:</mo>
-    <msubsup>
+    <msub>
      <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
 <mi>w</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
@@ -5316,9 +5316,7 @@ From <a href="#eq__16">4.11</a>, we see that there is a trade-off between Empiri
      </mrow>
      <mrow><mn>2</mn>
      </mrow>
-     <mrow><mn>2</mn>
-     </mrow>
-    </msubsup><mo> &le; </mo><mi>B</mi>
+    </msub><mo> &le; </mo><mi>B</mi>
    </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
@@ -5395,7 +5393,13 @@ If additionally the learning problem is <math xmlns="http://www.w3.org/1998/Math
         </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>w</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo><mi> &lambda; </mi><mi>B</mi>
+<mo>+</mo><mi> &lambda; </mi>
+        <msup>
+         <mrow><mi>B</mi>
+         </mrow>
+         <mrow><mn>2</mn>
+         </mrow>
+        </msup>
        </mrow>
       </mrow><mo stretchy="true">&UnderBrace;</mo>
      </munder><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
