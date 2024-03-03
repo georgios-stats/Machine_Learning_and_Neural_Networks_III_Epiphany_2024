@@ -98,8 +98,8 @@ font-variant: normal;
 font-size: medium;
 
 }
-div.summary {
-font-style: normal;
+div.algorithm {
+font-style: italic;
 font-variant: normal;
 font-size: medium;
 margin-top: 0.7ex;
@@ -107,9 +107,9 @@ margin-bottom: 0.7ex;
 text-align: left;
 
 }
-span.summary_label {
-font-weight: normal;
-font-style: italic;
+span.algorithm_label {
+font-weight: bold;
+font-style: normal;
 font-variant: normal;
 font-size: medium;
 
@@ -170,22 +170,6 @@ text-align: left;
 
 }
 span.problem_label {
-font-weight: bold;
-font-style: normal;
-font-variant: normal;
-font-size: medium;
-
-}
-div.algorithm {
-font-style: italic;
-font-variant: normal;
-font-size: medium;
-margin-top: 0.7ex;
-margin-bottom: 0.7ex;
-text-align: left;
-
-}
-span.algorithm_label {
 font-weight: bold;
 font-style: normal;
 font-variant: normal;
@@ -279,7 +263,7 @@ div.Boxed {
 <body dir="auto">
 
 
-<div class="standard" id='magicparlabel-1'><div class='Shadowbox'><div class="plain_layout" id='magicparlabel-10'>Machine Learning and Neural Networks (MATH3431)&nbsp;&nbsp;Epiphany term, 2023<div style='height:3ex'></div></div>
+<div class="standard" id='magicparlabel-1'><div class='Shadowbox'><div class="plain_layout" id='magicparlabel-10'>Machine Learning and Neural Networks (MATH3431)&nbsp;&nbsp;Epiphany term, 2024<div style='height:3ex'></div></div>
 
 <div class="plain_layout" style='text-align: center;' id='magicparlabel-11'> Handout <a href="#enu_Handout___Artificial">enu:Handout-:-Artificial</a>: Artificial neural networks <div style='height:3ex'></div></div>
 
@@ -296,7 +280,8 @@ div.Boxed {
 <div style='height:3ex'></div></div>
 <h3 class="subsection_" id='magicparlabel-33'>Reading list &amp; references:</h3>
 
-<ol class="enumerate" id='magicparlabel-34'><li class="enumerate_item">Bishop, C. M., &amp; Bishop, H. (2024). Deep learning: foundations and concepts. New York: Springer. <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-38'>As alternative &amp; more compact see Ch. 5 Neural Networks from &ldquo;Bishop, C. M. (2006). Pattern recognition and machine learning (Vol. 4, No. 4, p. 738). New York: Springer.&rdquo;</div>
+<ol class="enumerate" id='magicparlabel-34'><li class="enumerate_item"><a id="enu_Bishop__C__M__" />
+ Bishop, C. M., &amp; Bishop, H. (2024). Deep learning: foundations and concepts. New York: Springer. <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-38'>As alternative &amp; more compact see Ch. 5 Neural Networks from &ldquo;Bishop, C. M. (2006). Pattern recognition and machine learning (Vol. 4, No. 4, p. 738). New York: Springer.&rdquo;</div>
 </div></div>
 
 <ul class="itemize" id='magicparlabel-39'><li class="itemize_item">Ch. 5, 6, 8, 9</li>
@@ -305,7 +290,8 @@ div.Boxed {
 
 <ul class="itemize" id='magicparlabel-59'><li class="itemize_item">Ch. 4 The multi-layer perceptron </li>
 </ul>
-</li><li class="enumerate_item">LeCun, Y., Bottou, L., Orr, G. B., &amp; Müller, K. R. (2002). Efficient backprop. In Neural networks: Tricks of the trade (pp. 9-50). Berlin, Heidelberg: Springer Berlin Heidelberg.</li>
+</li><li class="enumerate_item"><a id="enu_LeCun__Y___Bottou_" />
+ LeCun, Y., Bottou, L., Orr, G. B., &amp; Müller, K. R. (2002). Efficient backprop. In Neural networks: Tricks of the trade (pp. 9-50). Berlin, Heidelberg: Springer Berlin Heidelberg.</li>
 </ol>
 </div></div>
 <h2 class="section" id='magicparlabel-65'><span class="section_label">1</span> Intro and motivation </h2>
@@ -473,7 +459,7 @@ Artificial Neural Networks (NN) are statistical models which have mostly been de
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> are functions and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> are known functions and <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <msub>
@@ -486,7 +472,7 @@ Artificial Neural Networks (NN) are statistical models which have mostly been de
   </msub>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> are weights/coefficients. One may choose with <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> are unknown weights/coefficients. E.g., one may choose with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -522,29 +508,16 @@ Artificial Neural Networks (NN) are statistical models which have mostly been de
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math>. The only left here is to learn unknown parameters <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
-  <msub>
-   <mrow><mi>w</mi>
-   </mrow>
-   <mrow>
-    <mrow><mo> &sdot; </mo><mo>,</mo><mo> &sdot; </mo><mo>,</mo><mo> &sdot; </mo>
-    </mrow>
-   </mrow>
-  </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-82'><br />
+<div class="standard" id='magicparlabel-86'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-83'><div class="note_item"><span class="note_label">Note 3.</span>
+<div class="note" id='magicparlabel-87'><div class="note_item"><span class="note_label">Note 3.</span>
 <a id="rem_The_original_biological" />
- The original biological motivation for feed-forward NN stems from McCulloch &amp; Pitts (1943) who published a seminal model of a NN as a binary thresholding device in discrete time, i.e. <div class="marginal"><div class="plain_layout" id='magicparlabel-87'>no need 
+ The original biological motivation for feed-forward NN stems from McCulloch &amp; Pitts (1943) who published a seminal model of a NN as a binary thresholding device in discrete time, i.e. <div class="marginal"><div class="plain_layout" id='magicparlabel-91'>no need 
 <br />
 
 to 
@@ -654,11 +627,11 @@ formula</div>
  </mrow></math>. Perhaps, such a mathematical model involving compositions of interconnected non-linear functions could be able to mimic human's learning mechanism and be implemented in a computing environment (with faster computational abilities) with purpose to discover patters, make predictions, cluster, classify, etc...</div>
 </div>
 
-<div class="standard" id='magicparlabel-88'><br />
+<div class="standard" id='magicparlabel-92'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-89'><div class="note_item"><span class="note_label">Note 4.</span>
+<div class="note" id='magicparlabel-93'><div class="note_item"><span class="note_label">Note 4.</span>
 <a id="rem_Mathematically__NN_are" />
  Mathematically, NN are rooted in the classical theorem by Kolmogorov stating (informally) that every continuous function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -680,7 +653,7 @@ formula</div>
    <mrow><mi>d</mi>
    </mrow>
   </msup>
- </mrow></math> can be written as <div class="marginal"><div class="plain_layout" id='magicparlabel-93'>no need 
+ </mrow></math> can be written as <div class="marginal"><div class="plain_layout" id='magicparlabel-97'>no need 
 <br />
 
 to 
@@ -827,13 +800,21 @@ formula</div>
  </mrow></math> to be high enough such that they can represent any function -hence the property of NN as global approximators.</div>
 </div>
 
-<div class="standard" id='magicparlabel-94'><br />
+<div class="standard" id='magicparlabel-98'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-95'><div class="example_item"><span class="example_label">Example 5.</span>
+<div class="example" id='magicparlabel-99'><div class="example_item"><span class="example_label">Example 5.</span>
 <a id="exa_Recall_soft_SVM_in" />
- Recall soft-SVM in (Example <a href="#exa_Consider_the_Soft_SVM">exa:Consider-the-Soft-SVM</a> in Handout <a href="#enu_Handout___Kernel">enu:Handout-:-Kernel</a>: Kernel methods); the hypothesis had a formula <a id="eq__20" />
+ Recall soft-SVM in (Example <a href="#exa_Consider_the_Soft_SVM">exa:Consider-the-Soft-SVM</a> in Handout <a href="#enu_Handout___Kernel">enu:Handout-:-Kernel</a>: Kernel methods); the predictive rule <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>h</mi>
+   </mrow>
+   <mrow><mi> &psi; </mi>
+   </mrow>
+  </msup>
+ </mrow></math> had a formula <a id="eq__20" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -900,7 +881,7 @@ formula</div>
    <mtd>(1.2)
    </mtd>
   </mtr>
- </mtable></math>with embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math>with some embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &psi; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
@@ -936,7 +917,7 @@ formula</div>
     </mrow>
    </msup>
   </mrow>
- </mrow></math>, and unknown coefficients <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> and unknown coefficients <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <msub>
@@ -947,7 +928,7 @@ formula</div>
   </msub>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math>. Assume there is no prior info about how to specify the formula of the embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>. Assume there is no prior info about how to specify the formula of the &ldquo;ideal&rdquo; embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &psi; </mi>
  </mrow></math>; then the scientist could try to parameterize <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &psi; </mi>
@@ -1041,9 +1022,9 @@ formula</div>
   </msub>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> can be successfully tuned during the learning procedure against the dataset and hence result in an adaptive semiparametric way to construct the the embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> can be successfully tuned during the learning procedure against the dataset and hence result in an adaptive semi-parametric way to construct the the embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &psi; </mi>
- </mrow></math> from the training data without his/her interference. Now, as a linear combination of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> from the training data without his/her interference. Based on Note <a href="#rem_Mathematically__NN_are">4</a>, and assuming that a linear combination of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <mrow><mi> &zeta; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -1053,7 +1034,7 @@ formula</div>
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> specified as sigmoids could acceptably enough recover the fluctuations of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, specified as sigmoids, could acceptably enough represent the fluctuations of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <mrow>
@@ -1069,17 +1050,17 @@ formula</div>
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> in <a href="#eq__20">(1.2)</a>. Based on Note <a href="#rem_Mathematically__NN_are">4</a>, such an attempt to &ldquo;adaptively construct the embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> in <a href="#eq__20">(1.2)</a>, such an attempt to &ldquo;adaptively construct the embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi> &psi; </mi>
  </mrow></math>&rdquo; might be successful. </div>
 </div>
 
-<div class="standard" id='magicparlabel-108'><br />
+<div class="standard" id='magicparlabel-112'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-109'><div class="example_item"><span class="example_label">Example 6.</span>
-(Cont Example <a href="#exa_Recall_soft_SVM_in">5</a> ) Having this in the mind, the scientist could become even more greedy, while wanting to improve expressiveness, and consider the use of another embedding in <a href="#eq__19">(1.3)</a> as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="example" id='magicparlabel-113'><div class="example_item"><span class="example_label">Example 6.</span>
+(Cont Example <a href="#exa_Recall_soft_SVM_in">5</a> ) Having this in the mind, and while wanting to improve expressiveness, the scientist could become even more greedy, and consider the use of another embedding in <a href="#eq__19">(1.3)</a> as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
    <mtd>
@@ -1246,15 +1227,39 @@ formula</div>
   </msub>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math>. This creates a deep hierarchical structure which may improve approximation but certainly sacrifice interpretability. </div>
+ </mrow></math>. This recursive basis function composition creates a deep hierarchical structure which may improve approximation of the ideal embedding <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+  <mrow>
+   <msub>
+    <mrow><mi> &psi; </mi>
+    </mrow>
+    <mrow><mi>j</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+ </mrow></math>, and expressiveness of predictive rule <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>h</mi>
+   </mrow>
+   <mrow><mi> &psi; </mi>
+   </mrow>
+  </msup>
+ </mrow></math> by sacrificing &ldquo;interpretability&rdquo; and &ldquo;parsimony&rdquo; of the &ldquo;model&rdquo;. </div>
 </div>
 
-<div class="standard" id='magicparlabel-110'><br />
+<div class="standard" id='magicparlabel-114'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-111'><span class="section_label">2</span> Feedforward Neural Network (Mathematical set-up) </h2>
+<h2 class="section" id='magicparlabel-115'><span class="section_label">2</span> Feedforward Neural Network (Mathematical set-up) </h2>
 
-<div class="note" id='magicparlabel-112'><div class="note_item"><span class="note_label">Note 7.</span>
+<div class="note" id='magicparlabel-116'><div class="note_item"><span class="note_label">Note 7.</span>
 An (Artificial) Neural Network (NN) is an interconnection of several sigmoids or threshold functions associated and arranged in layers, such that the outputs of one layer form the input of the next layer. Formally the structure of these interconnections can be depicted as a directed graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -1281,13 +1286,13 @@ An (Artificial) Neural Network (NN) is an interconnection of several sigmoids or
  </mrow></math> correspond to links between them. </div>
 </div>
 
-<div class="standard" id='magicparlabel-126'><br />
+<div class="standard" id='magicparlabel-130'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-127'><div class="note_item"><span class="note_label">Note 8.</span>
+<div class="note" id='magicparlabel-131'><div class="note_item"><span class="note_label">Note 8.</span>
 <a id="note_A_Feed_Forward_Neural" />
-A Feed-Forward Neural Network (FFNN) or else multi-layer perceptron is a special case of NN whose vertices can be numbered so that all connections go from a neuron (vertex) to one with a higher number. Hence, neurons (vertices) have one-way connections to other neurons such that the output of a lower numbered neuron feeds the input of the higher numbered neuron (in a forward manner). The neurons can be arranged in layers so that connections go from one layer to a later layer. FFNN can be depicted by a directed acyclic graph<div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-135'>(its vertices can be numbered so that all connections go from one vertex to another with a higher number)</div>
+A Feed-Forward Neural Network (FFNN) or else multi-layer perceptron is a special case of NN whose vertices can be numbered so that all connections go from a neuron (vertex) to one with a higher number. Hence, neurons (vertices) have one-way connections to other neurons such that the output of a lower numbered neuron feeds the input of the higher numbered neuron (in a forward manner). The neurons can be arranged in layers so that connections go from one layer to a later layer. FFNN can be depicted by a directed acyclic graph<div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-139'>(its vertices can be numbered so that all connections go from one vertex to another with a higher number)</div>
 </div></div>, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -1306,10 +1311,10 @@ A Feed-Forward Neural Network (FFNN) or else multi-layer perceptron is a special
  </mrow></math>. (See Figure <a href="#fig_Feed_forward_neural">2.1</a>). </div>
 </div>
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-144'><img style='width:90%;' src='0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ral_Networks_III_Handouts_pictures_ffnn-pic.png' alt='image: 0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ral_Networks_III_Handouts_pictures_ffnn-pic.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-148'><img style='width:90%;' src='0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ral_Networks_III_Handouts_pictures_ffnn-pic.png' alt='image: 0_extra_tmp_mffk55_Dropbox_Teaching_material_on___ral_Networks_III_Handouts_pictures_ffnn-pic.png' />
 </div>
 
-<div class="plain_layout" id='magicparlabel-145'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 2.1:  <a id="fig_Feed_forward_neural" />
+<div class="plain_layout" id='magicparlabel-149'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 2.1:  <a id="fig_Feed_forward_neural" />
 Feed forward neural network (<math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>1</mn>
  </mrow></math> hidden layer)</span></div>
@@ -1319,19 +1324,19 @@ Feed forward neural network (<math xmlns="http://www.w3.org/1998/Math/MathML">
 
 
 
-<div class="standard" id='magicparlabel-151'><br />
+<div class="standard" id='magicparlabel-155'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-152'><div class="note_item"><span class="note_label">Note 9.</span>
-Here we restrict ourselves to FFNN only.</div>
+<div class="note" id='magicparlabel-156'><div class="note_item"><span class="note_label">Note 9.</span>
+Here we restrict ourselves to FFNN only. </div>
 </div>
 
-<div class="standard" id='magicparlabel-153'><br />
+<div class="standard" id='magicparlabel-161'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-154'><div class="note_item"><span class="note_label">Note 10.</span>
+<div class="note" id='magicparlabel-162'><div class="note_item"><span class="note_label">Note 10.</span>
 We assume that the network is organized in layers. The set of nodes is decomposed into a union of (nonempty) disjoint subsets <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>V</mi><mo>=</mo>
@@ -1381,11 +1386,11 @@ We assume that the network is organized in layers. The set of nodes is decompose
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-155'><br />
+<div class="standard" id='magicparlabel-163'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-156'><div class="note_item"><span class="note_label">Note 11.</span>
+<div class="note" id='magicparlabel-164'><div class="note_item"><span class="note_label">Note 11.</span>
 The first layer <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -1411,11 +1416,11 @@ The first layer <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> nodes. </div>
 </div>
 
-<div class="standard" id='magicparlabel-157'><br />
+<div class="standard" id='magicparlabel-165'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-158'><div class="note_item"><span class="note_label">Note 12.</span>
+<div class="note" id='magicparlabel-166'><div class="note_item"><span class="note_label">Note 12.</span>
 The last layer <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -1441,11 +1446,11 @@ The last layer <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> nodes. </div>
 </div>
 
-<div class="standard" id='magicparlabel-159'><br />
+<div class="standard" id='magicparlabel-167'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-160'><div class="note_item"><span class="note_label">Note 13.</span>
+<div class="note" id='magicparlabel-168'><div class="note_item"><span class="note_label">Note 13.</span>
 The intermediate layers <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -1470,11 +1475,11 @@ The intermediate layers <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> are called <b>hidden layers.</b> </div>
 </div>
 
-<div class="standard" id='magicparlabel-161'><br />
+<div class="standard" id='magicparlabel-169'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-162'><div class="note_item"><span class="note_label">Note 14.</span>
+<div class="note" id='magicparlabel-170'><div class="note_item"><span class="note_label">Note 14.</span>
 In a neural network, the nodes of the graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -1493,11 +1498,11 @@ In a neural network, the nodes of the graph <math xmlns="http://www.w3.org/1998/
  </mrow></math> correspond to neurons. </div>
 </div>
 
-<div class="standard" id='magicparlabel-163'><br />
+<div class="standard" id='magicparlabel-171'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-164'><div class="note_item"><span class="note_label">Note 15.</span>
+<div class="note" id='magicparlabel-172'><div class="note_item"><span class="note_label">Note 15.</span>
 The <b><math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
  </mrow></math>-th neuron of the <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1515,11 +1520,11 @@ The <b><math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-165'><br />
+<div class="standard" id='magicparlabel-173'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-166'><div class="note_item"><span class="note_label">Note 16.</span>
+<div class="note" id='magicparlabel-174'><div class="note_item"><span class="note_label">Note 16.</span>
 The output of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
  </mrow></math> in the input layer <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1571,11 +1576,11 @@ The output of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-167'><br />
+<div class="standard" id='magicparlabel-175'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-168'><div class="note_item"><span class="note_label">Note 17.</span>
+<div class="note" id='magicparlabel-176'><div class="note_item"><span class="note_label">Note 17.</span>
 Each edge in the graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -1649,12 +1654,12 @@ Each edge in the graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-169'><br />
+<div class="standard" id='magicparlabel-177'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-170'><div class="note_item"><span class="note_label">Note 18.</span>
-We define a weight function <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-178'><div class="note_item"><span class="note_label">Note 18.</span>
+We define a <b>weight function</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>w</mi><mo>:</mo>
    <mstyle mathvariant='script'><mi>E</mi>
@@ -1669,11 +1674,11 @@ We define a weight function <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-171'><br />
+<div class="standard" id='magicparlabel-179'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-172'><div class="note_item"><span class="note_label">Note 19.</span>
+<div class="note" id='magicparlabel-180'><div class="note_item"><span class="note_label">Note 19.</span>
 <b>Activation</b> of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
  </mrow></math> at hidden layer <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1805,11 +1810,11 @@ We define a weight function <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-173'><br />
+<div class="standard" id='magicparlabel-181'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-174'><div class="note_item"><span class="note_label">Note 20.</span>
+<div class="note" id='magicparlabel-182'><div class="note_item"><span class="note_label">Note 20.</span>
 Each single neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -1842,12 +1847,24 @@ Each single neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-175'><br />
+<div class="standard" id='magicparlabel-183'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-176'><div class="note_item"><span class="note_label">Note 21.</span>
-We denote by <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-184'><div class="note_item"><span class="note_label">Note 21.</span>
+<b>The output of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>v</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math></b> when the network is fed with the input <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>x</mi>
+ </mrow></math> is denoted as <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -1886,26 +1903,14 @@ We denote by <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> <b>the output of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <msub>
-   <mrow><mi>v</mi>
-   </mrow>
-   <mrow>
-    <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
-    </mrow>
-   </mrow>
-  </msub>
- </mrow></math></b> when the network is fed with the input <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>x</mi>
- </mrow></math>. </div>
+ </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-177'><br />
+<div class="standard" id='magicparlabel-185'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-178'><div class="note_item"><span class="note_label">Note 22.</span>
+<div class="note" id='magicparlabel-186'><div class="note_item"><span class="note_label">Note 22.</span>
 Activation of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
  </mrow></math> at layer <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2038,11 +2043,11 @@ Activation of neuron <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-179'><br />
+<div class="standard" id='magicparlabel-187'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-180'><div class="note_item"><span class="note_label">Note 23.</span>
+<div class="note" id='magicparlabel-188'><div class="note_item"><span class="note_label">Note 23.</span>
 The input to <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -2146,20 +2151,20 @@ The input to <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-186'><br />
+<div class="standard" id='magicparlabel-194'><br />
 
 </div>
 
-<div class="summary" id='magicparlabel-187'><div class="summary_item"><span class="summary_label">Summary 24.</span>
+<div class="algorithm" id='magicparlabel-195'><div class="algorithm_item"><span class="algorithm_label">Algorithm 24.</span>
 <a id="def_To_sum_up__The" />
-The feed-forward NN formula in a layer by layer manner is performed (defined) according to the following recursion. </div>
+ The feed-forward NN formula in a layer by layer manner is performed (defined) according to the following recursion. </div>
 
-<dl class='description' id='magicparlabel-188'><dt class="description_label">At&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+<dl class='description' id='magicparlabel-196'><dt class="description_label">At&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>0</mn>
   </mrow>
  </mrow></math>,</dt>
-<dd class="description_item"> for <math xmlns="http://www.w3.org/1998/Math/MathML">
+<dd class="description_item"><i> for <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
 
@@ -2193,13 +2198,13 @@ The feed-forward NN formula in a layer by layer manner is performed (defined) ac
     </mrow>
    </msub>
   </mrow>
- </mrow></math></dd>
+ </mrow></math></i></dd>
 <dt class="description_label">At&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi><mo>-</mo><mn>1</mn>
   </mrow>
  </mrow></math>,</dt>
-<dd class="description_item"> for <math xmlns="http://www.w3.org/1998/Math/MathML">
+<dd class="description_item"><i> for <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
 
@@ -2348,25 +2353,25 @@ The feed-forward NN formula in a layer by layer manner is performed (defined) ac
     </mrow>
    </mtd>
   </mtr>
- </mtable></math></dd>
+ </mtable></math></i></dd>
 </dl>
 </div>
 
-<div class="standard" id='magicparlabel-190'><br />
+<div class="standard" id='magicparlabel-198'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-191'><div class="note_item"><span class="note_label">Note 25.</span>
+<div class="note" id='magicparlabel-199'><div class="note_item"><span class="note_label">Note 25.</span>
 <b>Depth</b> of the NN is the number of the layers excluding the input layer; i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>T</mi>
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-192'><br />
+<div class="standard" id='magicparlabel-200'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-193'><div class="note_item"><span class="note_label">Note 26.</span>
+<div class="note" id='magicparlabel-201'><div class="note_item"><span class="note_label">Note 26.</span>
 <b>Size</b> of the network is the number <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
 <mi>V</mi>
@@ -2375,11 +2380,11 @@ The feed-forward NN formula in a layer by layer manner is performed (defined) ac
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-194'><br />
+<div class="standard" id='magicparlabel-202'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-195'><div class="note_item"><span class="note_label">Note 27.</span>
+<div class="note" id='magicparlabel-203'><div class="note_item"><span class="note_label">Note 27.</span>
 <b>Width</b> of the NN is the number <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -2407,11 +2412,11 @@ The feed-forward NN formula in a layer by layer manner is performed (defined) ac
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-196'><br />
+<div class="standard" id='magicparlabel-204'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-197'><div class="note_item"><span class="note_label">Note 28.</span>
+<div class="note" id='magicparlabel-205'><div class="note_item"><span class="note_label">Note 28.</span>
 The <b>architecture</b> of the neural network is defined by the triplet <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -2432,11 +2437,11 @@ The <b>architecture</b> of the neural network is defined by the triplet <math xm
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-198'><br />
+<div class="standard" id='magicparlabel-206'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-199'><div class="note_item"><span class="note_label">Note 29.</span>
+<div class="note" id='magicparlabel-207'><div class="note_item"><span class="note_label">Note 29.</span>
 The neural network can be fully specified by the quadruplet <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -2457,11 +2462,11 @@ The neural network can be fully specified by the quadruplet <math xmlns="http://
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-200'><br />
+<div class="standard" id='magicparlabel-208'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-201'><div class="example_item"><span class="example_label">Example 30.</span>
+<div class="example" id='magicparlabel-209'><div class="example_item"><span class="example_label">Example 30.</span>
 Figure <a href="#fig_Feed_forward_neural">2.1</a> denotes a NN with depth 2, size 11, width 5. The neuron with no incoming edges has <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -2480,11 +2485,11 @@ Figure <a href="#fig_Feed_forward_neural">2.1</a> denotes a NN with depth 2, siz
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-202'><br />
+<div class="standard" id='magicparlabel-210'><br />
 
 </div>
 
-<div class="notation" id='magicparlabel-203'><div class="notation_item"><span class="notation_label">Notation 31.</span>
+<div class="notation" id='magicparlabel-211'><div class="notation_item"><span class="notation_label">Notation 31.</span>
 To easy the notation, we denote the weights as <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -2595,11 +2600,11 @@ To easy the notation, we denote the weights as <math xmlns="http://www.w3.org/19
  </mrow></math> is not in the network. </div>
 </div>
 
-<div class="standard" id='magicparlabel-204'><br />
+<div class="standard" id='magicparlabel-212'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-205'><div class="note_item"><span class="note_label">Note 32.</span>
+<div class="note" id='magicparlabel-213'><div class="note_item"><span class="note_label">Note 32.</span>
 Often a <b>constant neuron</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -2664,11 +2669,11 @@ Often a <b>constant neuron</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> is called <b>bias</b>. This resembles to the constant term in the linear regression.</div>
 </div>
 
-<div class="standard" id='magicparlabel-206'><br />
+<div class="standard" id='magicparlabel-214'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-207'><div class="example_item"><span class="example_label">Example 33.</span>
+<div class="example" id='magicparlabel-215'><div class="example_item"><span class="example_label">Example 33.</span>
 <a id="exa__Cont__Example___1" />
 (Cont. Example <a href="#exa_Consider_a_regression">2</a>) The <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>2</mn>
@@ -2786,9 +2791,9 @@ Often a <b>constant neuron</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mtd>(2.3)
    </mtd>
   </mtr>
- </mtable></math>can be written according to the recursion in Summary <a href="#def_To_sum_up__The">24</a> as</div>
+ </mtable></math>can be written according to the recursion in Algorithm <a href="#def_To_sum_up__The">24</a> as</div>
 
-<ul class="itemize" id='magicparlabel-208'><li class="itemize_item">Input layer<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-216'><li class="itemize_item">Input layer<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -3194,7 +3199,7 @@ Often a <b>constant neuron</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mtr>
  </mtable></math></li>
 </ul>
-<div class="standard" id='magicparlabel-211'>If <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-219'>If <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -3347,11 +3352,11 @@ Often a <b>constant neuron</b> <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>, similar to the linear regression models.</div>
 </div>
 
-<div class="standard" id='magicparlabel-212'><br />
+<div class="standard" id='magicparlabel-220'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-213'><div class="note_item"><span class="note_label">Note 34.</span>
+<div class="note" id='magicparlabel-221'><div class="note_item"><span class="note_label">Note 34.</span>
 <a id="rem_Activation_functions_" />
 Activation functions <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -3363,7 +3368,7 @@ Activation functions <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msub>
  </mrow></math> are non-increasing functions often sigmoids or threshold functions. Their choice is problem-dependent. some examples </div>
 
-<ul class="itemize" id='magicparlabel-214'><li class="itemize_item">Identity function: <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-222'><li class="itemize_item">Identity function: <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi> &alpha; </mi>
@@ -3427,12 +3432,12 @@ Activation functions <math xmlns="http://www.w3.org/1998/Math/MathML">
 </ul>
 </div>
 
-<div class="example" id='magicparlabel-227'><div class="example_item"><span class="example_label">Example 35.</span>
+<div class="example" id='magicparlabel-235'><div class="example_item"><span class="example_label">Example 35.</span>
 Examples on the choice of the activation function at the output layer <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>T</mi>
  </mrow></math>: </div>
 
-<ul class="itemize" id='magicparlabel-228'><li class="itemize_item">In the univariate regression problem with prediction rule <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-236'><li class="itemize_item">In the univariate regression problem with prediction rule <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mo> &sdot; </mo>
@@ -3635,19 +3640,19 @@ Examples on the choice of the activation function at the output layer <math xmln
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-230'><br />
+<div class="standard" id='magicparlabel-238'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-231'><span class="section_label">3</span> <a id="sec_Learning_Neural_Networks" />
+<h2 class="section" id='magicparlabel-239'><span class="section_label">3</span> <a id="sec_Learning_Neural_Networks" />
 Learning Neural Networks</h2>
 
 
 
-<div class="standard" id='magicparlabel-240'><br />
+<div class="standard" id='magicparlabel-248'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-241'><div class="note_item"><span class="note_label">Note 36.</span>
+<div class="note" id='magicparlabel-249'><div class="note_item"><span class="note_label">Note 36.</span>
 <a id="note_Assume_we_are" />
 Assume we are interested in a prediction rule <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -3784,14 +3789,14 @@ Assume we are interested in a prediction rule <math xmlns="http://www.w3.org/199
     </mrow>
    </msup>
   </mrow>
- </mrow></math> is according to the Summary <a href="#def_To_sum_up__The">24</a>.</div>
+ </mrow></math> is according to the Algorithm <a href="#def_To_sum_up__The">24</a>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-242'><br />
+<div class="standard" id='magicparlabel-250'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-243'><div class="note_item"><span class="note_label">Note 37.</span>
+<div class="note" id='magicparlabel-251'><div class="note_item"><span class="note_label">Note 37.</span>
 Learning the architecture <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -3806,11 +3811,11 @@ Learning the architecture <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> of a neural network is a model selection task (recall the variable selection in linear regression). </div>
 </div>
 
-<div class="standard" id='magicparlabel-244'><br />
+<div class="standard" id='magicparlabel-252'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-245'><div class="note_item"><span class="note_label">Note 38.</span>
+<div class="note" id='magicparlabel-253'><div class="note_item"><span class="note_label">Note 38.</span>
 We assume that the architecture <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -3903,11 +3908,11 @@ We assume that the architecture <math xmlns="http://www.w3.org/1998/Math/MathML"
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-246'><br />
+<div class="standard" id='magicparlabel-254'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-247'><div class="note_item"><span class="note_label">Note 39.</span>
+<div class="note" id='magicparlabel-255'><div class="note_item"><span class="note_label">Note 39.</span>
 The class of hypotheses is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -3965,11 +3970,11 @@ The class of hypotheses is <math display="block" xmlns="http://www.w3.org/1998/M
  </mrow></math> . </div>
 </div>
 
-<div class="standard" id='magicparlabel-248'><br />
+<div class="standard" id='magicparlabel-256'><br />
 
 </div>
 
-<div class="notation" id='magicparlabel-249'><div class="notation_item"><span class="notation_label">Notation 40.</span>
+<div class="notation" id='magicparlabel-257'><div class="notation_item"><span class="notation_label">Notation 40.</span>
 To simplify notation we will use <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -4003,11 +4008,11 @@ To simplify notation we will use <math xmlns="http://www.w3.org/1998/Math/MathML
  </mrow></math> is fixed here. </div>
 </div>
 
-<div class="standard" id='magicparlabel-250'><br />
+<div class="standard" id='magicparlabel-258'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-251'><div class="note_item"><span class="note_label">Note 41.</span>
+<div class="note" id='magicparlabel-259'><div class="note_item"><span class="note_label">Note 41.</span>
 Assume that there is available a training set of examples (data-set) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -4086,11 +4091,11 @@ Assume that there is available a training set of examples (data-set) <math xmlns
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-252'><br />
+<div class="standard" id='magicparlabel-260'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-253'><div class="note_item"><span class="note_label">Note 42.</span>
+<div class="note" id='magicparlabel-261'><div class="note_item"><span class="note_label">Note 42.</span>
 <a id="note_To_learn_the" />
  To learn the unknown <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
@@ -4132,11 +4137,11 @@ Assume that there is available a training set of examples (data-set) <math xmlns
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-269'><br />
+<div class="standard" id='magicparlabel-277'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-270'><div class="definition_item"><span class="definition_label">Definition 43.</span>
+<div class="definition" id='magicparlabel-278'><div class="definition_item"><span class="definition_label">Definition 43.</span>
 <a id="def_Error_function_is" />
 Error function is a performance measure that can be defined as<a id="eq__3" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4251,11 +4256,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-276'><br />
+<div class="standard" id='magicparlabel-284'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-277'><div class="example_item"><span class="example_label">Example 44.</span>
+<div class="example" id='magicparlabel-285'><div class="example_item"><span class="example_label">Example 44.</span>
 (Regression problem) Assume we wish to predict the mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mover accent='false'><mo> &rarr; </mo>
@@ -4337,7 +4342,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
   </mrow>
  </mrow></math> </div>
 
-<ul class="itemize" id='magicparlabel-278'><li class="itemize_item">The output activation function can be the identity function <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-286'><li class="itemize_item">The output activation function can be the identity function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -4392,7 +4397,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> by Summary <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> by Algorithm <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>h</mi>
@@ -4435,7 +4440,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo>=</mo><mi>a</mi>
   </mrow>
  </mrow></math> suffices.</li>
-<li class="itemize_item">A suitable loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="itemize_item">A reasonable loss can be the Euclidean distance <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -4487,7 +4492,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </mrow>
       <mrow><mi>i</mi>
       </mrow>
-     </msub><mo>|</mo><mi>x</mi><mo>,</mo><mi>w</mi><mo> &sim; </mo>
+     </msub><mo>|</mo><mi>x</mi><mo>,</mo><mi>w</mi><mover accent='false'><mo> &sim; </mo>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>i</mi><mi>n</mi><mi>d</mi>
+      </mrow>
+     </mstyle></mover>
      <mstyle mathvariant='normal'><mi>N</mi>
      </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -4547,7 +4556,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
  <mrow>
   <mrow><mi> &beta; </mi><mo>&gt;</mo><mn>0</mn>
   </mrow>
- </mrow></math>, the loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, the implied loss is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
    <mtd>
@@ -4821,17 +4830,21 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
     </mrow>
     <mrow><mn>2</mn>
     </mrow>
-   </msup>
+   </msup><mo>+</mo>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mn>...</mn>
+    </mrow>
+   </mstyle>
   </mrow>
  </mrow></math></li>
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-282'><br />
+<div class="standard" id='magicparlabel-290'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-283'><div class="example_item"><span class="example_label">Example 45.</span>
+<div class="example" id='magicparlabel-291'><div class="example_item"><span class="example_label">Example 45.</span>
 (Multi-output regression problem) Assume we wish to predict the mapping <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mover accent='false'><mo> &rarr; </mo>
@@ -4925,7 +4938,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
   </mrow>
  </mrow></math> </div>
 
-<ul class="itemize" id='magicparlabel-284'><li class="itemize_item">The output activation function is the identity function <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-292'><li class="itemize_item">The output activation function is the identity function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -4990,7 +5003,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
  <mrow>
   <mrow><mi>k</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>q</mi>
   </mrow>
- </mrow></math> by Summary <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> by Algorithm <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>h</mi>
@@ -5039,7 +5052,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo>=</mo><mi>a</mi>
   </mrow>
  </mrow></math> suffices.</li>
-<li class="itemize_item">A suitable loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="itemize_item">A reasonable loss can be an ellipsoidal norm<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -5052,14 +5065,8 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
    </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>=</mo>
-   <mfrac>
-    <mrow><mn>1</mn>
-    </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </mfrac>
-   <msubsup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+   <msup>
+    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
      <mrow>
       <msub>
@@ -5072,58 +5079,30 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>-</mo><mi>y</mi>
      </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>&par;</mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
     </mrow>
-    <mrow><mn>2</mn>
+    <mrow><mi> &top; </mi>
     </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </msubsup><mo>=</mo>
-   <mfrac>
-    <mrow><mn>1</mn>
-    </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </mfrac>
-   <msubsup>
-    <mrow><mo> &sum; </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi>k</mi><mo>=</mo><mn>1</mn>
+   </msup><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>h</mi>
      </mrow>
-    </mrow>
-    <mrow><mi>q</mi>
-    </mrow>
-   </msubsup>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow>
-      <msub>
-       <mrow><mi>h</mi>
-       </mrow>
-       <mrow>
-        <mrow><mi>w</mi><mo>,</mo><mi>k</mi>
-        </mrow>
-       </mrow>
-      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>w</mi>
+     </mrow>
+    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>-</mo>
-      <msub>
-       <mrow><mi>y</mi>
-       </mrow>
-       <mrow><mi>k</mi>
-       </mrow>
-      </msub>
-     </mrow>
+<mo>-</mo><mi>y</mi>
+   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+<mo>,</mo><mspace width="10px" />
+   <mstyle mathvariant='normal'>
+    <mrow><mi>f</mi><mi>o</mi><mi>r</mi>&nbsp;<mi>s</mi><mi>o</mi><mi>m</mi><mi>e</mi>
     </mrow>
-    <mrow><mn>2</mn>
-    </mrow>
-   </msup>
+   </mstyle><mspace width="10px" /><mi>P</mi><mo>&gt;</mo><mn>0</mn>
   </mrow>
  </mrow></math></li>
 <li class="itemize_item">Alternatively, if I consider a statistical model as <a id="eq__10" />
@@ -5143,7 +5122,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </mrow>
       <mrow><mi>i</mi>
       </mrow>
-     </msub><mo>,</mo><mi>w</mi><mo> &sim; </mo>
+     </msub><mo>,</mo><mi>w</mi><mover accent='false'><mo> &sim; </mo>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>i</mi><mi>n</mi><mi>d</mi>
+      </mrow>
+     </mstyle></mover>
      <mstyle mathvariant='normal'><mi>N</mi>
      </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -5151,7 +5134,15 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       <mstyle mathvariant='normal'>
        <mstyle class='math'><mi> &mu; </mi>
        </mstyle>
-      </mstyle><mo>,</mo><mo> &Sigma; </mo>
+      </mstyle><mo>,</mo>
+      <msup>
+       <mrow><mi>P</mi>
+       </mrow>
+       <mrow>
+        <mrow><mo>-</mo><mn>1</mn>
+        </mrow>
+       </mrow>
+      </msup>
      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>,</mo><mspace width="6px" /><mspace width="6px" /><mspace width="6px" />
@@ -5185,11 +5176,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
    <mtd>(3.3)
    </mtd>
   </mtr>
- </mtable></math>for some fixed <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mtable></math>for some fixed precision matrix <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
-  <mrow><mo> &Sigma; </mo><mo>&gt;</mo><mn>0</mn>
+  <mrow><mi>P</mi><mo>&gt;</mo><mn>0</mn>
   </mrow>
- </mrow></math>, the loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, the implied loss is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
    <mtd>
@@ -5222,7 +5213,15 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
        </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mo> &Sigma; </mo>
+<mo>,</mo>
+       <msup>
+        <mrow><mi>P</mi>
+        </mrow>
+        <mrow>
+         <mrow><mo>-</mo><mn>1</mn>
+         </mrow>
+        </mrow>
+       </msup>
       </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
@@ -5255,7 +5254,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
        </mrow>
       </mfrac>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>-</mo>
+<mo>+</mo>
       <mfrac>
        <mrow><mn>1</mn>
        </mrow>
@@ -5263,7 +5262,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
        </mrow>
       </mfrac><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
-<mo> &Sigma; </mo>
+<mi>P</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
 
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
@@ -5293,15 +5292,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
        </mrow>
        <mrow><mi> &top; </mi>
        </mrow>
-      </msup>
-      <msup>
-       <mrow><mo> &Sigma; </mo>
-       </mrow>
-       <mrow>
-        <mrow><mo>-</mo><mn>1</mn>
-        </mrow>
-       </mrow>
-      </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+      </msup><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
       <mrow>
        <msub>
@@ -5352,15 +5343,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </mrow>
       <mrow><mi> &top; </mi>
       </mrow>
-     </msup>
-     <msup>
-      <mrow><mo> &Sigma; </mo>
-      </mrow>
-      <mrow>
-       <mrow><mo>-</mo><mn>1</mn>
-       </mrow>
-      </mrow>
-     </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     </msup><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
      <mrow>
       <msub>
@@ -5498,15 +5481,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </mrow>
       <mrow><mi> &top; </mi>
       </mrow>
-     </msup>
-     <msup>
-      <mrow><mo> &Sigma; </mo>
-      </mrow>
-      <mrow>
-       <mrow><mo>-</mo><mn>1</mn>
-       </mrow>
-      </mrow>
-     </msup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     </msup><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
      <mrow>
       <msub>
@@ -5530,7 +5505,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </msub>
      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+<mo>+</mo>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mn>...</mn>
+      </mrow>
+     </mstyle>
     </mrow>
    </mtd>
   </mtr>
@@ -5552,11 +5531,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-288'><br />
+<div class="standard" id='magicparlabel-300'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-289'><div class="example_item"><span class="example_label">Example 46.</span>
+<div class="example" id='magicparlabel-301'><div class="example_item"><span class="example_label">Example 46.</span>
 (Binary classification problem) Assume we wish to classify objects with features <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mo> &isin; </mo>
@@ -5663,7 +5642,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
   </mrow>
  </mrow></math> labeling the class. </div>
 
-<ul class="itemize" id='magicparlabel-290'><li class="itemize_item">A suitable output activation function can be the logistic sigmoid <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-302'><li class="itemize_item">A suitable output activation function can be the logistic sigmoid <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -5731,7 +5710,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> by Summary <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> by Algorithm <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>h</mi>
@@ -5764,6 +5743,62 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
   <mstyle mathvariant='double-struck'><mi>R</mi>
   </mstyle>
  </mrow></math>, then the aforesaid mapping suffices.</li>
+<li class="itemize_item">A reasonable loss (among others) can be the cross entropy <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mi>w</mi><mo>,</mo><mi>z</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow><mi>x</mi><mo>,</mo><mi>y</mi>
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+    </mrow>
+   </mtd>
+   <mtd>
+    <mrow><mo>-</mo><mi>y</mi><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>-</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mn>1</mn><mo>-</mo><mi>y</mi>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mn>1</mn><mo>-</mo>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+  </mtr>
+ </mtable></math></li>
 <li class="itemize_item">If I consider a statistical model as <a id="eq__11" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
@@ -5781,7 +5816,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       </mrow>
       <mrow><mi>i</mi>
       </mrow>
-     </msub><mo>,</mo><mi>w</mi><mo> &sim; </mo>
+     </msub><mo>,</mo><mi>w</mi><mover accent='false'><mo> &sim; </mo>
+     <mstyle mathvariant='normal'>
+      <mrow><mi>i</mi><mi>n</mi><mi>d</mi>
+      </mrow>
+     </mstyle></mover>
      <mstyle mathvariant='normal'>
       <mrow><mi>B</mi><mi>e</mi><mi>r</mi><mi>n</mi><mi>o</mi><mi>u</mi><mi>l</mi><mi>l</mi><mi>i</mi>
       </mrow>
@@ -5871,7 +5910,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
     </mrow>
    </msup>
   </mrow>
- </mrow></math> the loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> the implied loss is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
    <mtd>
@@ -5891,28 +5930,9 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
    <mtd>
     <mrow><mo>-</mo><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-     <mrow>
-      <mstyle mathvariant='normal'>
-       <mrow><mi>B</mi><mi>e</mi><mi>r</mi><mi>n</mi><mi>o</mi><mi>u</mi><mi>l</mi><mi>l</mi><mi>i</mi>
-       </mrow>
-      </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <mrow>
-       <msub>
-        <mrow><mi>y</mi>
-        </mrow>
-        <mrow><mi>i</mi>
-        </mrow>
-       </msub><mo>|</mo>
-       <msub>
-        <mrow><mi>h</mi>
-        </mrow>
-        <mrow><mi>w</mi>
-        </mrow>
-       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+      <mrow><mi>y</mi><mo>|</mo><mi>x</mi><mo>,</mo><mi>w</mi>
       </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
@@ -5926,40 +5946,35 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
    <mtd><mo>=</mo>
    </mtd>
    <mtd>
-    <mrow><mo>-</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+    <mrow><mo>-</mo><mi>y</mi><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-     <mrow><mi>y</mi><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-      <mrow>
-       <msub>
-        <mrow><mi>h</mi>
-        </mrow>
-        <mrow><mi>w</mi>
-        </mrow>
-       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-      </mrow>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>+</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo>-</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <mrow><mn>1</mn><mo>-</mo><mi>y</mi>
-      </mrow>
+     <mrow><mn>1</mn><mo>-</mo><mi>y</mi>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <mrow><mn>1</mn><mo>-</mo>
-       <msub>
-        <mrow><mi>h</mi>
-        </mrow>
-        <mrow><mi>w</mi>
-        </mrow>
-       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mn>1</mn><mo>-</mo>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-      </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
      </mrow>
@@ -5968,7 +5983,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
     </mrow>
    </mtd>
   </mtr>
- </mtable></math> which is the cross-entropy.</li>
+ </mtable></math></li>
 <li class="itemize_item">The Error function given a set of examples <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -6163,11 +6178,11 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-297'><br />
+<div class="standard" id='magicparlabel-310'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-298'><div class="example_item"><span class="example_label">Example 47.</span>
+<div class="example" id='magicparlabel-311'><div class="example_item"><span class="example_label">Example 47.</span>
 (Multi-class classification problem) Assume we wish to classify objects with features <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>x</mi><mo> &isin; </mo>
@@ -6384,7 +6399,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
  <mrow><mi>i</mi>
  </mrow></math>-the example belongs. Then it is</div>
 
-<ul class="itemize" id='magicparlabel-299'><li class="itemize_item">A suitable output activation function can be the softmax function <a id="eq__1" />
+<ul class="itemize" id='magicparlabel-312'><li class="itemize_item">A suitable output activation function can be the softmax function <a id="eq__1" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -6504,7 +6519,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> by Summary <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">(36)</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> by Algorithm  <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">(36)</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>h</mi>
@@ -6702,7 +6717,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> by Summary <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> by Algorithm <a href="#def_To_sum_up__The">24</a> and Note <a href="#note_Assume_we_are">36</a>. Since <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>h</mi>
@@ -6850,6 +6865,61 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
 
   </mrow>
  </mrow></math>.</li>
+<li class="itemize_item">A reasonable loss can be the cross entropy <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mi>w</mi><mo>,</mo><mi>z</mi><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow><mi>x</mi><mo>,</mo><mi>y</mi>
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo>
+    </mrow>
+   </mtd>
+   <mtd>
+    <mrow><mo>-</mo>
+     <msubsup>
+      <mrow><mo> &sum; </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>k</mi><mo>=</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+      <mrow><mi>q</mi>
+      </mrow>
+     </msubsup>
+     <msub>
+      <mrow><mi>y</mi>
+      </mrow>
+      <mrow><mi>k</mi>
+      </mrow>
+     </msub><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow>
+        <mrow><mi>w</mi><mo>,</mo><mi>k</mi>
+        </mrow>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>x</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+  </mtr>
+ </mtable></math></li>
 <li class="itemize_item">If I consider a statistical model as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -6954,7 +7024,7 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
     </mrow>
    </msup>
   </mrow>
- </mrow></math> The loss can be <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> the implied loss is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
    <mtd>
@@ -6974,22 +7044,9 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
    <mtd>
     <mrow><mo>-</mo><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-     <mrow>
-      <mstyle mathvariant='normal'>
-       <mrow><mi>M</mi><mi>u</mi><mi>l</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>o</mi><mi>m</mi><mi>i</mi><mi>a</mi><mi>l</mi>
-       </mrow>
-      </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <mrow><mi>y</mi><mo>|</mo>
-       <msub>
-        <mrow><mi>h</mi>
-        </mrow>
-        <mrow><mi>w</mi>
-        </mrow>
-       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>x</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
+      <mrow><mi>y</mi><mo>|</mo><mi>x</mi><mo>,</mo><mi>w</mi>
       </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
@@ -7172,14 +7229,16 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
       <mrow><mi>q</mi>
       </mrow>
      </msubsup>
-     <msub>
+     <msubsup>
       <mrow><mi>y</mi>
       </mrow>
       <mrow>
        <mrow><mi>k</mi><mo>,</mo><mi>i</mi>
        </mrow>
       </mrow>
-     </msub><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+      <mrow><mo>*</mo>
+      </mrow>
+     </msubsup><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
      <mrow>
       <msub>
@@ -7191,12 +7250,14 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
        </mrow>
       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-      <msub>
+      <msubsup>
        <mrow><mi>x</mi>
        </mrow>
        <mrow><mi>i</mi>
        </mrow>
-      </msub>
+       <mrow><mo>*</mo>
+       </mrow>
+      </msubsup>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
      </mrow>
@@ -7222,9 +7283,9 @@ Error function is a performance measure that can be defined as<a id="eq__3" />
  </mrow></math>-th example in the dataset.</li>
 </ul>
 </div>
-<h2 class="section" id='magicparlabel-307'><span class="section_label">4</span> Classical learning of Neural Network</h2>
+<h2 class="section" id='magicparlabel-317'><span class="section_label">4</span> Classical learning of Neural Network</h2>
 
-<div class="note" id='magicparlabel-308'><div class="note_item"><span class="note_label">Note 48.</span>
+<div class="note" id='magicparlabel-318'><div class="note_item"><span class="note_label">Note 48.</span>
 Our purpose is to find optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -7294,9 +7355,9 @@ Our purpose is to find optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math>.</div>
 </div>
-<h3 class="subsection" id='magicparlabel-313'><span class="subsection_label">4.1</span> Standard learning problem</h3>
+<h3 class="subsection" id='magicparlabel-323'><span class="subsection_label">4.1</span> Standard learning problem</h3>
 
-<div class="note" id='magicparlabel-314'><div class="note_item"><span class="note_label">Note 49.</span>
+<div class="note" id='magicparlabel-324'><div class="note_item"><span class="note_label">Note 49.</span>
 Essentially, this is an optimization problem, where the objective is to minimize either the risk function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -7330,11 +7391,11 @@ Essentially, this is an optimization problem, where the objective is to minimize
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-315'><br />
+<div class="standard" id='magicparlabel-325'><br />
 
 </div>
 
-<div class="problem" id='magicparlabel-316'><div class="problem_item"><span class="problem_label">Problem 50.</span>
+<div class="problem" id='magicparlabel-326'><div class="problem_item"><span class="problem_label">Problem 50.</span>
 <a id="prob_Find__" />
  Compute optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -7435,12 +7496,13 @@ Essentially, this is an optimization problem, where the objective is to minimize
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-317'><br />
+<div class="standard" id='magicparlabel-327'><br />
 
 </div>
 
-<div class="problem" id='magicparlabel-318'><div class="problem_item"><span class="problem_label">Problem 51.</span>
-Compute optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="problem" id='magicparlabel-328'><div class="problem_item"><span class="problem_label">Problem 51.</span>
+<a id="prob_Compute_optimal_" />
+ Compute optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msup>
@@ -7554,15 +7616,15 @@ Compute optimal <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-319'><br />
+<div class="standard" id='magicparlabel-329'><br />
 
 </div>
-<h3 class="subsection" id='magicparlabel-320'><span class="subsection_label">4.2</span> <a id="subsec_Regularization" />
+<h3 class="subsection" id='magicparlabel-330'><span class="subsection_label">4.2</span> <a id="subsec_Regularization" />
  Regularized loss optimization </h3>
 
-<div class="note" id='magicparlabel-321'><div class="note_item"><span class="note_label">Note 52.</span>
+<div class="note" id='magicparlabel-331'><div class="note_item"><span class="note_label">Note 52.</span>
 <a id="note_Often_neural_network" />
-Often neural network models are over-parameterized, in the sense that the dimensionality of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ Often neural network models are over-parameterized, in the sense that the dimensionality of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>w</mi><mo> &isin; </mo>
    <msup>
@@ -7582,11 +7644,11 @@ Often neural network models are over-parameterized, in the sense that the dimens
  </mrow></math> is too large, with negative consequences in its predictability. This can be addressed by learning the architecture NN, precisely by learning which of the edges of the FFNN significantly contribute to the NN model and should be kept, and which do not contribute and may be removed (or be inactive). </div>
 </div>
 
-<div class="standard" id='magicparlabel-322'><br />
+<div class="standard" id='magicparlabel-332'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-323'><div class="note_item"><span class="note_label">Note 53.</span>
+<div class="note" id='magicparlabel-333'><div class="note_item"><span class="note_label">Note 53.</span>
 To address Note <a href="#note_Often_neural_network">52</a>, one can resort to shrinkage methods e.g., LASSO, Ridge, which indirectly allow edge/weight selection/elimination by shrinking the values of the weights <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -7685,13 +7747,13 @@ To address Note <a href="#note_Often_neural_network">52</a>, one can resort to s
  </mrow></math> is not active (essentially not in the neural network). </div>
 </div>
 
-<div class="standard" id='magicparlabel-324'><br />
+<div class="standard" id='magicparlabel-334'><br />
 
 </div>
 
-<div class="problem" id='magicparlabel-325'><div class="problem_item"><span class="problem_label">Problem 54.</span>
+<div class="problem" id='magicparlabel-335'><div class="problem_item"><span class="problem_label">Problem 54.</span>
 <a id="prob_Often_neural_network" />
-Find <math xmlns="http://www.w3.org/1998/Math/MathML">
+ Compute <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -7939,11 +8001,11 @@ Find <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-330'><br />
+<div class="standard" id='magicparlabel-340'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-331'><div class="note_item"><span class="note_label">Note 55.</span>
+<div class="note" id='magicparlabel-341'><div class="note_item"><span class="note_label">Note 55.</span>
 <a id="prob_Popular_shrinkage_terms" />
 Popular shrinkage terms <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -7956,7 +8018,7 @@ Popular shrinkage terms <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math> are</div>
 
-<ul class="itemize" id='magicparlabel-336'><li class="itemize_item">Ridge: <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-346'><li class="itemize_item">Ridge: <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>J</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -7976,7 +8038,7 @@ Popular shrinkage terms <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msubsup>
   </mrow>
- </mrow></math><div class="marginal"><div class="plain_layout" id='magicparlabel-340'>Term 1</div>
+ </mrow></math><div class="marginal"><div class="plain_layout" id='magicparlabel-350'>Term 1</div>
 </div></li>
 <li class="itemize_item">LASSO: <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -7996,7 +8058,7 @@ Popular shrinkage terms <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msub>
   </mrow>
- </mrow></math> <div class="marginal"><div class="plain_layout" id='magicparlabel-345'>Term 1</div>
+ </mrow></math> <div class="marginal"><div class="plain_layout" id='magicparlabel-355'>Term 1</div>
 </div></li>
 <li class="itemize_item">Elastic net: <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -8059,23 +8121,23 @@ Popular shrinkage terms <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math></li>
 </ul>
 </div>
-<h2 class="section" id='magicparlabel-347'><span class="section_label">5</span> Stochastic gradient implementation for training NN</h2>
+<h2 class="section" id='magicparlabel-357'><span class="section_label">5</span> Stochastic gradient descent for classical training of NN</h2>
 
-<div class="standard" id='magicparlabel-348'><br />
+<div class="standard" id='magicparlabel-358'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-349'><div class="note_item"><span class="note_label">Note 56.</span>
+<div class="note" id='magicparlabel-359'><div class="note_item"><span class="note_label">Note 56.</span>
 Training a neural network model is usually a high-dimensional problem (essentially <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
- </mrow></math> has high dimensionality to provide a better approximation) and a big-data problem (essentially we need a large number of training examples to learn a large number of weights). For this reason, Stochastic Gradient Descent (and its variations) is a suitable stochastic learning algorithm. </div>
+ </mrow></math> has high dimensionality to provide a better approximation) and a big-data problem (essentially we need a large number of training examples to learn a large number of weights). For this reason, Stochastic Gradient Descent (and its variations) is a suitable computational learning tool. </div>
 </div>
 
-<div class="standard" id='magicparlabel-350'><br />
+<div class="standard" id='magicparlabel-360'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-351'><div class="note_item"><span class="note_label">Note 57.</span>
+<div class="note" id='magicparlabel-361'><div class="note_item"><span class="note_label">Note 57.</span>
 To address Problem <a href="#prob_Find__">50</a>, the recursion of the SGD with batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8158,11 +8220,11 @@ To address Problem <a href="#prob_Find__">50</a>, the recursion of the SGD with 
  </mrow></math> </div>
 </div>
 
-<div class="standard" id='magicparlabel-352'><br />
+<div class="standard" id='magicparlabel-362'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-353'><div class="note_item"><span class="note_label">Note 58.</span>
+<div class="note" id='magicparlabel-363'><div class="note_item"><span class="note_label">Note 58.</span>
 To address the Problem <a href="#prob_Often_neural_network">54</a>, the recursion of the SGD with batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8263,24 +8325,25 @@ To address the Problem <a href="#prob_Often_neural_network">54</a>, the recursio
  </mrow></math> which is user specified, or chosen via cross validation.</div>
 </div>
 
-<div class="standard" id='magicparlabel-354'><br />
+<div class="standard" id='magicparlabel-364'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-355'><div class="note_item"><span class="note_label">Note 59.</span>
+<div class="note" id='magicparlabel-365'><div class="note_item"><span class="note_label">Note 59.</span>
 The learning problem associated to the Neural network model is (almost always) non-convex due to the non-convex loss with respect to the <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math>'s. Upon implementing SGD in the learning problem of Neural Network, the theoretical results in Section <a href="#sec_Analysis">sec:Analysis</a> (Handout 2) and Section <a href="#subsec_Analysis">subsec:Analysis</a> (Handout 3) will not be effective due to the violation of the assumptions. </div>
 </div>
 
-<div class="standard" id='magicparlabel-356'><br />
+<div class="standard" id='magicparlabel-366'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-357'><div class="note_item"><span class="note_label">Note 60.</span>
-Practical guidelines for the use of SGD in the learning problem of NN:</div>
+<div class="note" id='magicparlabel-367'><div class="note_item"><span class="note_label">Note 60.</span>
+Practical guidelines for the use of SGD in the learning problem of NN: <div class="marginal"><div class="plain_layout" id='magicparlabel-371'>Ref [<a href="#enu_LeCun__Y___Bottou_">3.</a>]</div>
+</div></div>
 
-<ol class="enumerate" id='magicparlabel-358'><li class="enumerate_item">Utilize a learning rate <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-372'><li class="enumerate_item">Utilize a learning rate <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi> &eta; </mi>
@@ -8481,14 +8544,14 @@ Practical guidelines for the use of SGD in the learning problem of NN:</div>
 </ol>
 </div>
 
-<div class="standard" id='magicparlabel-366'><br />
+<div class="standard" id='magicparlabel-380'><br />
 
 </div>
-<h3 class="subsection" id='magicparlabel-367'><span class="subsection_label">5.1</span> <a id="subsec_Error_backpropagation__to" />
- Error backpropagation</h3>
+<h3 class="subsection" id='magicparlabel-381'><span class="subsection_label">5.1</span> <a id="subsec_Error_backpropagation__to" />
+ Error backpropagation </h3>
 
-<div class="note" id='magicparlabel-372'><div class="note_item"><span class="note_label">Note 61.</span>
-The error backpropagation procedure is an efficient algorithm for the computation of the gradient <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-386'><div class="note_item"><span class="note_label">Note 61.</span>
+The error back-propagation procedure is an efficient algorithm for the computation of the gradient <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -8526,11 +8589,11 @@ The error backpropagation procedure is an efficient algorithm for the computatio
  </mrow></math> as required for the implementation of stochastic gradient based algorithm to train the FFNN. </div>
 </div>
 
-<div class="standard" id='magicparlabel-373'><br />
+<div class="standard" id='magicparlabel-387'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-374'><div class="note_item"><span class="note_label">Note 62.</span>
+<div class="note" id='magicparlabel-388'><div class="note_item"><span class="note_label">Note 62.</span>
 Error backpropagation assumes that <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -8562,7 +8625,7 @@ Error backpropagation assumes that <math xmlns="http://www.w3.org/1998/Math/Math
  </mrow></math> exists –however extensions exist.</div>
 </div>
 
-<div class="notation" id='magicparlabel-375'><div class="notation_item"><span class="notation_label">Notation 63.</span>
+<div class="notation" id='magicparlabel-389'><div class="notation_item"><span class="notation_label">Notation 63.</span>
 Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -8625,78 +8688,22 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mi>T</mi>
   </mrow>
- </mrow></math>. 
-<br />
-
-</div>
+ </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-376'><br />
-
-</div>
-
-<div class="notation" id='magicparlabel-377'><div class="notation_item"><span class="notation_label">Notation 64.</span>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi>o</mi>
-    </mrow>
-    <mrow><mi>t</mi>
-    </mrow>
-   </msub><mo>=</mo>
-   <msup>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow>
-      <msub>
-       <mrow><mi>o</mi>
-       </mrow>
-       <mrow>
-        <mrow><mi>t</mi><mo>,</mo><mn>1</mn>
-        </mrow>
-       </mrow>
-      </msub><mo>,</mo><mn>...</mn><mo>,</mo>
-      <msub>
-       <mrow><mi>o</mi>
-       </mrow>
-       <mrow>
-        <mrow><mi>t</mi><mo>,</mo>
-         <msub>
-          <mrow><mi>k</mi>
-          </mrow>
-          <mrow><mi>t</mi>
-          </mrow>
-         </msub>
-        </mrow>
-       </mrow>
-      </msub>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-    <mrow><mi> &top; </mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> be the vector of the outputs of the <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>t</mi>
- </mrow></math>-th layer of a NN.</div>
-</div>
-
-<div class="standard" id='magicparlabel-393'><br />
+<div class="standard" id='magicparlabel-411'><br />
 
 </div>
 
 
-<div class="standard" id='magicparlabel-394'><div class='Boxed'><div class="algorithm" id='magicparlabel-442'><div class="algorithm_item"><span class="algorithm_label">Algorithm 65.</span>
+<div class="standard" id='magicparlabel-412'><div class='Boxed'><div class="algorithm" id='magicparlabel-460'><div class="algorithm_item"><span class="algorithm_label">Algorithm 64.</span>
 <a id="alg__Error_backpropagation_" />
 (Error backpropagation)</div>
-<div class="plain_layout" id='magicparlabel-443'><i><hr />
+<div class="plain_layout" id='magicparlabel-461'><i><hr />
 
 </i></div>
 
-<dl class='description' id='magicparlabel-444'><dt class="description_label">Requires</dt>
+<dl class='description' id='magicparlabel-462'><dt class="description_label">Requires</dt>
 <dd class="description_item"><i> The FFNN <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -8736,11 +8743,11 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math></i></dd>
 </dl>
-<div class="plain_layout" id='magicparlabel-445'><i><hr />
+<div class="plain_layout" id='magicparlabel-463'><i><hr />
 
 </i></div>
 
-<dl class='description' id='magicparlabel-446'><dt class="description_label">Returns</dt>
+<dl class='description' id='magicparlabel-464'><dt class="description_label">Returns</dt>
 <dd class="description_item"><i> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -8784,13 +8791,13 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math></i></dd>
 </dl>
-<div class="plain_layout" id='magicparlabel-447'><i><hr />
+<div class="plain_layout" id='magicparlabel-465'><i><hr />
 
 </i></div>
 
-<dl class='description' id='magicparlabel-448'><dt class="description_label">Initialize</dt>
+<dl class='description' id='magicparlabel-466'><dt class="description_label">Initialize</dt>
 <dd class="description_item"><i> &nbsp;</i>
-<div class="plain_layout" id='magicparlabel-449'><i>Set </i><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" id='magicparlabel-467'><i>Set </i><math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -8903,12 +8910,12 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 </dd><dt class="description_label">Forward&nbsp;pass</dt>
 <dd class="description_item"><i> &nbsp;</i>
 
-<ol class="enumerate" id='magicparlabel-451'><li class="enumerate_item"><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-469'><li class="enumerate_item"><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>d</mi>
   </mrow>
  </mrow></math></i>
-<div class="plain_layout" id='magicparlabel-452'><i>&emsp;&emsp;Set: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" id='magicparlabel-470'><i>&emsp;&emsp;Set: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -8931,8 +8938,7 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi>
   </mrow>
- </mrow></math></i>
-<div class="plain_layout" id='magicparlabel-454'><i>&emsp;&emsp;For <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> ; For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
    <msub>
@@ -8942,9 +8948,8 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msub>
   </mrow>
- </mrow></math></i></div>
-
-<div class="plain_layout" id='magicparlabel-455'><i>&emsp;&emsp;&emsp;&emsp;Compute: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math></i>
+<div class="plain_layout" id='magicparlabel-472'><i>&emsp;&emsp;Compute: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -8992,7 +8997,7 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math></i></div>
 
-<div class="plain_layout" id='magicparlabel-456'><i>&emsp;&emsp;&emsp;&emsp;Compute: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" id='magicparlabel-473'><i>&emsp;&emsp;Compute: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -9026,12 +9031,11 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 </dd><dt class="description_label">Backward&nbsp;pass</dt>
 <dd class="description_item"><i> &nbsp;</i>
 
-<ol class="enumerate" id='magicparlabel-458'><li class="enumerate_item"><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-475'><li class="enumerate_item"><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mi>T</mi>
   </mrow>
- </mrow></math></i>
-<div class="plain_layout" id='magicparlabel-480'><i>&emsp;&emsp;For <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> ; For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
    <msub>
@@ -9041,11 +9045,10 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msub>
   </mrow>
- </mrow></math></i></div>
+ </mrow></math></i>
+<div class="plain_layout" id='magicparlabel-497'><i>&emsp;&emsp;Compute: </i></div>
 
-<div class="plain_layout" id='magicparlabel-481'><i>&emsp;&emsp;&emsp;&emsp;Compute: </i></div>
-
-<div class="plain_layout" id='magicparlabel-486'><i><a id="eq__21" />
+<div class="plain_layout" id='magicparlabel-502'><i><a id="eq__21" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -9153,8 +9156,7 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mi>T</mi><mo>-</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mn>1</mn>
   </mrow>
- </mrow></math></i>
-<div class="plain_layout" id='magicparlabel-488'><i>&emsp;&emsp;For <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math> ; For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
    <msub>
@@ -9164,9 +9166,8 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msub>
   </mrow>
- </mrow></math></i></div>
-
-<div class="plain_layout" id='magicparlabel-489'><i>&emsp;&emsp;&emsp;&emsp;Compute: <a id="eq__22" />
+ </mrow></math> </i>
+<div class="plain_layout" id='magicparlabel-504'><i>&emsp;&emsp;Compute: <a id="eq__22" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -9262,7 +9263,35 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 </li></ol>
 </dd><dt class="description_label">Output</dt>
 <dd class="description_item"><i> &nbsp;</i>
-<div class="plain_layout" id='magicparlabel-495'><i>for each edge <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="plain_layout" id='magicparlabel-510'><i>For <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi>
+  </mrow>
+ </mrow></math>; <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
+   <msub>
+    <mrow><mi>k</mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math> ; <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>j</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
+   <msub>
+    <mrow><mi>k</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math> </i></div>
+
+<div class="plain_layout" id='magicparlabel-511'><i>&emsp;&emsp;If edge <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -9289,9 +9318,7 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mstyle mathvariant='script'><mi>E</mi>
    </mstyle>
   </mrow>
- </mrow></math></i></div>
-
-<div class="plain_layout" id='magicparlabel-496'><i>&emsp;&emsp;Set, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>, set: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mfrac>
@@ -9335,42 +9362,14 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
    </msub>
   </mrow>
  </mrow></math></i></div>
-
-<div class="plain_layout" id='magicparlabel-497'><i>for <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
-   <msub>
-    <mrow><mi>k</mi>
-    </mrow>
-    <mrow><mi>t</mi>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>j</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
-   <msub>
-    <mrow><mi>k</mi>
-    </mrow>
-    <mrow>
-     <mrow><mi>t</mi><mo>-</mo><mn>1</mn>
-     </mrow>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi>
-  </mrow>
- </mrow></math>.</i></div>
 </dd></dl>
 </div>
 </div></div>
 
 
 
-<div class="note" id='magicparlabel-533'><div class="note_item"><span class="note_label">Note 66.</span>
-In <a href="#eq__21">5.1</a> and <a href="#eq__22">(5.2)</a>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-547'><div class="note_item"><span class="note_label">Note 65.</span>
+In <a href="#eq__21">(5.1)</a> and <a href="#eq__22">(5.2)</a>, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <msub>
@@ -9386,11 +9385,11 @@ In <a href="#eq__21">5.1</a> and <a href="#eq__22">(5.2)</a>, <math xmlns="http:
  </mrow></math> are called errors. </div>
 </div>
 
-<div class="standard" id='magicparlabel-534'><br />
+<div class="standard" id='magicparlabel-548'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-535'><div class="example_item"><span class="example_label">Example 67.</span>
+<div class="example" id='magicparlabel-549'><div class="example_item"><span class="example_label">Example 66.</span>
 Consider the multi-output regression problem, assume a predictive rule <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -9662,13 +9661,13 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
  </mrow></math>.</div>
 </div>
 
-<div class="solution_" id='magicparlabel-536'><div class="solution__item"><span class="solution__label">Solution.</span>
+<div class="solution_" id='magicparlabel-550'><div class="solution__item"><span class="solution__label">Solution.</span>
 &nbsp;</div>
 
-<dl class='description' id='magicparlabel-537'><dt class="description_label">Forward&nbsp;pass</dt>
+<dl class='description' id='magicparlabel-551'><dt class="description_label">Forward&nbsp;pass</dt>
 <dd class="description_item"> 
 
-<dl class='description' id='magicparlabel-538'><dt class="description_label">Set</dt>
+<dl class='description' id='magicparlabel-552'><dt class="description_label">Set</dt>
 <dd class="description_item"> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -9695,7 +9694,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
 <dt class="description_label">Compute</dt>
 <dd class="description_item"> 
 
-<dl class='description' id='magicparlabel-540'><dt class="description_label">at&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+<dl class='description' id='magicparlabel-554'><dt class="description_label">at&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn>
   </mrow>
@@ -9706,7 +9705,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
   </mrow>
  </mrow></math>
 
-<dl class='description' id='magicparlabel-541'><dt class="description_label">comp</dt>
+<dl class='description' id='magicparlabel-555'><dt class="description_label">comp</dt>
 <dd class="description_item"> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -9781,7 +9780,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
   </mrow>
  </mrow></math>
 
-<dl class='description' id='magicparlabel-544'><dt class="description_label">comp</dt>
+<dl class='description' id='magicparlabel-558'><dt class="description_label">comp</dt>
 <dd class="description_item"> <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -9867,7 +9866,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
 </dl>
 </dd></dl>
 </dd></dl>
-<div class="standard" id='magicparlabel-547'>Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-561'>Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mfrac>
@@ -9939,10 +9938,10 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
   </mrow>
  </mrow></math>. </div>
 
-<dl class='description' id='magicparlabel-548'><dt class="description_label">Backward&nbsp;pass</dt>
+<dl class='description' id='magicparlabel-562'><dt class="description_label">Backward&nbsp;pass</dt>
 <dd class="description_item"> 
 
-<dl class='description' id='magicparlabel-549'><dt class="description_label">at&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+<dl class='description' id='magicparlabel-563'><dt class="description_label">at&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>2</mn>
   </mrow>
@@ -9953,7 +9952,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
   </mrow>
  </mrow></math>
 
-<dl class='description' id='magicparlabel-550'><dt class="description_label">comp</dt>
+<dl class='description' id='magicparlabel-564'><dt class="description_label">comp</dt>
 <dd class="description_item"> &nbsp;<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -10167,7 +10166,7 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
   </mrow>
  </mrow></math>
 
-<dl class='description' id='magicparlabel-552'><dt class="description_label">comp</dt>
+<dl class='description' id='magicparlabel-566'><dt class="description_label">comp</dt>
 <dd class="description_item"> &nbsp;<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -10474,18 +10473,11 @@ Consider the multi-output regression problem, assume a predictive rule <math xml
  </mrow></math></dd>
 </dl>
 </div>
-<h3 class="subsection" id='magicparlabel-554'><span class="subsection_label">5.2</span> Design of Error back-propagation (Algorithm <a href="#alg__Error_backpropagation_">65</a>)</h3>
 
-<div class="note" id='magicparlabel-588'><div class="note_item"><span class="note_label">Note 68.</span>
-We show that the algorithm is valid and in particular the Backward pass.</div>
-</div>
+<div class="note" id='magicparlabel-605'><div class="note_item"><span class="note_label">Note 67.</span>
+We show that the Algorithm <a href="#alg__Error_backpropagation_">64</a> is valid. The Forward pass is valid due to Algorithm <a href="#def_To_sum_up__The">24</a>. Now, we work on the Backward pass.</div>
 
-<div class="standard" id='magicparlabel-589'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-590'><div class="note_item"><span class="note_label">Note 69.</span>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-606'><li class="itemize_item">Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -10530,15 +10522,8 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math> be the vector of the activations of the <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>t</mi>
- </mrow></math>-th layer of a NN.</div>
-</div>
-
-<div class="standard" id='magicparlabel-591'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-592'><div class="note_item"><span class="note_label">Note 70.</span>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>-th layer of a NN.</li>
+<li class="itemize_item">Let <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -10570,15 +10555,11 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msub>
  </mrow></math> at <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>t</mi>
- </mrow></math>-th layer. </div>
+ </mrow></math>-th layer. </li>
+</ul>
 </div>
 
-<div class="standard" id='magicparlabel-593'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-594'><div class="note_item"><span class="note_label">Note 71.</span>
-It is <a id="eq__23" />
+<ul class="itemize" id='magicparlabel-608'><li class="itemize_item">It is <a id="eq__23" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -10776,15 +10757,8 @@ It is <a id="eq__23" />
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi>
   </mrow>
- </mrow></math>. </div>
-</div>
-
-<div class="standard" id='magicparlabel-599'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-600'><div class="note_item"><span class="note_label">Note 72.</span>
-Regarding the second part of <a href="#eq__23">(5.3)</a>, it is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>. </li>
+<li class="itemize_item">Regarding the second part of <a href="#eq__23">(5.3)</a>, it is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mfrac>
@@ -10886,25 +10860,25 @@ Regarding the second part of <a href="#eq__23">(5.3)</a>, it is<math display="bl
     </mrow>
    </msub>
   </mrow>
- </mrow></math>. </div>
-</div>
-
-<div class="standard" id='magicparlabel-601'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-602'><div class="note_item"><span class="note_label">Note 73.</span>
-I will try to find a way to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-
+ </mrow></math>. </li>
+<li class="itemize_item">I will try to find a way to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
   <msub>
    <mrow><mi> &delta; </mi>
    </mrow>
    <mrow><mi>t</mi>
    </mrow>
   </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
-
+ </mrow></math> given <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi> &delta; </mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+    </mrow>
+   </mrow>
+  </msub>
  </mrow></math> recursively from <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -10921,10 +10895,9 @@ I will try to find a way to compute <math xmlns="http://www.w3.org/1998/Math/Mat
    <mrow><mn>0</mn>
    </mrow>
   </msub>
- </mrow></math>. </div>
-</div>
+ </mrow></math>. 
 
-<ul class="itemize" id='magicparlabel-603'><li class="itemize_item">For <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-615'><li class="itemize_item">For <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>t</mi><mo>=</mo><mi>T</mi>
   </mrow>
@@ -11461,12 +11434,13 @@ I will try to find a way to compute <math xmlns="http://www.w3.org/1998/Math/Mat
   </mrow>
  </mrow></math></li>
 </ul>
+</li></ul>
 
-<div class="standard" id='magicparlabel-605'><br />
+<div class="standard" id='magicparlabel-617'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-606'><div class="note_item"><span class="note_label">Note 74.</span>
+<div class="note" id='magicparlabel-618'><div class="note_item"><span class="note_label">Note 68.</span>
 Error back-propagation idea can also be used to efficiently compute the gradient <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -11503,11 +11477,28 @@ Error back-propagation idea can also be used to efficiently compute the gradient
   </mrow>
  </mrow></math> with respect to the inputs <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>x</mi>
- </mrow></math>. The idea is the same, use chain rule to find a recursive procedure. </div>
+ </mrow></math>. The idea is the same, use chain rule to find a recursive procedure from <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>V</mi>
+   </mrow>
+   <mrow><mi>T</mi>
+   </mrow>
+  </msub>
+ </mrow></math> to <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>V</mi>
+   </mrow>
+   <mrow><mn>0</mn>
+   </mrow>
+  </msub>
+ </mrow></math>. </div>
 </div>
-<h3 class="subsection" id='magicparlabel-607'><span class="subsection_label">5.3</span> Preconditioning and computation of the Hessian</h3>
 
-<div class="note" id='magicparlabel-608'><div class="note_item"><span class="note_label">Note 75.</span>
+<h3 class="subsection" id='magicparlabel-636'><span class="subsection_label">5.2</span> Preconditioning and computation of the Hessian</h3>
+
+<div class="note" id='magicparlabel-637'><div class="note_item"><span class="note_label">Note 69.</span>
 Recall (Handout 3, Algorithm <a href="#alg_Stochastic_Gradient_descent_2">alg:Stochastic-Gradient-descent-2</a>), that SGD may be improved by using a suitable preconditioner <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -11660,11 +11651,11 @@ Recall (Handout 3, Algorithm <a href="#alg_Stochastic_Gradient_descent_2">alg:St
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-609'><br />
+<div class="standard" id='magicparlabel-638'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-610'><div class="note_item"><span class="note_label">Note 76.</span>
+<div class="note" id='magicparlabel-639'><div class="note_item"><span class="note_label">Note 70.</span>
 The computation of the Hessian <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -11748,11 +11739,11 @@ The computation of the Hessian <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> We will not go further to exact computations. </div>
 </div>
 
-<div class="standard" id='magicparlabel-611'><br />
+<div class="standard" id='magicparlabel-640'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-612'><div class="note_item"><span class="note_label">Note 77.</span>
+<div class="note" id='magicparlabel-641'><div class="note_item"><span class="note_label">Note 71.</span>
 The exact computation of the Hessian <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
@@ -11773,11 +11764,11 @@ The exact computation of the Hessian <math xmlns="http://www.w3.org/1998/Math/Ma
  </mrow></math> in NN setting can be computationally expensive and hence approximations are often used (with hope to work well). One can implement the general purpose AdaGrad (Section <a href="#subsec_Adaptive_Stochastic_Gradient">subsec:Adaptive-Stochastic-Gradient</a>, Handout 3). In what follows we present other alternatives tailored to the NN model.</div>
 </div>
 
-<div class="standard" id='magicparlabel-613'><br />
+<div class="standard" id='magicparlabel-642'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-614'><div class="note_item"><span class="note_label">Note 78.</span>
+<div class="note" id='magicparlabel-643'><div class="note_item"><span class="note_label">Note 72.</span>
 <a id="note_Consider_the_regression" />
 Consider the regression problem with predictive rule <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -12420,13 +12411,13 @@ Consider the regression problem with predictive rule <math xmlns="http://www.w3.
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-615'><br />
+<div class="standard" id='magicparlabel-644'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-616'><div class="note_item"><span class="note_label">Note 79.</span>
+<div class="note" id='magicparlabel-645'><div class="note_item"><span class="note_label">Note 73.</span>
 <a id="note__Cont__Note__" />
-(Cont. Note <a href="#note_Consider_the_regression">78</a>) To efficiently compute the inverse <math xmlns="http://www.w3.org/1998/Math/MathML">
+(Cont. Note <a href="#note_Consider_the_regression">72</a>) To efficiently compute the inverse <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
    <mrow><mi>H</mi>
@@ -12438,7 +12429,7 @@ Consider the regression problem with predictive rule <math xmlns="http://www.w3.
     </mrow>
    </mrow>
   </msubsup>
- </mrow></math> of <a href="#eq__7">(5.5)</a> I can utilize Woodbury identity<div class="marginal"><div class="plain_layout" id='magicparlabel-620'>No need to 
+ </mrow></math> of <a href="#eq__7">(5.5)</a> I can utilize Woodbury identity<div class="marginal"><div class="plain_layout" id='magicparlabel-649'>No need to 
 <br />
 
 memorize 
@@ -12855,20 +12846,20 @@ identity</div>
  </mrow></math> small, and iterate <a href="#eq__8">(5.7)</a>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-621'><br />
+<div class="standard" id='magicparlabel-650'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-622'><div class="note_item"><span class="note_label">Note 80.</span>
+<div class="note" id='magicparlabel-651'><div class="note_item"><span class="note_label">Note 74.</span>
 Likewise and by modifying <a href="#eq__17">(5.4)</a>, one can compute the corresponding approximations for the classification problems or problems with different loss functions. </div>
 </div>
 
-<div class="standard" id='magicparlabel-623'><br />
+<div class="standard" id='magicparlabel-652'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-624'><span class="section_label">6</span> Bayesian Artificial Neural Networks </h2>
+<h2 class="section" id='magicparlabel-653'><span class="section_label">6</span> Bayesian Artificial Neural Networks </h2>
 
-<div class="note" id='magicparlabel-625'><div class="note_item"><span class="note_label">Note 81.</span>
+<div class="note" id='magicparlabel-654'><div class="note_item"><span class="note_label">Note 75.</span>
 Consider a feed-forward Neural Network with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -12880,7 +12871,7 @@ Consider a feed-forward Neural Network with <math xmlns="http://www.w3.org/1998/
   </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
- </mrow></math>. We use the same notation and structure as in the classical treatment. Assume the architecture <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>. Assume the architecture <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
   <mrow>
@@ -12907,12 +12898,13 @@ Consider a feed-forward Neural Network with <math xmlns="http://www.w3.org/1998/
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-626'><br />
+<div class="standard" id='magicparlabel-655'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-627'><div class="note_item"><span class="note_label">Note 82.</span>
-Assume there is available a training set of examples (data-set) <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="problem" id='magicparlabel-656'><div class="problem_item"><span class="problem_label">Problem 76.</span>
+<a id="prob_Assume_there_is" />
+ Assume there is available a training set of examples (data-set) <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mstyle mathvariant='script'><mi>S</mi>
@@ -13073,19 +13065,19 @@ Assume there is available a training set of examples (data-set) <math xmlns="htt
  </mrow></math>) are collected or based on subjective judgments, while the prior distribution is specified based on subjective manner. </div>
 </div>
 
-<div class="standard" id='magicparlabel-628'><br />
+<div class="standard" id='magicparlabel-657'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-629'><div class="note_item"><span class="note_label">Note 83.</span>
+<div class="note" id='magicparlabel-658'><div class="note_item"><span class="note_label">Note 77.</span>
 &nbsp;In most of the real applications, it is difficult (almost impossible) to specify the sampling distribution based on the experimental design or judgments, and almost impossible to specify the prior of the weights based on subjective judgments. </div>
 </div>
 
-<div class="standard" id='magicparlabel-630'><br />
+<div class="standard" id='magicparlabel-659'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-631'><div class="note_item"><span class="note_label">Note 84.</span>
+<div class="note" id='magicparlabel-660'><div class="note_item"><span class="note_label">Note 78.</span>
 One could specify the sampling distribution based on the loss function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -13213,11 +13205,11 @@ One could specify the sampling distribution based on the loss function <math xml
  </mrow></math> via the likelihood. </div>
 </div>
 
-<div class="standard" id='magicparlabel-632'><br />
+<div class="standard" id='magicparlabel-661'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-633'><div class="note_item"><span class="note_label">Note 85.</span>
+<div class="note" id='magicparlabel-662'><div class="note_item"><span class="note_label">Note 79.</span>
 The prior density of the weights may be specified based on some shrinkage term <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>J</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -13268,14 +13260,14 @@ The prior density of the weights may be specified based on some shrinkage term <
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> with an over-parametrized NN (with many weighs, more than needed) and many of them should be shrunk to zero. Also as we see in Note <a href="#note_Training_of_non_linear">94</a>, careless training of NN tends to produce over-fitted NN with large weights (in abs values).</div>
+ </mrow></math> with an over-parametrized NN (with many weighs, more than needed) and many of them should be shrunk to zero. Also as we see in Note <a href="#note_Training_of_non_linear">88</a>, careless training of NN tends to produce over-fitted NN with large weights (in abs values).</div>
 </div>
 
-<div class="standard" id='magicparlabel-634'><br />
+<div class="standard" id='magicparlabel-663'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-635'><div class="note_item"><span class="note_label">Note 86.</span>
+<div class="note" id='magicparlabel-664'><div class="note_item"><span class="note_label">Note 80.</span>
 Regarding prior it is often, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>w</mi><mo> &sim; </mo>
@@ -13304,11 +13296,11 @@ Regarding prior it is often, <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> chances for the weight to be above or below zero.</div>
 </div>
 
-<div class="standard" id='magicparlabel-636'><br />
+<div class="standard" id='magicparlabel-665'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-637'><div class="note_item"><span class="note_label">Note 87.</span>
+<div class="note" id='magicparlabel-666'><div class="note_item"><span class="note_label">Note 81.</span>
 The corresponding posterior (according to the Bayes theorem) is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -13496,7 +13488,7 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
 </div>
 
 
-<div class="example" id='magicparlabel-644'><div class="example_item"><span class="example_label">Example 88.</span>
+<div class="example" id='magicparlabel-673'><div class="example_item"><span class="example_label">Example 82.</span>
 (Regression problem) Sampling distribution can be specified as in <a href="#eq__15">(6.1)</a> based on (Euclidean) loss <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -13537,7 +13529,108 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
     </mrow>
    </msup>
   </mrow>
- </mrow></math> Note this is equivalent to as if we had considered a sampling distribution <a id="eq__9_1" />
+ </mrow></math> which (based on <a href="#eq__11">(3.4)</a>) can build a density <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>y</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub><mo>|</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub><mo>,</mo><mi>w</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo> &vprop; </mo><mo> exp </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mo>-</mo><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <msub>
+      <mrow><mi>h</mi>
+      </mrow>
+      <mrow><mi>w</mi>
+      </mrow>
+     </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>x</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub><mo>,</mo>
+      <msub>
+       <mrow><mi>y</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo>-</mo>
+   <mfrac>
+    <mrow><mi> &beta; </mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </mfrac>
+   <msup>
+    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <msub>
+       <mrow><mi>x</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>-</mo>
+      <msub>
+       <mrow><mi>y</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup><mo>,</mo>
+  </mrow>
+ </mrow></math>This implies a sampling distribution <a id="eq__9_1" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -13640,7 +13733,7 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
     </mrow>
    </msubsup>
   </mrow>
- </mrow></math> is the Ridge shrinkage term. Note this is equivalent to as if we had considered<a id="eq__12" />
+ </mrow></math> which is based on the Ridge shrinkage term. This implies a prior<a id="eq__12" />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -13764,11 +13857,11 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
  </mtable></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-653'><br />
+<div class="standard" id='magicparlabel-682'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-654'><div class="example_item"><span class="example_label">Example 89.</span>
+<div class="example" id='magicparlabel-683'><div class="example_item"><span class="example_label">Example 83.</span>
 (Binary classification problem) Sampling distribution can be specified as in <a href="#eq__15">(6.1)</a> based on (cross-entropy) loss <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -13821,7 +13914,148 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math>which is equivalent to as if we had considered a sampling distribution <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>which (based on <a href="#eq__11">(3.4)</a>) can build a density <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>y</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub><mo>|</mo>
+      <msub>
+       <mrow><mi>x</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub><mo>,</mo><mi>w</mi>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+   <mtd>
+    <mrow><mo> &vprop; </mo><mo> exp </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mo>-</mo><mi> &ell; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <msub>
+        <mrow><mi>h</mi>
+        </mrow>
+        <mrow><mi>w</mi>
+        </mrow>
+       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <msub>
+        <mrow><mi>x</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <mrow>
+        <msub>
+         <mrow><mi>x</mi>
+         </mrow>
+         <mrow><mi>i</mi>
+         </mrow>
+        </msub><mo>,</mo>
+        <msub>
+         <mrow><mi>y</mi>
+         </mrow>
+         <mrow><mi>i</mi>
+         </mrow>
+        </msub>
+       </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    </mrow>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd><mrow/>
+   </mtd>
+   <mtd>
+    <mrow><mo>=</mo><mo>-</mo>
+     <msub>
+      <mrow><mi>y</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow>
+      <msub>
+       <mrow><mi>h</mi>
+       </mrow>
+       <mrow><mi>w</mi>
+       </mrow>
+      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <msub>
+       <mrow><mi>x</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>-</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mn>1</mn><mo>-</mo>
+      <msub>
+       <mrow><mi>y</mi>
+       </mrow>
+       <mrow><mi>i</mi>
+       </mrow>
+      </msub>
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+     <mrow><mn>1</mn><mo>-</mo><mo> log </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+      <mrow>
+       <msub>
+        <mrow><mi>h</mi>
+        </mrow>
+        <mrow><mi>w</mi>
+        </mrow>
+       </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+       <msub>
+        <mrow><mi>x</mi>
+        </mrow>
+        <mrow><mi>i</mi>
+        </mrow>
+       </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+      </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+     </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>,</mo>
+    </mrow>
+   </mtd>
+  </mtr>
+ </mtable></math>This implies a sampling distribution <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <msub>
@@ -13875,7 +14109,7 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> based on <a href="#eq__11">(3.4)</a>. Prior can be specified as in <a href="#eq__13">(6.2)</a> with the LASSO shrinkage term <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>To encourage sparsity, prior can be specified as in <a href="#eq__13">(6.2)</a> by using the LASSO shrinkage term <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>J</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -14005,12 +14239,13 @@ The corresponding posterior (according to the Bayes theorem) is<math display="bl
  </mrow></math></div>
 </div>
 
-<div class="standard" id='magicparlabel-680'><br />
+<div class="standard" id='magicparlabel-709'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-681'><div class="note_item"><span class="note_label">Note 90.</span>
-Sampling from the posterior can be performed via SGLD due to the high-dimensionality in the weights <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="note" id='magicparlabel-710'><div class="note_item"><span class="note_label">Note 84.</span>
+<a id="note_Sampling_from_the" />
+ Sampling from the posterior can be performed via SGLD due to the high-dimensionality in the weights <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math> and the big size of the training data set. Recall the recursion of the SGLD with batch size <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
@@ -14178,11 +14413,11 @@ Sampling from the posterior can be performed via SGLD due to the high-dimensiona
  </mrow></math>. (See Algorithm <a href="#alg_Stochastic_Gradient_Langevin">alg:Stochastic-Gradient-Langevin</a> in Handout 4: Bayesian Learning via Stochastic gradient and Stochastic gradient Langevin dynamics). </div>
 </div>
 
-<div class="standard" id='magicparlabel-682'><br />
+<div class="standard" id='magicparlabel-711'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-683'><div class="note_item"><span class="note_label">Note 91.</span>
+<div class="note" id='magicparlabel-712'><div class="note_item"><span class="note_label">Note 85.</span>
 Given sample values <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
@@ -14224,7 +14459,7 @@ Given sample values <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>w</mi>
  </mrow></math>'s can be performed via </div>
 
-<ol class="enumerate" id='magicparlabel-684'><li class="enumerate_item">Monte Carlo estimation namely averaging the samples values <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol class="enumerate" id='magicparlabel-713'><li class="enumerate_item">Monte Carlo estimation namely averaging the samples values <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msubsup>
    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
@@ -14360,28 +14595,30 @@ Given sample values <math xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow><mo> max </mo>
     </mrow>
     <mrow>
-     <msubsup>
-      <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+     <mrow><mi>w</mi><mo> &isin; </mo>
+      <msubsup>
+       <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
-       <msup>
-        <mrow><mi>w</mi>
-        </mrow>
-        <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+        <msup>
+         <mrow><mi>w</mi>
+         </mrow>
+         <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 <mi>t</mi>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
-        </mrow>
-       </msup>
+         </mrow>
+        </msup>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
-      </mrow>
-      <mrow>
-       <mrow><mi>t</mi><mo>=</mo><mn>1</mn>
        </mrow>
-      </mrow>
-      <mrow><mi>T</mi>
-      </mrow>
-     </msubsup>
+       <mrow>
+        <mrow><mi>t</mi><mo>=</mo><mn>1</mn>
+        </mrow>
+       </mrow>
+       <mrow><mi>T</mi>
+       </mrow>
+      </msubsup>
+     </mrow>
     </mrow>
    </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
@@ -14454,79 +14691,79 @@ Given sample values <math xmlns="http://www.w3.org/1998/Math/MathML">
 </ol>
 </div>
 
-<div class="standard" id='magicparlabel-686'><br />
+<div class="standard" id='magicparlabel-715'><br />
 
 </div>
 
 
-<h2 class="section" id='magicparlabel-693'><span class="section_label">7</span> <a id="sec_Theoretical_aspects" />
+<h2 class="section" id='magicparlabel-722'><span class="section_label">7</span> <a id="sec_Theoretical_aspects" />
 Theoretical aspects</h2>
 
-<div class="note" id='magicparlabel-694'><div class="note_item"><span class="note_label">Note 92.</span>
+<div class="note" id='magicparlabel-723'><div class="note_item"><span class="note_label">Note 86.</span>
 We will not go this direction here. For the interested student, I suggest for starters, Ch 5 from &ldquo;Ripley, B. D. (2007). Pattern recognition and neural networks. Cambridge university press.&rdquo;; and for advanced Ch 30 from &ldquo;Devroye, L., Györfi, L., &amp; Lugosi, G. (2013). A probabilistic theory of pattern recognition (Vol. 31). Springer Science &amp; Business Media.&rdquo;</div>
 </div>
 
 
 
-<div class="standard" id='magicparlabel-700'><br />
+<div class="standard" id='magicparlabel-729'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-701'><span class="section_label">8</span> Comments, guidelines, and discussions</h2>
-<h3 class="subsection" id='magicparlabel-702'><span class="subsection_label">8.1</span> Over-fitting issues </h3>
+<h2 class="section" id='magicparlabel-730'><span class="section_label">8</span> Comments, guidelines, and discussions</h2>
+<h3 class="subsection" id='magicparlabel-731'><span class="subsection_label">8.1</span> Over-fitting issues </h3>
 
-<div class="note" id='magicparlabel-703'><div class="note_item"><span class="note_label">Note 93.</span>
+<div class="note" id='magicparlabel-732'><div class="note_item"><span class="note_label">Note 87.</span>
 Neural Networks can be &ldquo;over-parametrized&rdquo;, for instance by consisting of a large number of layers each of them having a large number of neurons able to represent each feacture/characteristic of the pattern of interest to be learned. Careless training may produce NN models with bad generalization predictive properties.</div>
 </div>
 
-<div class="standard" id='magicparlabel-704'><br />
+<div class="standard" id='magicparlabel-733'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-705'><div class="note_item"><span class="note_label">Note 94.</span>
+<div class="note" id='magicparlabel-734'><div class="note_item"><span class="note_label">Note 88.</span>
 <a id="note_Training_of_non_linear" />
-Training of non-linear (non-convex) NN models corresponds to an iterative reduction of the Error Function defined on the training data-set. It has been observed that the Error Function defined on the validation data-set (independent to the training data set) often shows a decrease at first, followed by an increase as the NN starts to overfit. This overfit is often associated to the production of weight values larger than needed to be generalised. It is desirable to avoid this over-fitting with purpose to obtain a NN with good generalization performance. 
-<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-713'><img style='width:48%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' />
+ Training of non-linear (non-convex) NN models corresponds to an iterative reduction of the Error Function defined on the training data-set. It has been observed that the Error Function defined on the validation data-set (independent to the training data set) often shows a decrease at first, followed by an increase as the NN starts to overfit. This overfit is often associated to the production of weight values larger than needed to be generalised. It is desirable to avoid this over-fitting with purpose to obtain a NN with good generalization performance. 
+<div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-742'><img style='width:48%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  training set</span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-721'><img style='width:48%;' src='2_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-validation-set-error.png' alt='image: 2_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-validation-set-error.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-750'><img style='width:48%;' src='2_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-validation-set-error.png' alt='image: 2_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-validation-set-error.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure b:  validation set</span></div>
 </div>
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-730'><img style='width:48%;' src='3_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-training-set-error-1.png' alt='image: 3_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-training-set-error-1.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-759'><img style='width:48%;' src='3_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-training-set-error-1.png' alt='image: 3_extra_tmp_mffk55_Dropbox_Teaching_material_on___al_neural_networks_ann-training-set-error-1.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure c:  loss function</span></div>
 </div>
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-738'><img style='width:48%;' src='4_extra_tmp_mffk55_Dropbox_Teaching_material_on____neural_networks_ann-validation-set-error-1.png' alt='image: 4_extra_tmp_mffk55_Dropbox_Teaching_material_on____neural_networks_ann-validation-set-error-1.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-767'><img style='width:48%;' src='4_extra_tmp_mffk55_Dropbox_Teaching_material_on____neural_networks_ann-validation-set-error-1.png' alt='image: 4_extra_tmp_mffk55_Dropbox_Teaching_material_on____neural_networks_ann-validation-set-error-1.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure d:  accuracy</span></div>
 </div>
 
 
-<div class="plain_layout" id='magicparlabel-743'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 8.1:  Behavior of the Error Function wrt the iterations, against a training set and against a validation set.</span></div>
+<div class="plain_layout" id='magicparlabel-772'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 8.1:  Behavior of the Error Function wrt the iterations, against a training set and against a validation set.</span></div>
 </div>
 </div>
 </div>
 
-<div class="standard" id='magicparlabel-748'><br />
+<div class="standard" id='magicparlabel-777'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-749'><div class="note_item"><span class="note_label">Note 95.</span>
+<div class="note" id='magicparlabel-778'><div class="note_item"><span class="note_label">Note 89.</span>
 <b>Early stopping</b> is a way of limiting the effective network complexity by halting training before a minimum of the training error has been reached. During training, we monitor the NN performance against the EF defined on the validation data-set, and stop the training procedure when just before the EF defined on the validation data set start increasing (aka before overfitting signs) to prevent the model memorizing too much information about the training set. </div>
 </div>
 
-<div class="standard" id='magicparlabel-750'><br />
+<div class="standard" id='magicparlabel-779'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-751'><div class="note_item"><span class="note_label">Note 96.</span>
+<div class="note" id='magicparlabel-780'><div class="note_item"><span class="note_label">Note 90.</span>
 <b>Regularization</b> as in Section <a href="#subsec_Regularization">4.2</a> can alternatively be used to address the above issue by using a shrinkage term preventing the weights to grow too much away from zero.</div>
 </div>
-<h3 class="subsection" id='magicparlabel-752'><span class="subsection_label">8.2</span> Non-identifiabilities</h3>
+<h3 class="subsection" id='magicparlabel-781'><span class="subsection_label">8.2</span> Non-identifiabilities</h3>
 
-<div class="note" id='magicparlabel-753'><div class="note_item"><span class="note_label">Note 97.</span>
+<div class="note" id='magicparlabel-782'><div class="note_item"><span class="note_label">Note 91.</span>
 <a id="note_The_weights_" />
-The weights <math xmlns="http://www.w3.org/1998/Math/MathML">
+ NN Learning Problems (E.g, Problems <a href="#prob_Find__">50</a>, <a href="#prob_Compute_optimal_">51</a>, <a href="#prob_Often_neural_network">54</a>, and <a href="#prob_Assume_there_is">76</a>) are often non-identifiable with respect to weights <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
   <msub>
@@ -14539,7 +14776,15 @@ The weights <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msub>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
 
- </mrow></math> have non-identifiabilities. Consider the FFNN in Figure <a href="#fig_A_FFNN">8.2</a> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+ </mrow></math>.</div>
+</div>
+
+<div class="standard" id='magicparlabel-783'><br />
+
+</div>
+
+<div class="example" id='magicparlabel-784'><div class="example_item"><span class="example_label">Example 92.</span>
+Consider the FFNN in Figure <a href="#fig_A_FFNN">8.2</a> with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>1</mn>
  </mrow></math> hidden layer of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>M</mi>
@@ -14603,28 +14848,28 @@ The weights <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mrow>
    </msup><mi>M</mi><mo>!</mo>
   </mrow>
- </mrow></math>. –This is not harmful in training or predictive rul computation as we just need to find one such parameter setting. <div class='float-figure'><div class="plain_layout" id='magicparlabel-757'><img src='5_extra_tmp_mffk55_Dropbox_Teaching_material_on___neural_networks_ann-1-hiden-layer-nn-bishop.png' alt='image: 5_extra_tmp_mffk55_Dropbox_Teaching_material_on___neural_networks_ann-1-hiden-layer-nn-bishop.png' />
+ </mrow></math>. –This is not harmful in training or predictive rul computation as we just need to find one such parameter setting. <div class='float-figure'><div class="plain_layout" id='magicparlabel-788'><img src='5_extra_tmp_mffk55_Dropbox_Teaching_material_on___neural_networks_ann-1-hiden-layer-nn-bishop.png' alt='image: 5_extra_tmp_mffk55_Dropbox_Teaching_material_on___neural_networks_ann-1-hiden-layer-nn-bishop.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Figure 8.2:  <a id="fig_A_FFNN" />
 A FFNN</span></div>
 </div>
 </div>
 </div>
-<h3 class="subsection" id='magicparlabel-762'><span class="subsection_label">8.3</span> Non-convexity</h3>
+<h3 class="subsection" id='magicparlabel-793'><span class="subsection_label">8.3</span> Non-convexity</h3>
 
-<div class="note" id='magicparlabel-763'><div class="note_item"><span class="note_label">Note 98.</span>
-Learning problems with NN are non-convex, hence the loss function to be minimized has many local minima. The consequence is that the SGD/SGLD learning algorithms may be trapped in a local optima and never reach any of the global ones. The number of local minima is exaggerated due to the symmetries discussed in Note <a href="#note_The_weights_">97</a>. Due to the large number of data (big-data) used to train the NN (in real life) such local minima become more shallow while the global minima more picky. Due to this and the stochastic nature of SGD/SGLD algorithms, SGD/SGLD may be able (by chance) to escape from such local minima/maxima and reach the global ones. </div>
+<div class="note" id='magicparlabel-794'><div class="note_item"><span class="note_label">Note 93.</span>
+Learning problems with NN are non-convex, hence the loss function to be minimized has many local minima. The consequence is that the SGD/SGLD learning algorithms may be trapped in a local optima and never reach any of the global ones. The number of local minima is exaggerated due to the symmetries discussed in Note <a href="#note_The_weights_">91</a>. Due to the large number of data (big-data) used to train the NN (in real life) such local minima become more shallow while the global minima more picky. Due to this and the stochastic nature of SGD/SGLD algorithms, SGD/SGLD may be able (by chance) to escape from such local minima/maxima and reach the global ones. </div>
 </div>
 
-<div class="standard" id='magicparlabel-764'><br />
+<div class="standard" id='magicparlabel-795'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-765'><div class="note_item"><span class="note_label">Note 99.</span>
+<div class="note" id='magicparlabel-796'><div class="note_item"><span class="note_label">Note 94.</span>
 To address local optima issue, run SGD/SGLD learning algorithms multiple times by initializing them with different seeds each time. </div>
 </div>
-<h3 class="subsection" id='magicparlabel-766'><span class="subsection_label">8.4</span> Skip-layers <a href="#eq_ergtgqert">2.4</a></h3>
+<h3 class="subsection" id='magicparlabel-797'><span class="subsection_label">8.4</span> Skip-layers <a href="#eq_ergtgqert">2.4</a></h3>
 
-<div class="note" id='magicparlabel-767'><div class="note_item"><span class="note_label">Note 100.</span>
+<div class="note" id='magicparlabel-798'><div class="note_item"><span class="note_label">Note 95.</span>
 The general definition of feed forward Neural Network allows &ldquo;skip-layer&rdquo; connections that is the directed graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -14674,11 +14919,11 @@ The general definition of feed forward Neural Network allows &ldquo;skip-layer&r
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-768'><br />
+<div class="standard" id='magicparlabel-799'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-769'><div class="example_item"><span class="example_label">Example 101.</span>
+<div class="example" id='magicparlabel-800'><div class="example_item"><span class="example_label">Example 96.</span>
 For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>1</mn>
  </mrow></math> hidden layer is<a id="eq_weetwetfwert" />
@@ -14817,31 +15062,31 @@ For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Ma
  </mtable></math> Compared to <a href="#eq_ergtgqert">(2.4)</a> in Example <a href="#exa__Cont__Example___1">33</a> and <a href="#eq_ergtgqert">(2.4)</a>, <a href="#eq_weetwetfwert">(8.1)</a> links the input to the output.</div>
 </div>
 
-<div class="standard" id='magicparlabel-770'><br />
+<div class="standard" id='magicparlabel-801'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-771'><div class="note_item"><span class="note_label">Note 102.</span>
+<div class="note" id='magicparlabel-802'><div class="note_item"><span class="note_label">Note 97.</span>
 In skip-layer FFNN cases, the error back propagation (Section <a href="#subsec_Error_backpropagation__to">5.1</a>) has to be adjusted properly. </div>
 </div>
 
-<div class="standard" id='magicparlabel-772'><br />
+<div class="standard" id='magicparlabel-803'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-773'><div class="note_item"><span class="note_label">Note 103.</span>
+<div class="note" id='magicparlabel-804'><div class="note_item"><span class="note_label">Note 98.</span>
 FFNN are mainly used without skip-layers because theory (Section <a href="#sec_Theoretical_aspects">7</a>) states that FFNN are global approximators even without skip layers, as well as because of computational inconvenience and modeling parsimony.</div>
 </div>
 
-<div class="standard" id='magicparlabel-774'><br />
+<div class="standard" id='magicparlabel-805'><br />
 
 </div>
 
-<div class="standard" id='magicparlabel-775'><br />
+<div class="standard" id='magicparlabel-806'><br />
 </div>
-<h2 class="section" id='magicparlabel-776'><span class="section_label">A</span> About graphs</h2>
+<h2 class="section" id='magicparlabel-807'><span class="section_label">A</span> About graphs</h2>
 
-<div class="definition" id='magicparlabel-777'><div class="definition_item"><span class="definition_label">Definition 104.</span>
+<div class="definition" id='magicparlabel-808'><div class="definition_item"><span class="definition_label">Definition 99.</span>
 A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -14859,7 +15104,7 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
   </mrow>
  </mrow></math> comprising </div>
 
-<ul class="itemize" id='magicparlabel-783'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-814'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>V</mi>
   </mstyle>
@@ -14888,11 +15133,11 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-785'><br />
+<div class="standard" id='magicparlabel-816'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-786'><div class="definition_item"><span class="definition_label">Definition 105.</span>
+<div class="definition" id='magicparlabel-817'><div class="definition_item"><span class="definition_label">Definition 100.</span>
 An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -14925,22 +15170,22 @@ An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/19
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-787'><br />
+<div class="standard" id='magicparlabel-818'><br />
 
 </div>
 
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-793'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-824'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Figure A.1:  A directed graph</span></div>
 
 
 </div>
 
-<h2 class="section" id='magicparlabel-799'><span class="section_label">B</span> About Partial derivatives</h2>
+<h2 class="section" id='magicparlabel-830'><span class="section_label">B</span> About Partial derivatives</h2>
 
-<div class="note" id='magicparlabel-800'><div class="note_item"><span class="note_label">Note 106.</span>
+<div class="note" id='magicparlabel-831'><div class="note_item"><span class="note_label">Note 101.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
@@ -14958,7 +15203,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="definition" id='magicparlabel-801'><div class="definition_item"><span class="definition_label">Definition 107.</span>
+<div class="definition" id='magicparlabel-832'><div class="definition_item"><span class="definition_label">Definition 102.</span>
 <a id="def_The_partial_derivative" />
 The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -15257,12 +15502,12 @@ The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>-th location. </div>
 </div>
 
-<div class="standard" id='magicparlabel-802'><br />
+<div class="standard" id='magicparlabel-833'><br />
 
 </div>
 
-<div class="remark" id='magicparlabel-803'><div class="remark_item"><span class="remark_label">Remark 108.</span>
-Essentially, Definition <a href="#def_The_partial_derivative">107</a> says that the partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="remark" id='magicparlabel-834'><div class="remark_item"><span class="remark_label">Remark 103.</span>
+Essentially, Definition <a href="#def_The_partial_derivative">102</a> says that the partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
    <msup>
@@ -15413,11 +15658,11 @@ Essentially, Definition <a href="#def_The_partial_derivative">107</a> says that 
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-804'><br />
+<div class="standard" id='magicparlabel-835'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-805'><div class="example_item"><span class="example_label">Example 109.</span>
+<div class="example" id='magicparlabel-836'><div class="example_item"><span class="example_label">Example 104.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>f</mi>
  </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -15526,7 +15771,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math>. </div>
 
-<div class="solution_" id='magicparlabel-806'><div class="solution__item"><span class="solution__label">Solution.</span>
+<div class="solution_" id='magicparlabel-837'><div class="solution__item"><span class="solution__label">Solution.</span>
 It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -15868,1002 +16113,8 @@ It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  </mtable></math></div>
 </div>
 </div>
-<h2 class="section" id='magicparlabel-807'><span class="section_label">C</span> About Jacobian</h2>
 
-<div class="note" id='magicparlabel-808'><div class="note_item"><span class="note_label">Note 110.</span>
-Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>f</mi><mo>:</mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup><mo> &rarr; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>m</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. </div>
-</div>
-
-<div class="standard" id='magicparlabel-809'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-810'><div class="note_item"><span class="note_label">Note 111.</span>
-The Jacobian of <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>f</mi>
- </mrow></math> at <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>w</mi><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>, is denoted as <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi>J</mi>
-    </mrow>
-    <mrow><mi>w</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>f</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> and it is an <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>m</mi><mo> &times; </mo><mi>n</mi>
-  </mrow>
- </mrow></math> matrix with <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-  <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-  </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
- </mrow></math> elements such as<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
-
-     <mrow>
-      <msub>
-       <mrow><mi>J</mi>
-       </mrow>
-       <mrow><mi>w</mi>
-       </mrow>
-      </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>f</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub><mo>=</mo>
-   <mfrac>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>d</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle>
-      <msub>
-       <mrow><mi>w</mi>
-       </mrow>
-       <mrow><mi>j</mi>
-       </mrow>
-      </msub>
-     </mrow>
-    </mrow>
-   </mfrac>
-   <msub>
-    <mrow><mi>f</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>m</mi>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>j</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>n</mi>
-  </mrow>
- </mrow></math>. </div>
-</div>
-
-<div class="standard" id='magicparlabel-811'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-812'><div class="note_item"><span class="note_label">Note 112.</span>
-To align with standard notation in statistics, we will use the notation<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mfrac>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>f</mi>
-     </mrow>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac><mo>,</mo><mspace width="6px" /><mspace width="6px" />
-   <mstyle mathvariant='normal'>
-    <mrow><mi>o</mi><mi>r</mi>
-    </mrow>
-   </mstyle><mspace width="6px" /><mspace width="6px" />
-   <mfrac>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>d</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mi>J</mi>
-    </mrow>
-    <mrow><mi>w</mi>
-    </mrow>
-   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>f</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math>.</div>
-</div>
-
-<div class="standard" id='magicparlabel-813'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-814'><div class="note_item"><span class="note_label">Note 113.</span>
-Some properties</div>
-
-<ul class="itemize" id='magicparlabel-815'><li class="itemize_item">Let functions <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mi>A</mi><mi>w</mi>
-  </mrow>
- </mrow></math>, for matrix <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>A</mi><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>m</mi><mo>,</mo><mi>n</mi>
-     </mrow>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> and vector <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>w</mi><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mfrac>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>f</mi>
-     </mrow>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mi>A</mi>
-  </mrow>
- </mrow></math>. </li>
-<li class="itemize_item">Let functions <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>f</mi><mo>:</mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup><mo> &rarr; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>m</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>g</mi><mo>:</mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>k</mi>
-    </mrow>
-   </msup><mo> &rarr; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. The Jacobian of the composition function <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>f</mi><mo> &cir; </mo><mi>g</mi><mo>:</mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>k</mi>
-    </mrow>
-   </msup><mo> &rarr; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>m</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> at <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow><mi>w</mi>
- </mrow></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>.</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi> &xi; </mi>
-        </mrow>
-       </mrow>
-      </mfrac><mi>f</mi><mo> &cir; </mo><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi> &xi; </mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi> &xi; </mi><mo>=</mo><mi>w</mi>
-     </mrow>
-    </mrow>
-   </msub><mspace width="6px" /><mo>=</mo><mspace width="6px" />
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>.</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>f</mi>
-        </mrow>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>g</mi>
-        </mrow>
-       </mrow>
-      </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>g</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>g</mi><mo>=</mo><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-    </mrow>
-   </msub><mspace width="6px" />
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>.</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>g</mi>
-        </mrow>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi> &xi; </mi>
-        </mrow>
-       </mrow>
-      </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi> &xi; </mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi> &xi; </mi><mo>=</mo><mi>w</mi>
-     </mrow>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math>or more compactly <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mfrac>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>d</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac><mi>f</mi><mo> &cir; </mo><mi>g</mi><mo>=</mo>
-   <mfrac>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>f</mi>
-     </mrow>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>g</mi>
-     </mrow>
-    </mrow>
-   </mfrac>
-   <mfrac>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>g</mi>
-     </mrow>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac>
-  </mrow>
- </mrow></math></li>
-</ul>
-</div>
-
-<div class="example" id='magicparlabel-817'><div class="example_item"><span class="example_label">Example 114.</span>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>g</mi><mo>:</mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>k</mi>
-    </mrow>
-   </msup><mo> &rarr; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>n</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mi>A</mi><mi>w</mi>
-  </mrow>
- </mrow></math> where matrix <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>A</mi><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow><mi>n</mi><mo>,</mo><mi>k</mi>
-     </mrow>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi> &sigma; </mi><mo>:</mo>
-   <mstyle mathvariant='double-struck'><mi>R</mi>
-   </mstyle><mo> &rarr; </mo>
-   <mstyle mathvariant='double-struck'><mi>R</mi>
-   </mstyle>
-  </mrow>
- </mrow></math>. Compute <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mfrac>
-    <mrow>
-     <mstyle mathvariant='normal'><mi>d</mi>
-     </mstyle>
-    </mrow>
-    <mrow>
-     <mrow>
-      <mstyle mathvariant='normal'><mi>d</mi>
-      </mstyle><mi>w</mi>
-     </mrow>
-    </mrow>
-   </mfrac><mi> &sigma; </mi><mo> &cir; </mo><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math>. </div>
-
-<dl class='description' id='magicparlabel-818'><dt class="description_label">Hint</dt>
-<dd class="description_item"> Adopt notation <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>a</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <msub>
-     <mrow><mi>a</mi>
-     </mrow>
-     <mrow><mn>1</mn>
-     </mrow>
-    </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mn>...</mn><mo>,</mo><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-    <msub>
-     <mrow><mi>a</mi>
-     </mrow>
-     <mrow><mi>n</mi>
-     </mrow>
-    </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-   </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-  </mrow>
- </mrow></math> when <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>a</mi><mo> &isin; </mo>
-   <msup>
-    <mrow>
-     <mstyle mathvariant='double-struck'><mi>R</mi>
-     </mstyle>
-    </mrow>
-    <mrow><mi>d</mi>
-    </mrow>
-   </msup>
-  </mrow>
- </mrow></math>. </dd>
-</dl>
-
-<div class="solution_" id='magicparlabel-819'><div class="solution__item"><span class="solution__label">Solution.</span>
-It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mtable>
-  <mtr>
-   <mtd>
-    <mrow>
-     <mfrac>
-      <mrow>
-       <mstyle mathvariant='normal'><mi>d</mi>
-       </mstyle>
-      </mrow>
-      <mrow>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle><mi>w</mi>
-       </mrow>
-      </mrow>
-     </mfrac><mi> &sigma; </mi><mo> &cir; </mo><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo>
-    </mrow>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>.</mo>
-
-       <mrow>
-        <mfrac>
-         <mrow>
-          <mstyle mathvariant='normal'><mi>d</mi>
-          </mstyle>
-         </mrow>
-         <mrow>
-          <mrow>
-           <mstyle mathvariant='normal'><mi>d</mi>
-           </mstyle><mi>g</mi>
-          </mrow>
-         </mrow>
-        </mfrac><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>g</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-      </mrow>
-      <mrow>
-       <mrow><mi>g</mi><mo>=</mo><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-      </mrow>
-     </msub><mspace width="6px" />
-     <mfrac>
-      <mrow>
-       <mstyle mathvariant='normal'><mi>d</mi>
-       </mstyle>
-      </mrow>
-      <mrow>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle><mi>w</mi>
-       </mrow>
-      </mrow>
-     </mfrac><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd><mo>=</mo>
-   </mtd>
-   <mtd>
-    <mrow>
-     <msub>
-      <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>.</mo>
-
-       <mrow>
-        <mfrac>
-         <mrow>
-          <mstyle mathvariant='normal'><mi>d</mi>
-          </mstyle>
-         </mrow>
-         <mrow>
-          <mrow>
-           <mstyle mathvariant='normal'><mi>d</mi>
-           </mstyle><mi>g</mi>
-          </mrow>
-         </mrow>
-        </mfrac><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>g</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
-
-      </mrow>
-      <mrow>
-       <mrow><mi>g</mi><mo>=</mo><mi>A</mi><mi>w</mi>
-       </mrow>
-      </mrow>
-     </msub><mspace width="6px" />
-     <mfrac>
-      <mrow>
-       <mstyle mathvariant='normal'><mi>d</mi>
-       </mstyle>
-      </mrow>
-      <mrow>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle><mi>w</mi>
-       </mrow>
-      </mrow>
-     </mfrac><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-    </mrow>
-   </mtd>
-  </mtr>
-  <mtr>
-   <mtd><mo>=</mo>
-   </mtd>
-   <mtd>
-    <mrow>
-     <mstyle mathvariant='normal'>
-      <mrow><mi>d</mi><mi>i</mi><mi>a</mi><mi>g</mi>
-      </mrow>
-     </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-     <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-      <mrow><mi>A</mi><mi>w</mi>
-      </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mspace width="6px" /><mi>A</mi>
-    </mrow>
-   </mtd>
-  </mtr>
- </mtable></math> This is because <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>w</mi>
-        </mrow>
-       </mrow>
-      </mfrac><mi>g</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>w</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub><mo>=</mo>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>w</mi>
-        </mrow>
-       </mrow>
-      </mfrac><mi>A</mi><mi>w</mi>
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub><mo>=</mo>
-   <mfrac>
-    <mrow><mi> &part; </mi>
-    </mrow>
-    <mrow>
-     <mrow><mi> &part; </mi>
-      <msub>
-       <mrow><mi>w</mi>
-       </mrow>
-       <mrow><mi>j</mi>
-       </mrow>
-      </msub>
-     </mrow>
-    </mrow>
-   </mfrac>
-   <msubsup>
-    <mrow><mo> &sum; </mo>
-    </mrow>
-    <mrow>
-     <mrow><mi>k</mi><mo>=</mo><mn>1</mn>
-     </mrow>
-    </mrow>
-    <mrow><mi>k</mi>
-    </mrow>
-   </msubsup>
-   <msub>
-    <mrow><mi>A</mi>
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>k</mi>
-     </mrow>
-    </mrow>
-   </msub>
-   <msub>
-    <mrow><mi>w</mi>
-    </mrow>
-    <mrow><mi>k</mi>
-    </mrow>
-   </msub><mo>=</mo>
-   <msub>
-    <mrow><mi>A</mi>
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math> and because<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
-
-     <mrow>
-      <mfrac>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle>
-       </mrow>
-       <mrow>
-        <mrow>
-         <mstyle mathvariant='normal'><mi>d</mi>
-         </mstyle><mi>g</mi>
-        </mrow>
-       </mrow>
-      </mfrac><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-<mi>g</mi>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-     </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub><mo>=</mo>
-   <msub>
-    <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
-
-     <mfrac>
-      <mrow>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-        <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-         <msub>
-          <mrow><mi>g</mi>
-          </mrow>
-          <mrow><mn>1</mn>
-          </mrow>
-         </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo><mn>...</mn><mo>,</mo><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-         <msub>
-          <mrow><mi>g</mi>
-          </mrow>
-          <mrow><mi>n</mi>
-          </mrow>
-         </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-        </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-      </mrow>
-      <mrow>
-       <mrow>
-        <mstyle mathvariant='normal'><mi>d</mi>
-        </mstyle><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-        <mrow>
-         <msub>
-          <mrow><mi>g</mi>
-          </mrow>
-          <mrow><mn>1</mn>
-          </mrow>
-         </msub><mo>,</mo><mn>...</mn><mo>,</mo>
-         <msub>
-          <mrow><mi>g</mi>
-          </mrow>
-          <mrow><mi>n</mi>
-          </mrow>
-         </msub>
-        </mrow>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-
-       </mrow>
-      </mrow>
-     </mfrac>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
-
-    </mrow>
-    <mrow>
-     <mrow><mi>i</mi><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub><mo>=</mo>
-   <mfrac>
-    <mrow><mi> &part; </mi>
-    </mrow>
-    <mrow>
-     <mrow><mi> &part; </mi>
-      <msub>
-       <mrow><mi>g</mi>
-       </mrow>
-       <mrow><mi>j</mi>
-       </mrow>
-      </msub>
-     </mrow>
-    </mrow>
-   </mfrac><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-   <msub>
-    <mrow><mi>g</mi>
-    </mrow>
-    <mrow><mi>i</mi>
-    </mrow>
-   </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
-   <mtable>
-    <mtr>
-     <mtd>
-      <mrow><mi> &sigma; </mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
-
-       <msub>
-        <mrow><mi>g</mi>
-        </mrow>
-        <mrow><mi>i</mi>
-        </mrow>
-       </msub>
-<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
-<mo>,</mo>
-      </mrow>
-     </mtd>
-     <mtd>
-      <mrow><mi>i</mi><mo>=</mo><mi>j</mi>
-      </mrow>
-     </mtd>
-    </mtr>
-    <mtr>
-     <mtd>
-      <mrow><mn>0</mn><mo>,</mo>
-      </mrow>
-     </mtd>
-     <mtd>
-      <mrow><mi>i</mi><mo> &ne; </mo><mi>j</mi>
-      </mrow>
-     </mtd>
-    </mtr>
-   </mtable>
-  </mrow>
- </mrow></math></div>
-</div>
-</div>
-
-<div class="standard" id='magicparlabel-828'><br />
+<div class="standard" id='magicparlabel-862'><br />
 
 </div>
 </body>
