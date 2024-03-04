@@ -74,7 +74,14 @@ Homework 3
 
 
 Homework 4  
+
++ Questions [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_4_questions.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_4_questions_xhtml/Homework_3_questions_xhtml)  
+
++ Complete [PDF](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_4_complete.pdf) & [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_4_complete_xhtml/Homework_4_complete.xhtml)  
+
 <!--
+### Mock computer based test  
+
 + Questions [HTML](https://blackboard.durham.ac.uk/ultra/courses/_44662_1/outline/assessment/test/_1381253_1?courseId=_44662_1&gradeitemView=details)  
 
 + Complete [HTML](https://htmlpreview.github.io/?https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Exercises/Homework_4_complete.nb.html)  
