@@ -85,9 +85,9 @@ Artificial Neural Networks
 
 + [09.Artificial_neural_networks.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/master/Lecture_handouts/09.Artificial_neural_networks.pdf)  
 
-<!--
+
 Gaussian process regression  
 
-+ [08.Gaussian_process_regression.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/08.Gaussian_process_regression.pdf)  
++ [10.Gaussian_process_regression.pdf](https://github.com/georgios-stats/Machine_Learning_and_Neural_Networks_III_Epiphany_2024/blob/main/Lecture_handouts/10.Gaussian_process_regression.pdf)  
 
--->
+

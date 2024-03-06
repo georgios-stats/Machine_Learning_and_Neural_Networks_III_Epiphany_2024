@@ -192,6 +192,16 @@ font-variant: normal;
 font-size: medium;
 
 }
+h4.subsubsection {
+font-weight: normal;
+font-style: italic;
+font-variant: normal;
+font-size: medium;
+margin-top: 0.7ex;
+margin-bottom: 0.4ex;
+text-align: left;
+
+}
 div.remark {
 font-style: normal;
 font-variant: normal;
@@ -8686,7 +8696,7 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 
 <div class="standard" id='magicparlabel-412'><div class='Boxed'><div class="algorithm" id='magicparlabel-460'><div class="algorithm_item"><span class="algorithm_label">Algorithm 64.</span>
 <a id="alg__Error_backpropagation_" />
-(Error backpropagation)</div>
+(Error back-propagation)</div>
 <div class="plain_layout" id='magicparlabel-461'><i><hr />
 
 </i></div>
@@ -9307,49 +9317,55 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
    </mstyle>
   </mrow>
  </mrow></math>, set: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow>
-   <mfrac>
+ <mtable>
+  <mtr>
+   <mtd>
     <mrow>
-     <mrow><mi> &part; </mi><mi> &ell; </mi>
-     </mrow>
-    </mrow>
-    <mrow>
-     <mrow><mi> &part; </mi>
-      <msub>
-       <mrow><mi>w</mi>
+     <mfrac>
+      <mrow>
+       <mrow><mi> &part; </mi><mi> &ell; </mi>
        </mrow>
-       <mrow>
-        <mrow><mi>t</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>j</mi>
-        </mrow>
+      </mrow>
+      <mrow>
+       <mrow><mi> &part; </mi>
+        <msub>
+         <mrow><mi>w</mi>
+         </mrow>
+         <mrow>
+          <mrow><mi>t</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>j</mi>
+          </mrow>
+         </mrow>
+        </msub>
        </mrow>
-      </msub>
-     </mrow>
-    </mrow>
-   </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+      </mrow>
+     </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
 
-   <mrow><mi>w</mi><mo>,</mo><mi>z</mi>
-   </mrow>
+     <mrow><mi>w</mi><mo>,</mo><mi>z</mi>
+     </mrow>
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 <mo>=</mo>
-   <msub>
-    <mrow><mi> &delta; </mi>
+     <msub>
+      <mrow><mi> &delta; </mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
+       </mrow>
+      </mrow>
+     </msub><mspace width="6px" />
+     <msub>
+      <mrow><mi>o</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>t</mi><mo>-</mo><mn>1</mn><mo>,</mo><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub>
     </mrow>
-    <mrow>
-     <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
-     </mrow>
-    </mrow>
-   </msub><mspace width="6px" />
-   <msub>
-    <mrow><mi>o</mi>
-    </mrow>
-    <mrow>
-     <mrow><mi>t</mi><mo>-</mo><mn>1</mn><mo>,</mo><mi>j</mi>
-     </mrow>
-    </mrow>
-   </msub>
-  </mrow>
- </mrow></math></i></div>
+   </mtd>
+   <mtd>(5.3)
+   </mtd>
+  </mtr>
+ </mtable></math></i></div>
 </dd></dl>
 </div>
 </div></div>
@@ -10671,7 +10687,7 @@ We show that the Algorithm <a href="#alg__Error_backpropagation_">64</a> is vali
      </mfrac>
     </mrow>
    </mtd>
-   <mtd>(5.3)
+   <mtd>(5.4)
    </mtd>
   </mtr>
  </mtable></math>where <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
@@ -10746,7 +10762,7 @@ We show that the Algorithm <a href="#alg__Error_backpropagation_">64</a> is vali
   <mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mi>T</mi>
   </mrow>
  </mrow></math>. </li>
-<li class="itemize_item">Regarding the second part of <a href="#eq__23">(5.3)</a>, it is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<li class="itemize_item">Regarding the second part of <a href="#eq__23">(5.4)</a>, it is<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
    <mfrac>
@@ -11932,7 +11948,7 @@ Consider the regression problem with predictive rule <math xmlns="http://www.w3.
 
     </mrow>
    </mtd>
-   <mtd>(5.4)
+   <mtd>(5.5)
    </mtd>
   </mtr>
   <mtr>
@@ -12393,7 +12409,7 @@ Consider the regression problem with predictive rule <math xmlns="http://www.w3.
      </msup>
     </mrow>
    </mtd>
-   <mtd>(5.5)
+   <mtd>(5.6)
    </mtd>
   </mtr>
  </mtable></math></div>
@@ -12417,7 +12433,7 @@ Consider the regression problem with predictive rule <math xmlns="http://www.w3.
     </mrow>
    </mrow>
   </msubsup>
- </mrow></math> of <a href="#eq__7">(5.5)</a> I can utilize Woodbury identity<div class="marginal"><div class="plain_layout" id='magicparlabel-649'>No need to 
+ </mrow></math> of <a href="#eq__7">(5.6)</a> I can utilize Woodbury identity<div class="marginal"><div class="plain_layout" id='magicparlabel-649'>No need to 
 <br />
 
 memorize 
@@ -12518,7 +12534,7 @@ identity</div>
      </mfrac>
     </mrow>
    </mtd>
-   <mtd>(5.6)
+   <mtd>(5.7)
    </mtd>
   </mtr>
  </mtable></math>offering a way to avoid the computational expensive task of directly inverting the high dimensional <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12708,7 +12724,7 @@ identity</div>
      </msup>
     </mrow>
    </mtd>
-   <mtd>(5.7)
+   <mtd>(5.8)
    </mtd>
   </mtr>
   <mtr>
@@ -12831,7 +12847,7 @@ identity</div>
  <mrow>
   <mrow><mi> &epsi; </mi><mo>&gt;</mo><mn>0</mn>
   </mrow>
- </mrow></math> small, and iterate <a href="#eq__8">(5.7)</a>.</div>
+ </mrow></math> small, and iterate <a href="#eq__8">(5.8)</a>.</div>
 </div>
 
 <div class="standard" id='magicparlabel-650'><br />
@@ -12839,13 +12855,14 @@ identity</div>
 </div>
 
 <div class="note" id='magicparlabel-651'><div class="note_item"><span class="note_label">Note 74.</span>
-Likewise and by modifying <a href="#eq__17">(5.4)</a>, one can compute the corresponding approximations for the classification problems or problems with different loss functions. </div>
+Likewise and by modifying <a href="#eq__17">(5.5)</a>, one can compute the corresponding approximations for the classification problems or problems with different loss functions. </div>
 </div>
 
 <div class="standard" id='magicparlabel-652'><br />
 
 </div>
-<h2 class="section" id='magicparlabel-653'><span class="section_label">6</span> Bayesian Artificial Neural Networks </h2>
+<h2 class="section" id='magicparlabel-653'><span class="section_label">6</span> <a id="sec_Bayesian_Artificial_Neural" />
+ Bayesian Artificial Neural Networks </h2>
 
 <div class="note" id='magicparlabel-654'><div class="note_item"><span class="note_label">Note 75.</span>
 Consider a feed-forward Neural Network with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -14700,7 +14717,7 @@ We will not go this direction here. For the interested student, I suggest for st
 <h3 class="subsection" id='magicparlabel-731'><span class="subsection_label">8.1</span> Over-fitting issues </h3>
 
 <div class="note" id='magicparlabel-732'><div class="note_item"><span class="note_label">Note 87.</span>
-Neural Networks can be &ldquo;over-parametrized&rdquo;, for instance by consisting of a large number of layers each of them having a large number of neurons able to represent each feacture/characteristic of the pattern of interest to be learned. Careless training may produce NN models with bad generalization predictive properties.</div>
+Neural Networks can be highly &ldquo;over-parametrized&rdquo;. E.g. they may consist of a large number of layers each of them having a large number of neurons with purpose to represent each feature/characteristic of the pattern to be recognized –this increases the number of unknown weights to be learned. Careless training may produce NN models with bad generalization predictive properties.</div>
 </div>
 
 <div class="standard" id='magicparlabel-733'><br />
@@ -14709,7 +14726,7 @@ Neural Networks can be &ldquo;over-parametrized&rdquo;, for instance by consisti
 
 <div class="note" id='magicparlabel-734'><div class="note_item"><span class="note_label">Note 88.</span>
 <a id="note_Training_of_non_linear" />
- Training of non-linear (non-convex) NN models corresponds to an iterative reduction of the Error Function defined on the training data-set. It has been observed that the Error Function defined on the validation data-set (independent to the training data set) often shows a decrease at first, followed by an increase as the NN starts to overfit. This overfit is often associated to the production of weight values larger than needed to be generalised. It is desirable to avoid this over-fitting with purpose to obtain a NN with good generalization performance. 
+ Training of NN models corresponds to an iterative reduction of the Error Function defined on the training data-set. On the other hand it has been observed that the Error Function defined on the validation data-set (independent to the training data set) often shows a decrease at first (while NN is being tuned), followed by an increase (while the NN starts to overfit). The reason is because the NN training is a a high-dimensional and big-data problem; hence during the NN training against the EF defined on the training data, the NN memorises too much info from the specific training dataset, overfits to it, and presents bad generalization performance. This over-fitting is often associated to the production of weight values larger than needed for the NN learning rule to have a good generalization performance. It is desirable to avoid this over-fitting with purpose to obtain a NN based learning rule with good generalization performance. 
 <div class='float-figure'><div class='float-figure'><div class="plain_layout" id='magicparlabel-742'><img style='width:48%;' src='1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' alt='image: 1_extra_tmp_mffk55_Dropbox_Teaching_material_on___cial_neural_networks_ann-training-set-error.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  training set</span></div>
 </div>
@@ -14737,7 +14754,7 @@ Neural Networks can be &ldquo;over-parametrized&rdquo;, for instance by consisti
 </div>
 
 <div class="note" id='magicparlabel-778'><div class="note_item"><span class="note_label">Note 89.</span>
-<b>Early stopping</b> is a way of limiting the effective network complexity by halting training before a minimum of the training error has been reached. During training, we monitor the NN performance against the EF defined on the validation data-set, and stop the training procedure when just before the EF defined on the validation data set start increasing (aka before overfitting signs) to prevent the model memorizing too much information about the training set. </div>
+<b>Early stopping</b> is a way of limiting the effective network complexity by halting training before a minimum of the training error has been reached. During training of NN against the MM defined on the training set, we monitor the NN performance against the EF defined on the validation data-set, and stop the training procedure just before the EF defined on the validation data set starts increasing (aka before overfitting) to prevent the model memorizing too much information about the training set. </div>
 </div>
 
 <div class="standard" id='magicparlabel-779'><br />
@@ -14745,7 +14762,7 @@ Neural Networks can be &ldquo;over-parametrized&rdquo;, for instance by consisti
 </div>
 
 <div class="note" id='magicparlabel-780'><div class="note_item"><span class="note_label">Note 90.</span>
-<b>Regularization</b> as in Section <a href="#subsec_Regularization">4.2</a> can alternatively be used to address the above issue by using a shrinkage term preventing the weights to grow too much away from zero.</div>
+<b>Regularization</b> (Section <a href="#subsec_Regularization">4.2</a>) can be used to address the above issue by using a shrinkage term preventing the weights to grow too much away from zero. </div>
 </div>
 <h3 class="subsection" id='magicparlabel-781'><span class="subsection_label">8.2</span> Non-identifiabilities</h3>
 
@@ -14855,9 +14872,398 @@ Learning problems with NN are non-convex, hence the loss function to be minimize
 <div class="note" id='magicparlabel-796'><div class="note_item"><span class="note_label">Note 94.</span>
 To address local optima issue, run SGD/SGLD learning algorithms multiple times by initializing them with different seeds each time. </div>
 </div>
-<h3 class="subsection" id='magicparlabel-797'><span class="subsection_label">8.4</span> Skip-layers <a href="#eq_ergtgqert">2.4</a></h3>
+<h3 class="subsection" id='magicparlabel-797'><span class="subsection_label">8.4</span> Vanishing and exploding gradient</h3>
 
 <div class="note" id='magicparlabel-798'><div class="note_item"><span class="note_label">Note 95.</span>
+In the Error back-propagation Algorithm <a href="#alg__Error_backpropagation_">64</a>, for the computation of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+  <mrow>
+   <mfrac>
+    <mrow>
+     <mrow><mi> &part; </mi><mi> &ell; </mi>
+     </mrow>
+    </mrow>
+    <mrow>
+     <mrow><mi> &part; </mi>
+      <msub>
+       <mrow><mi>w</mi>
+       </mrow>
+       <mrow>
+        <mrow><mi>t</mi><mo>,</mo><mi>i</mi><mo>,</mo><mi>j</mi>
+        </mrow>
+       </mrow>
+      </msub>
+     </mrow>
+    </mrow>
+   </mfrac><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mi>w</mi><mo>,</mo><mi>z</mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+ </mrow></math> crucial quantities are the <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi> &delta; </mi>
+ </mrow></math>-derivatives the propagation of which follows the recursive rule <a href="#eq__22">(5.2)</a>, i.e. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &delta; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
+     </mrow>
+    </mrow>
+   </msub><mo>=</mo>
+   <msubsup>
+    <mrow><mo> &sum; </mo>
+    </mrow>
+    <mrow>
+     <mrow><mi>j</mi><mo>=</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+    <mrow>
+     <msub>
+      <mrow><mi>k</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+     </msub>
+    </mrow>
+   </msubsup>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>j</mi><mo>,</mo><mi>i</mi>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi> &delta; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>j</mi>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <msub>
+    <mrow><mi> &alpha; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>i</mi>
+     </mrow>
+    </mrow>
+   </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>;</mo><mspace width="6px" /><mi>t</mi><mo>=</mo><mi>T</mi><mo>-</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo><mn>1</mn><mo>;</mo><mspace width="6px" /><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>...</mn><mo>,</mo>
+   <msub>
+    <mrow><mi>k</mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math> <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi> &delta; </mi>
+   </mrow>
+   <mrow><mi>t</mi>
+   </mrow>
+  </msub>
+ </mrow></math>-derivatives depend on the respective <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi> &delta; </mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math>-derivatives, weights, and derivatives of the sigmoid in a multiplicative manner. Keeping on <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &delta; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>,</mo><mi>i</mi>
+     </mrow>
+    </mrow>
+   </msub><mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>[</mo>
+
+   <mrow>
+    <msubsup>
+     <mrow><mo> &sum; </mo>
+     </mrow>
+     <mrow>
+      <mrow><mi>j</mi><mo>=</mo><mn>1</mn>
+      </mrow>
+     </mrow>
+     <mrow>
+      <msub>
+       <mrow><mi>k</mi>
+       </mrow>
+       <mrow>
+        <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+        </mrow>
+       </mrow>
+      </msub>
+     </mrow>
+    </msubsup><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <mrow>
+     <msubsup>
+      <mrow><mo> &sum; </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>s</mi><mo>=</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+      <mrow>
+       <msub>
+        <mrow><mi>k</mi>
+        </mrow>
+        <mrow>
+         <mrow><mi>t</mi><mo>+</mo><mn>2</mn>
+         </mrow>
+        </mrow>
+       </msub>
+      </mrow>
+     </msubsup>
+     <msub>
+      <mrow><mi> &delta; </mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>s</mi>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>w</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>t</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>s</mi><mo>,</mo><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub>
+    </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    <msub>
+     <mrow><mi> &sigma; </mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+      </mrow>
+     </mrow>
+    </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+    <msub>
+     <mrow><mi> &alpha; </mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>t</mi><mo>+</mo><mn>2</mn><mo>,</mo><mi>j</mi>
+      </mrow>
+     </mrow>
+    </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+    <msub>
+     <mrow><mi>w</mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>j</mi><mo>,</mo><mi>i</mi>
+      </mrow>
+     </mrow>
+    </msub>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>]</mo>
+
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <msub>
+    <mrow><mi> &alpha; </mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>t</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>i</mi>
+     </mrow>
+    </mrow>
+   </msub>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>we see that as the backpropagation algorithm flows backwards, the derivatives of the sigmoids as well as the weights are multiplied and the number of the involved products grows. This may cause the two problems: vanishing or exploding gradient.</div>
+</div>
+
+<div class="standard" id='magicparlabel-799'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-800'><div class="note_item"><span class="note_label">Note 96.</span>
+This is more powerful in lower layers. </div>
+</div>
+
+<div class="standard" id='magicparlabel-801'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-802'><div class="note_item"><span class="note_label">Note 97.</span>
+This exaggerates in deeper structures of NN. </div>
+</div>
+
+<div class="standard" id='magicparlabel-803'><br />
+
+</div>
+<h4 class="subsubsection" id='magicparlabel-804'><span class="subsubsection_label">8.4.1</span> Vanishing gradient</h4>
+
+<div class="standard" id='magicparlabel-805'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-806'><div class="note_item"><span class="note_label">Note 98.</span>
+As <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mo> &sdot; </mo>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math> are often smaller than <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mn>1</mn>
+ </mrow></math> if the corresponding weights are not large enough, the gradients of the loss wrt the weights of the lower layers can take vanishingly small values and make training via SGD too slow. </div>
+</div>
+
+<div class="standard" id='magicparlabel-807'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-808'><div class="note_item"><span class="note_label">Note 99.</span>
+A remedy to mitigate vanishing gradient is to use rectified linear unit (ReLU) activation functions <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi> &alpha; </mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mo> max </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mn>0</mn><mo>,</mo><mi> &alpha; </mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>+</mo><mi> &xi; </mi><mo> min </mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+
+   <mrow><mn>0</mn><mo>,</mo><mi> &alpha; </mi>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+
+  </mrow>
+ </mrow></math>where <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &xi; </mi><mo> &isin; </mo>
+   <mstyle mathvariant='double-struck'><mi>R</mi>
+   </mstyle>
+  </mrow>
+ </mrow></math> is a user specified parameter. For instance: if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &xi; </mi><mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>, we observe that <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi> &alpha; </mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mn>1</mn>
+  </mrow>
+ </mrow></math> when <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &alpha; </mi><mo>&gt;</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> hence it does not suffer from saturation. However the training may freeze when <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi> &alpha; </mi><mo>&lt;</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> since <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi> &sigma; </mi>
+    </mrow>
+    <mrow><mi>t</mi>
+    </mrow>
+   </msub><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi> &alpha; </mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+<mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>, and hence we often consider some <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>|</mo>
+<mi> &xi; </mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>|</mo>
+<mo> &ap; </mo>
+   <mstyle mathvariant='normal'>
+    <mrow><mi>s</mi><mi>m</mi><mi>a</mi><mi>l</mi><mi>l</mi>
+    </mrow>
+   </mstyle>
+  </mrow>
+ </mrow></math> depending on the application. </div>
+</div>
+<h4 class="subsubsection" id='magicparlabel-813'><span class="subsubsection_label">8.4.2</span> Exploding gradient </h4>
+
+<div class="note" id='magicparlabel-814'><div class="note_item"><span class="note_label">Note 100.</span>
+If the values of the weights get very large values, this can lead to an explosion of the gradient estimates. This can affect the learning by pushing the estimates of the weights to the wrong region in the parameter space when SGD is used.</div>
+</div>
+
+<div class="standard" id='magicparlabel-815'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-816'><div class="note_item"><span class="note_label">Note 101.</span>
+Remedies of this are clipping the gradient in SGD (Note <a href="#note_Gradient_scaling_involves">note:Gradient-scaling-involves</a> in Handout <a href="#enu_Handout___Bayesian">enu:Handout-:-Bayesian</a>: Bayesian Learning via Stochastic gradient and Stochastic gradient Langevin dynamics), the use of shrinkage terms in the learning problem (Section <a href="#subsec_Regularization">4.2</a>), or the use of Bayesian framework with appropriate priors (Section <a href="#sec_Bayesian_Artificial_Neural">6</a>). </div>
+</div>
+<h3 class="subsection" id='magicparlabel-817'><span class="subsection_label">8.5</span> Skip-layers</h3>
+
+<div class="note" id='magicparlabel-818'><div class="note_item"><span class="note_label">Note 102.</span>
 The general definition of feed forward Neural Network allows &ldquo;skip-layer&rdquo; connections that is the directed graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -14907,11 +15313,11 @@ The general definition of feed forward Neural Network allows &ldquo;skip-layer&r
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-799'><br />
+<div class="standard" id='magicparlabel-819'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-800'><div class="example_item"><span class="example_label">Example 96.</span>
+<div class="example" id='magicparlabel-820'><div class="example_item"><span class="example_label">Example 103.</span>
 For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>1</mn>
  </mrow></math> hidden layer is<a id="eq_weetwetfwert" />
@@ -15050,31 +15456,31 @@ For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Ma
  </mtable></math> Compared to <a href="#eq_ergtgqert">(2.4)</a> in Example <a href="#exa__Cont__Example___1">33</a> and <a href="#eq_ergtgqert">(2.4)</a>, <a href="#eq_weetwetfwert">(8.1)</a> links the input to the output.</div>
 </div>
 
-<div class="standard" id='magicparlabel-801'><br />
+<div class="standard" id='magicparlabel-821'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-802'><div class="note_item"><span class="note_label">Note 97.</span>
+<div class="note" id='magicparlabel-822'><div class="note_item"><span class="note_label">Note 104.</span>
 In skip-layer FFNN cases, the error back propagation (Section <a href="#subsec_Error_backpropagation__to">5.1</a>) has to be adjusted properly. </div>
 </div>
 
-<div class="standard" id='magicparlabel-803'><br />
+<div class="standard" id='magicparlabel-823'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-804'><div class="note_item"><span class="note_label">Note 98.</span>
+<div class="note" id='magicparlabel-824'><div class="note_item"><span class="note_label">Note 105.</span>
 FFNN are mainly used without skip-layers because theory (Section <a href="#sec_Theoretical_aspects">7</a>) states that FFNN are global approximators even without skip layers, as well as because of computational inconvenience and modeling parsimony.</div>
 </div>
 
-<div class="standard" id='magicparlabel-805'><br />
+<div class="standard" id='magicparlabel-825'><br />
 
 </div>
 
-<div class="standard" id='magicparlabel-806'><br />
+<div class="standard" id='magicparlabel-826'><br />
 </div>
-<h2 class="section" id='magicparlabel-807'><span class="section_label">A</span> About graphs</h2>
+<h2 class="section" id='magicparlabel-827'><span class="section_label">A</span> About graphs</h2>
 
-<div class="definition" id='magicparlabel-808'><div class="definition_item"><span class="definition_label">Definition 99.</span>
+<div class="definition" id='magicparlabel-828'><div class="definition_item"><span class="definition_label">Definition 106.</span>
 A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15092,7 +15498,7 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
   </mrow>
  </mrow></math> comprising </div>
 
-<ul class="itemize" id='magicparlabel-814'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-834'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>V</mi>
   </mstyle>
@@ -15121,11 +15527,11 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-816'><br />
+<div class="standard" id='magicparlabel-836'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-817'><div class="definition_item"><span class="definition_label">Definition 100.</span>
+<div class="definition" id='magicparlabel-837'><div class="definition_item"><span class="definition_label">Definition 107.</span>
 An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15158,22 +15564,22 @@ An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/19
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-818'><br />
+<div class="standard" id='magicparlabel-838'><br />
 
 </div>
 
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-824'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-844'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Figure A.1:  A directed graph</span></div>
 
 
 </div>
 
-<h2 class="section" id='magicparlabel-830'><span class="section_label">B</span> About Partial derivatives</h2>
+<h2 class="section" id='magicparlabel-850'><span class="section_label">B</span> About Partial derivatives</h2>
 
-<div class="note" id='magicparlabel-831'><div class="note_item"><span class="note_label">Note 101.</span>
+<div class="note" id='magicparlabel-851'><div class="note_item"><span class="note_label">Note 108.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
@@ -15191,7 +15597,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="definition" id='magicparlabel-832'><div class="definition_item"><span class="definition_label">Definition 102.</span>
+<div class="definition" id='magicparlabel-852'><div class="definition_item"><span class="definition_label">Definition 109.</span>
 <a id="def_The_partial_derivative" />
 The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -15490,12 +15896,12 @@ The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>-th location. </div>
 </div>
 
-<div class="standard" id='magicparlabel-833'><br />
+<div class="standard" id='magicparlabel-853'><br />
 
 </div>
 
-<div class="remark" id='magicparlabel-834'><div class="remark_item"><span class="remark_label">Remark 103.</span>
-Essentially, Definition <a href="#def_The_partial_derivative">102</a> says that the partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="remark" id='magicparlabel-854'><div class="remark_item"><span class="remark_label">Remark 110.</span>
+Essentially, Definition <a href="#def_The_partial_derivative">109</a> says that the partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
    <msup>
@@ -15646,11 +16052,11 @@ Essentially, Definition <a href="#def_The_partial_derivative">102</a> says that 
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-835'><br />
+<div class="standard" id='magicparlabel-855'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-836'><div class="example_item"><span class="example_label">Example 104.</span>
+<div class="example" id='magicparlabel-856'><div class="example_item"><span class="example_label">Example 111.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>f</mi>
  </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -15759,7 +16165,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math>. </div>
 
-<div class="solution_" id='magicparlabel-837'><div class="solution__item"><span class="solution__label">Solution.</span>
+<div class="solution_" id='magicparlabel-857'><div class="solution__item"><span class="solution__label">Solution.</span>
 It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -16102,7 +16508,7 @@ It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
 </div>
 </div>
 
-<div class="standard" id='magicparlabel-862'><br />
+<div class="standard" id='magicparlabel-882'><br />
 
 </div>
 </body>
