@@ -14869,9 +14869,9 @@ Learning problems with NN are non-convex, hence the loss function to be minimize
 To address local optima issue, run SGD/SGLD learning algorithms multiple times by initializing them with different seeds each time. </div>
 </div>
 
-<h3 class="subsection" id='magicparlabel-814'><span class="subsection_label">8.4</span> Vanishing and exploding gradient</h3>
+<h3 class="subsection" id='magicparlabel-818'><span class="subsection_label">8.4</span> Vanishing and exploding gradient</h3>
 
-<div class="note" id='magicparlabel-815'><div class="note_item"><span class="note_label">Note 95.</span>
+<div class="note" id='magicparlabel-819'><div class="note_item"><span class="note_label">Note 95.</span>
 In the Error back-propagation Algorithm <a href="#alg__Error_backpropagation_">64</a>, for the computation of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
 
@@ -15112,32 +15112,32 @@ In the Error back-propagation Algorithm <a href="#alg__Error_backpropagation_">6
  </mrow></math>we see that as the backpropagation algorithm flows backwards, the derivatives of the sigmoids as well as the weights are multiplied and the number of the involved products grows. This may cause the two problems: vanishing or exploding gradient.</div>
 </div>
 
-<div class="standard" id='magicparlabel-816'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-817'><div class="note_item"><span class="note_label">Note 96.</span>
-This is more powerful in lower layers. </div>
-</div>
-
-<div class="standard" id='magicparlabel-818'><br />
-
-</div>
-
-<div class="note" id='magicparlabel-819'><div class="note_item"><span class="note_label">Note 97.</span>
-This exaggerates in deeper structures of NN. </div>
-</div>
-
 <div class="standard" id='magicparlabel-820'><br />
 
 </div>
-<h4 class="subsubsection" id='magicparlabel-821'><span class="subsubsection_label">8.4.1</span> Vanishing gradient</h4>
+
+<div class="note" id='magicparlabel-821'><div class="note_item"><span class="note_label">Note 96.</span>
+This is more powerful in lower layers. </div>
+</div>
 
 <div class="standard" id='magicparlabel-822'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-823'><div class="note_item"><span class="note_label">Note 98.</span>
+<div class="note" id='magicparlabel-823'><div class="note_item"><span class="note_label">Note 97.</span>
+This exaggerates in deeper structures of NN. </div>
+</div>
+
+<div class="standard" id='magicparlabel-824'><br />
+
+</div>
+<h4 class="subsubsection" id='magicparlabel-825'><span class="subsubsection_label">8.4.1</span> Vanishing gradient</h4>
+
+<div class="standard" id='magicparlabel-826'><br />
+
+</div>
+
+<div class="note" id='magicparlabel-827'><div class="note_item"><span class="note_label">Note 98.</span>
 As <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15156,11 +15156,11 @@ As <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math> if the corresponding weights are not large enough, the gradients of the loss wrt the weights of the lower layers can take vanishingly small values and make training via SGD too slow. </div>
 </div>
 
-<div class="standard" id='magicparlabel-824'><br />
+<div class="standard" id='magicparlabel-828'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-825'><div class="note_item"><span class="note_label">Note 99.</span>
+<div class="note" id='magicparlabel-829'><div class="note_item"><span class="note_label">Note 99.</span>
 A remedy to mitigate vanishing gradient is to use rectified linear unit (ReLU) activation functions <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15241,23 +15241,23 @@ A remedy to mitigate vanishing gradient is to use rectified linear unit (ReLU) a
   </mrow>
  </mrow></math> depending on the application. </div>
 </div>
-<h4 class="subsubsection" id='magicparlabel-830'><span class="subsubsection_label">8.4.2</span> Exploding gradient </h4>
+<h4 class="subsubsection" id='magicparlabel-834'><span class="subsubsection_label">8.4.2</span> Exploding gradient </h4>
 
-<div class="note" id='magicparlabel-831'><div class="note_item"><span class="note_label">Note 100.</span>
+<div class="note" id='magicparlabel-835'><div class="note_item"><span class="note_label">Note 100.</span>
 If the values of the weights get very large values, this can lead to an explosion of the gradient estimates. This can affect the learning by pushing the estimates of the weights to the wrong region in the parameter space when SGD is used.</div>
 </div>
 
-<div class="standard" id='magicparlabel-832'><br />
+<div class="standard" id='magicparlabel-836'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-833'><div class="note_item"><span class="note_label">Note 101.</span>
+<div class="note" id='magicparlabel-837'><div class="note_item"><span class="note_label">Note 101.</span>
 Remedies of this are clipping the gradient in SGD (Note <a href="#note_Gradient_scaling_involves">note:Gradient-scaling-involves</a> in Handout <a href="#enu_Handout___Bayesian">enu:Handout-:-Bayesian</a>: Bayesian Learning via Stochastic gradient and Stochastic gradient Langevin dynamics), the use of shrinkage terms in the learning problem (Section <a href="#subsec_Regularization">4.2</a>), or the use of Bayesian framework with appropriate priors (Section <a href="#sec_Bayesian_Artificial_Neural">6</a>). </div>
 </div>
 
-<h3 class="subsection" id='magicparlabel-839'><span class="subsection_label">8.5</span> Skip-layers</h3>
+<h3 class="subsection" id='magicparlabel-847'><span class="subsection_label">8.5</span> Skip-layers</h3>
 
-<div class="note" id='magicparlabel-840'><div class="note_item"><span class="note_label">Note 102.</span>
+<div class="note" id='magicparlabel-848'><div class="note_item"><span class="note_label">Note 102.</span>
 The general definition of feed forward Neural Network allows &ldquo;skip-layer&rdquo; connections that is the directed graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15307,11 +15307,11 @@ The general definition of feed forward Neural Network allows &ldquo;skip-layer&r
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-841'><br />
+<div class="standard" id='magicparlabel-849'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-842'><div class="example_item"><span class="example_label">Example 103.</span>
+<div class="example" id='magicparlabel-850'><div class="example_item"><span class="example_label">Example 103.</span>
 For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mn>1</mn>
  </mrow></math> hidden layer is<a id="eq_weetwetfwert" />
@@ -15450,31 +15450,31 @@ For instance, a fully connected FFNN with <math xmlns="http://www.w3.org/1998/Ma
  </mtable></math> Compared to <a href="#eq_ergtgqert">(2.4)</a> in Example <a href="#exa__Cont__Example___1">33</a> and <a href="#eq_ergtgqert">(2.4)</a>, <a href="#eq_weetwetfwert">(8.1)</a> links the input to the output.</div>
 </div>
 
-<div class="standard" id='magicparlabel-843'><br />
+<div class="standard" id='magicparlabel-851'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-844'><div class="note_item"><span class="note_label">Note 104.</span>
+<div class="note" id='magicparlabel-852'><div class="note_item"><span class="note_label">Note 104.</span>
 In skip-layer FFNN cases, the error back propagation (Section <a href="#subsec_Error_backpropagation__to">5.1</a>) has to be adjusted properly. </div>
 </div>
 
-<div class="standard" id='magicparlabel-845'><br />
+<div class="standard" id='magicparlabel-853'><br />
 
 </div>
 
-<div class="note" id='magicparlabel-846'><div class="note_item"><span class="note_label">Note 105.</span>
+<div class="note" id='magicparlabel-854'><div class="note_item"><span class="note_label">Note 105.</span>
 FFNN are mainly used without skip-layers because theory (Section <a href="#sec_Theoretical_aspects">7</a>) states that FFNN are global approximators even without skip layers, as well as because of computational inconvenience and modeling parsimony.</div>
 </div>
 
-<div class="standard" id='magicparlabel-847'><br />
+<div class="standard" id='magicparlabel-855'><br />
 
 </div>
 
-<div class="standard" id='magicparlabel-848'><br />
+<div class="standard" id='magicparlabel-856'><br />
 </div>
-<h2 class="section" id='magicparlabel-849'><span class="section_label">A</span> About graphs</h2>
+<h2 class="section" id='magicparlabel-857'><span class="section_label">A</span> About graphs</h2>
 
-<div class="definition" id='magicparlabel-850'><div class="definition_item"><span class="definition_label">Definition 106.</span>
+<div class="definition" id='magicparlabel-858'><div class="definition_item"><span class="definition_label">Definition 106.</span>
 A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15492,7 +15492,7 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
   </mrow>
  </mrow></math> comprising </div>
 
-<ul class="itemize" id='magicparlabel-856'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul class="itemize" id='magicparlabel-864'><li class="itemize_item">a set of nodes <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mstyle mathvariant='script'><mi>V</mi>
   </mstyle>
@@ -15521,11 +15521,11 @@ A directed graph is an ordered pair <math xmlns="http://www.w3.org/1998/Math/Mat
 </ul>
 </div>
 
-<div class="standard" id='magicparlabel-858'><br />
+<div class="standard" id='magicparlabel-866'><br />
 
 </div>
 
-<div class="definition" id='magicparlabel-859'><div class="definition_item"><span class="definition_label">Definition 107.</span>
+<div class="definition" id='magicparlabel-867'><div class="definition_item"><span class="definition_label">Definition 107.</span>
 An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow>
@@ -15558,22 +15558,22 @@ An edge-weighted graph or a network is a graph <math xmlns="http://www.w3.org/19
  </mrow></math>.</div>
 </div>
 
-<div class="standard" id='magicparlabel-860'><br />
+<div class="standard" id='magicparlabel-868'><br />
 
 </div>
 
 
 
 
-<div class='float-figure'><div class="plain_layout" id='magicparlabel-866'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
+<div class='float-figure'><div class="plain_layout" id='magicparlabel-874'><img style='width:50%;' src='6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' alt='image: 6_extra_tmp_mffk55_Dropbox_Teaching_material_on___tworks_III_Handouts_pictures_directed-graph.png' />
 <span class='float-caption-Standard float-caption float-caption-standard'>Figure A.1:  A directed graph</span></div>
 
 
 </div>
 
-<h2 class="section" id='magicparlabel-872'><span class="section_label">B</span> About Partial derivatives</h2>
+<h2 class="section" id='magicparlabel-880'><span class="section_label">B</span> About Partial derivatives</h2>
 
-<div class="note" id='magicparlabel-873'><div class="note_item"><span class="note_label">Note 108.</span>
+<div class="note" id='magicparlabel-881'><div class="note_item"><span class="note_label">Note 108.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
@@ -15591,7 +15591,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>. </div>
 </div>
 
-<div class="definition" id='magicparlabel-874'><div class="definition_item"><span class="definition_label">Definition 109.</span>
+<div class="definition" id='magicparlabel-882'><div class="definition_item"><span class="definition_label">Definition 109.</span>
 <a id="def_The_partial_derivative" />
 The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -15890,11 +15890,11 @@ The partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  </mrow></math>-th location. </div>
 </div>
 
-<div class="standard" id='magicparlabel-875'><br />
+<div class="standard" id='magicparlabel-883'><br />
 
 </div>
 
-<div class="remark" id='magicparlabel-876'><div class="remark_item"><span class="remark_label">Remark 110.</span>
+<div class="remark" id='magicparlabel-884'><div class="remark_item"><span class="remark_label">Remark 110.</span>
 Essentially, Definition <a href="#def_The_partial_derivative">109</a> says that the partial derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>f</mi><mo>:</mo>
@@ -16046,11 +16046,11 @@ Essentially, Definition <a href="#def_The_partial_derivative">109</a> says that 
  </mrow></math>. </div>
 </div>
 
-<div class="standard" id='magicparlabel-877'><br />
+<div class="standard" id='magicparlabel-885'><br />
 
 </div>
 
-<div class="example" id='magicparlabel-878'><div class="example_item"><span class="example_label">Example 111.</span>
+<div class="example" id='magicparlabel-886'><div class="example_item"><span class="example_label">Example 111.</span>
 Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>f</mi>
  </mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -16159,7 +16159,7 @@ Consider a function <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
  </mrow></math>. </div>
 
-<div class="solution_" id='magicparlabel-879'><div class="solution__item"><span class="solution__label">Solution.</span>
+<div class="solution_" id='magicparlabel-887'><div class="solution__item"><span class="solution__label">Solution.</span>
 It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
  <mtable>
   <mtr>
@@ -16502,7 +16502,7 @@ It is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
 </div>
 </div>
 
-<div class="standard" id='magicparlabel-904'><br />
+<div class="standard" id='magicparlabel-912'><br />
 
 </div>
 </body>
