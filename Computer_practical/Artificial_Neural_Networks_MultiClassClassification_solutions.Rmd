@@ -215,7 +215,7 @@ By using the R function nnet{nnet} fit a feed forward neural network with:
 
 + the output activation function is softmax
 
-+ use decay "decay=0.00001" -- the arguments of nnet
++ use decay "decay=5e-4" -- the arguments of nnet
 
 + use maximum number of iterations for the SGD "maxit = 200" -- the arguments of nnet
 
@@ -226,6 +226,7 @@ Do it below
 nnet.2.out <- nnet(x_train, y_train,  
             size = 2, 
             decay = 5e-4, 
+            softmax = TRUE, 
             maxit = 200)
 ```
 
